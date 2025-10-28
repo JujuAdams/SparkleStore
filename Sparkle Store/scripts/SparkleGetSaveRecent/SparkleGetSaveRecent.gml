@@ -4,6 +4,6 @@
 
 function SparkleGetSaveRecent()
 {
-    static _savePq = __SparkleSystem().__savePq;
-    return ds_priority_size(_savePq);
+    static _saveActivityArray = __SparkleSystem().__saveActivityArray;
+    return array_length(_saveActivityArray);
 }

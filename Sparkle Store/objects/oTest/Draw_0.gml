@@ -1,7 +1,7 @@
 // Feather disable all
 
 var _string = string_join("\n", 
-$"Total pending = {SparkleGetPending()}",
+$"Total pending = {SparkleGetTotalPending()}",
 $"Save pending = {SparkleGetSavePending()}",
 $"Save recent = {SparkleGetSaveRecent()}",
 $"Load pending = {SparkleGetLoadPending()}",

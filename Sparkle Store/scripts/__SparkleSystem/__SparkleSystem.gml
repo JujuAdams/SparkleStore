@@ -14,54 +14,30 @@ function __SparkleSystem()
     {
         __SparkleTrace("Welcome to Sparkle Store by Juju Adams!");
         
-        __lastQueuedTime = -infinity;
+        __lastActivityTime = -infinity;
         
         __gamepadIndex = -1;
         __slotTitle    = SPARKLE_CONSOLE_SLOT_TITLE;
         __slotSubtitle = SPARKLE_CONSOLE_SUBTITLE;
         
-        __queuedArray      = [];
-        __savePendingArray = [];
-        __loadPendingArray = [];
-        
-        __savePq = ds_priority_create();
-        __loadPq = ds_priority_create();
+        __queuedArray       = [];
+        __savePendingArray  = [];
+        __loadPendingArray  = [];
+        __saveActivityArray = [];
+        __loadActivityArray = [];
         
         if (SPARKLE_FORCE_GROUP_NAME != undefined)
         {
             __groupName = string(SPARKLE_FORCE_GROUP_NAME);
-            __groupNameUnknown = false;
-            
             __SparkleTrace($"Initialized group name to \"{__groupName}\" (forced)");
         }
         else
         {
-            __groupName = string(SPARKLE_ON_CONSOLE? SPARKLE_CONSOLE_GROUP_NAME : SPARKLE_UNKNOWN_GROUP_NAME);
-            __groupNameUnknown = true;
-            
+            __groupName = string(SPARKLE_DEFAULT_GROUP_NAME);
             __SparkleTrace($"Initialized group name to \"{__groupName}\"");
         }
         
         __SparkleInitializeSteam();
-        
-        if (SPARKLE_ON_DESKTOP && __usingSteamworks)
-        {
-            try
-            {
-                __groupName = string(steam_get_user_steam_id());
-                __groupNameUnknown = false;
-            }
-            catch(_error)
-            {
-                show_debug_message(_error);
-                __SparkleError("Failed to obtain Steam user ID");
-            }
-        }
-        
-        if (__groupNameUnknown)
-        {
-            __SparkleTrace($"Warning! Group name not known");
-        }
         
         time_source_start(time_source_create(time_source_global, 1, time_source_units_frames, function()
         {

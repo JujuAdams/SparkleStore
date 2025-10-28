@@ -2,61 +2,62 @@
 
 with(__SparkleSystem())
 {
-    var _oldestSave = ds_priority_find_min(__savePq);
-    if (is_struct(_oldestSave))
+    while(array_length(__saveActivityArray) > 0)
     {
-        if (current_time - _oldestSave.__executeTime > 60_000)
+        if (current_time - __saveActivityArray[0].__activityTime > 60_000)
         {
-            ds_priority_delete_min(__savePq);
+            array_shift(__saveActivityArray);
+        }
+        else
+        {
+            break;
         }
     }
     
-    var _oldestLoad = ds_priority_find_min(__loadPq);
-    if (is_struct(_oldestLoad))
+    while(array_length(__loadActivityArray) > 0)
     {
-        if (current_time - _oldestLoad.__executeTime > 60_000)
+        if (current_time - __loadActivityArray[0].__activityTime > 60_000)
         {
-            ds_priority_delete_min(__loadPq);
+            array_shift(__loadActivityArray);
+        }
+        else
+        {
+            break;
         }
     }
     
-    if (array_length(__queuedArray) > 0)
+    while(array_length(__queuedArray) > 0)
     {
-        __lastQueuedTime = current_time;
+        __lastActivityTime = current_time;
         
-        var _lastOpTime = infinity;
-        var _delay      = infinity;
+        var _totalPending = array_length(__savePendingArray) + array_length(__loadPendingArray);
         
         var _opStruct = array_first(__queuedArray);
         if (_opStruct.GetOperation() == SPARKLE_OP_SAVE)
         {
-            var _priorityCount = ds_priority_size(__savePq);
-            if (_priorityCount < SPARKLE_MAX_SAVE_FREQUENCY)
+            var _recentCount = array_length(__saveActivityArray);
+            if ((_recentCount < SPARKLE_MAX_SAVE_FREQUENCY) && (_totalPending <= max(1, SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
             {
-                var _param = clamp((_priorityCount - SPARKLE_NO_RATE_LIMIT_COUNT) / (SPARKLE_MAX_SAVE_FREQUENCY - SPARKLE_NO_RATE_LIMIT_COUNT), 0, 1);
-                _delay = _param * 2 * (60_000 / (SPARKLE_MAX_SAVE_FREQUENCY - SPARKLE_NO_RATE_LIMIT_COUNT));
-                
-                var _newestOp = ds_priority_find_max(__savePq);
-                var _lastOpTime = is_struct(_newestOp)? _newestOp.__executeTime : -infinity;
+                array_shift(__queuedArray);
+                _opStruct.__Execute();
+            }
+            else
+            {
+                break;
             }
         }
         else
         {
-            var _priorityCount = ds_priority_size(__loadPq);
-            if (_priorityCount < SPARKLE_MAX_LOAD_FREQUENCY)
+            var _recentCount = array_length(__loadActivityArray);
+            if ((_recentCount < SPARKLE_MAX_LOAD_FREQUENCY) && (_totalPending <= max(1, SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
             {
-                var _param = clamp((_priorityCount - SPARKLE_NO_RATE_LIMIT_COUNT) / (SPARKLE_MAX_LOAD_FREQUENCY - SPARKLE_NO_RATE_LIMIT_COUNT), 0, 1);
-                _delay = _param * 2 * (60_000 / (SPARKLE_MAX_LOAD_FREQUENCY - SPARKLE_NO_RATE_LIMIT_COUNT));
-                
-                var _newestOp = ds_priority_find_max(__loadPq);
-                var _lastOpTime = is_struct(_newestOp)? _newestOp.__executeTime : -infinity;
+                array_shift(__queuedArray);
+                _opStruct.__Execute();
             }
-        }
-        
-        if (current_time > _lastOpTime + _delay)
-        {
-            array_shift(__queuedArray);
-            _opStruct.__Execute();
+            else
+            {
+                break;
+            }
         }
     }
 }

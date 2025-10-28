@@ -7,12 +7,12 @@
 /// @param callback
 /// @param gamepadIndex
 
-function __SparkleClassSave( _filename, _buffer, _offset, _size, _callback) constructor
+function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) constructor
 {
     static _system = __SparkleSystem();
-    static _queuedArray      = _system.__queuedArray;
-    static _savePendingArray = _system.__savePendingArray;
-    static _savePq           = _system.__savePq;
+    static _queuedArray       = _system.__queuedArray;
+    static _savePendingArray  = _system.__savePendingArray;
+    static _saveActivityArray = _system.__saveActivityArray;
     
     __filename = _filename;
     __buffer   = _buffer;
@@ -30,10 +30,10 @@ function __SparkleClassSave( _filename, _buffer, _offset, _size, _callback) cons
         __SparkleTrace($"Created SAVE operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__slotTitle}\", filename = \"{_filename}\", buffer = {_buffer}, offset = {_offset}, size = {_size}, callback = {_callback}");
     }
     
-    __executed    = false;
-    __executeTime = infinity;
-    __asyncID     = undefined;
-    __status      = SPARKLE_STATUS_QUEUED;
+    __executed     = false;
+    __activityTime = infinity;
+    __asyncID      = undefined;
+    __status       = SPARKLE_STATUS_QUEUED;
     
     static GetOperation = function()
     {
@@ -58,7 +58,7 @@ function __SparkleClassSave( _filename, _buffer, _offset, _size, _callback) cons
         }
         
         __executed = true;
-        __executeTime = current_time;
+        __activityTime = current_time;
         
         buffer_async_group_begin(__groupName);
     	buffer_async_group_option("showdialog", 0);
@@ -78,7 +78,7 @@ function __SparkleClassSave( _filename, _buffer, _offset, _size, _callback) cons
         if (_index >= 0) array_delete(_queuedArray, _index, 1);
         
         array_push(_savePendingArray, self);
-        ds_priority_add(_savePq, self, current_time);
+        array_push(_saveActivityArray, self);
         
         __status = SPARKLE_STATUS_PENDING;
     }
@@ -97,6 +97,7 @@ function __SparkleClassSave( _filename, _buffer, _offset, _size, _callback) cons
         
         __status = _status;
         __asyncID = undefined;
+        __activityTime = current_time;
         
         var _index = array_get_index(_queuedArray, self);
         if (_index >= 0) array_delete(_queuedArray, _index, 1);

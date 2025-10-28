@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"SparkleGetPending",
+  "%Name":"SparkleGetTotalPending",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SparkleGetPending",
+  "name":"SparkleGetTotalPending",
   "parent":{
     "name":"Getters",
     "path":"folders/Sparkle Store/Getters.yy",

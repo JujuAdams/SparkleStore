@@ -14,6 +14,7 @@ function SparkleSave(_filename, _buffer, _callback, _offset = 0, _size = infinit
     static _system = __SparkleSystem();
     static _queuedArray = _system.__queuedArray;
     
+    _offset = clamp(_offset, 0, buffer_get_size(_buffer)-1);
     _size = clamp(_size, 0, buffer_get_size(_buffer) - _offset);
     
     var _struct = new __SparkleClassSave(_filename, _buffer, _offset, _size, _callback);

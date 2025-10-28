@@ -6,9 +6,9 @@
 function __SparkleClassLoad(_filename, _callback) constructor
 {
     static _system = __SparkleSystem();
-    static _queuedArray      = _system.__queuedArray;
-    static _loadPendingArray = _system.__loadPendingArray;
-    static _loadPq           = _system.__loadPq;
+    static _queuedArray       = _system.__queuedArray;
+    static _loadPendingArray  = _system.__loadPendingArray;
+    static _loadActivityArray = _system.__loadActivityArray;
     
     __filename = _filename;
     __callback = _callback;
@@ -23,11 +23,11 @@ function __SparkleClassLoad(_filename, _callback) constructor
         __SparkleTrace($"Created LOAD operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__slotTitle}\", filename = \"{_filename}\", callback = {_callback}");
     }
     
-    __buffer      = undefined;
-    __executed    = false;
-    __executeTime = infinity;
-    __asyncID     = undefined;
-    __status      = SPARKLE_STATUS_QUEUED;
+    __buffer       = undefined;
+    __executed     = false;
+    __activityTime = infinity;
+    __asyncID      = undefined;
+    __status       = SPARKLE_STATUS_QUEUED;
     
     static GetOperation = function()
     {
@@ -52,7 +52,7 @@ function __SparkleClassLoad(_filename, _callback) constructor
         }
         
         __executed = true;
-        __executeTime = current_time;
+        __activityTime = current_time;
         
         __buffer = buffer_create(1, buffer_grow, 1);
         
@@ -74,7 +74,7 @@ function __SparkleClassLoad(_filename, _callback) constructor
         if (_index >= 0) array_delete(_queuedArray, _index, 1);
         
         array_push(_loadPendingArray, self);
-        ds_priority_add(_loadPq, self, current_time);
+        array_push(_loadActivityArray, self);
         
         __status = SPARKLE_STATUS_PENDING;
     }
@@ -88,6 +88,7 @@ function __SparkleClassLoad(_filename, _callback) constructor
         
         __status = _status;
         __asyncID = undefined;
+        __activityTime = current_time;
         
         var _index = array_get_index(_queuedArray, self);
         if (_index >= 0) array_delete(_queuedArray, _index, 1);

@@ -4,6 +4,6 @@
 
 function SparkleGetLoadRecent()
 {
-    static _loadPq = __SparkleSystem().__loadPq;
-    return ds_priority_size(_loadPq);
+    static _loadActivityArray = __SparkleSystem().__loadActivityArray;
+    return array_length(_loadActivityArray);
 }

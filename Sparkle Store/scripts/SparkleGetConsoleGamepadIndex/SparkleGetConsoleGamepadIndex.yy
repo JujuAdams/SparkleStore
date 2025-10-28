@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"SparkleGetGroupNameUnknown",
+  "%Name":"SparkleGetConsoleGamepadIndex",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SparkleGetGroupNameUnknown",
+  "name":"SparkleGetConsoleGamepadIndex",
   "parent":{
     "name":"Options",
     "path":"folders/Sparkle Store/Options.yy",

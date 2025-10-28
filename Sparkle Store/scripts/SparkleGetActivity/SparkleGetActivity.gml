@@ -8,5 +8,6 @@
 function SparkleGetActivity(_milliseconds = 1000)
 {
     static _system = __SparkleSystem();
-    return (current_time - _system.__lastQueuedTime <= _milliseconds);
+    
+    return (SparkleGetTotalPending() > 0)? true : (current_time - _system.__lastActivityTime <= _milliseconds);
 }
