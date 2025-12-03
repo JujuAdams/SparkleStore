@@ -2,7 +2,7 @@
 
 /// Returns the current Xbox user ID for save/load operations.
 
-function SparkleGetXboxUserID(_gamepadIndex)
+function SparkleGetXboxUserID()
 {
     static _system = __SparkleSystem();
     return _system.__xboxUserID;

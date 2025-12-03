@@ -14,6 +14,7 @@ function __SparkleClassLoad(_filename, _callback) constructor
     __callback = _callback;
     
     __groupName      = _system.__groupName;
+    __psShowDialog   = _system.__psShowDialog;
     __psGamepadIndex = _system.__psGamepadIndex;
     __slotTitle      = _system.__slotTitle;
     __slotSubtitle   = _system.__slotSubtitle;
@@ -66,17 +67,17 @@ function __SparkleClassLoad(_filename, _callback) constructor
         }
         
         buffer_async_group_begin(__groupName);
-    	buffer_async_group_option("showdialog", true);
         
         if (SPARKLE_ON_PS_ANY)
         {
-        	buffer_async_group_option("savepadindex", __psGamepadIndex);
-        	buffer_async_group_option("slottitle",    __slotTitle);
+            buffer_async_group_option("showdialog",   __psShowDialog);
+            buffer_async_group_option("savepadindex", __psGamepadIndex);
+            buffer_async_group_option("slottitle",    __slotTitle);
         }
         
         buffer_load_async(__buffer, __filename, 0, -1);
         
-    	__asyncID = buffer_async_group_end();
+        __asyncID = buffer_async_group_end();
         
         var _index = array_get_index(_queuedArray, self);
         if (_index >= 0) array_delete(_queuedArray, _index, 1);

@@ -21,6 +21,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) const
     __callback = _callback;
     
     __groupName      = _system.__groupName;
+    __psShowDialog   = _system.__psShowDialog;
     __psGamepadIndex = _system.__psGamepadIndex;
     __slotTitle      = _system.__slotTitle;
     __slotSubtitle   = _system.__slotSubtitle;
@@ -70,13 +71,13 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) const
         }
         
         buffer_async_group_begin(__groupName);
-    	buffer_async_group_option("showdialog", true);
         
         if (SPARKLE_ON_PS_ANY)
         {
-        	buffer_async_group_option("savepadindex", __psGamepadIndex);
-        	buffer_async_group_option("slottitle",    __slotTitle);
-        	buffer_async_group_option("subtitle",     __slotSubtitle);
+            buffer_async_group_option("showdialog",   __psShowDialog);
+            buffer_async_group_option("savepadindex", __psGamepadIndex);
+            buffer_async_group_option("slottitle",    __slotTitle);
+            buffer_async_group_option("subtitle",     __slotSubtitle);
         }
         
         if (SPARKLE_ON_PS5)
@@ -87,7 +88,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) const
         
         buffer_save_async(__buffer, __filename, __offset, __size);
         
-    	__asyncID = buffer_async_group_end();
+        __asyncID = buffer_async_group_end();
         
         var _index = array_get_index(_queuedArray, self);
         if (_index >= 0) array_delete(_queuedArray, _index, 1);

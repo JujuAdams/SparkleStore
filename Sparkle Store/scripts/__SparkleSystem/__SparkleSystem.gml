@@ -18,6 +18,7 @@ function __SparkleSystem()
         
         __slotTitle      = SPARKLE_CONSOLE_SLOT_TITLE;
         __slotSubtitle   = SPARKLE_CONSOLE_SUBTITLE;
+        __psShowDialog   = false;
         __psGamepadIndex = -1;
         __xboxUserID     = pointer_null;
         

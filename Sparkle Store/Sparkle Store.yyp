@@ -1,8 +1,8 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"Sparkle Store",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -17,11 +17,12 @@
     {"$GMFolder":"","%Name":"Options","folderPath":"folders/Sparkle Store/Options.yy","name":"Options","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Save","folderPath":"folders/Sparkle Store/Save.yy","name":"Save","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"Sparkle Store",
   "resources":[
@@ -43,6 +44,7 @@
     {"id":{"name":"SparkleGetLoadPending","path":"scripts/SparkleGetLoadPending/SparkleGetLoadPending.yy",},},
     {"id":{"name":"SparkleGetLoadRecent","path":"scripts/SparkleGetLoadRecent/SparkleGetLoadRecent.yy",},},
     {"id":{"name":"SparkleGetPSGamepadIndex","path":"scripts/SparkleGetPSGamepadIndex/SparkleGetPSGamepadIndex.yy",},},
+    {"id":{"name":"SparkleGetPSShowDialog","path":"scripts/SparkleGetPSShowDialog/SparkleGetPSShowDialog.yy",},},
     {"id":{"name":"SparkleGetSavePending","path":"scripts/SparkleGetSavePending/SparkleGetSavePending.yy",},},
     {"id":{"name":"SparkleGetSaveRecent","path":"scripts/SparkleGetSaveRecent/SparkleGetSaveRecent.yy",},},
     {"id":{"name":"SparkleGetTotalPending","path":"scripts/SparkleGetTotalPending/SparkleGetTotalPending.yy",},},
@@ -61,6 +63,7 @@
     {"id":{"name":"SparkleSetConsoleSlotTitle","path":"scripts/SparkleSetConsoleSlotTitle/SparkleSetConsoleSlotTitle.yy",},},
     {"id":{"name":"SparkleSetGroupName","path":"scripts/SparkleSetGroupName/SparkleSetGroupName.yy",},},
     {"id":{"name":"SparkleSetPSGamepadIndex","path":"scripts/SparkleSetPSGamepadIndex/SparkleSetPSGamepadIndex.yy",},},
+    {"id":{"name":"SparkleSetPSShowDialog","path":"scripts/SparkleSetPSShowDialog/SparkleSetPSShowDialog.yy",},},
     {"id":{"name":"SparkleSetXboxUserID","path":"scripts/SparkleSetXboxUserID/SparkleSetXboxUserID.yy",},},
   ],
   "resourceType":"GMProject",

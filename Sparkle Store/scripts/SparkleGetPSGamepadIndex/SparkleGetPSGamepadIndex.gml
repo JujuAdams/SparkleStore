@@ -2,7 +2,7 @@
 
 /// Returns the current PlayStation gamepad index for save/load operations.
 
-function SparkleGetPSGamepadIndex(_gamepadIndex)
+function SparkleGetPSGamepadIndex()
 {
     static _system = __SparkleSystem();
     return _system.__psGamepadIndex;
