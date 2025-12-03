@@ -29,5 +29,5 @@ function SparkleLoadJSON(_filename, _callback, _priority = SPARKLE_PRIORITY_NORM
         }
     });
     
-    return SparkleLoadString(_newCallback, _filename, _priority);
+    return SparkleLoadString(_filename, _newCallback, _priority);
 }
