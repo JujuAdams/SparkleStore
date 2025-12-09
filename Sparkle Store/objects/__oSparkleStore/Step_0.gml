@@ -36,7 +36,7 @@ with(__SparkleSystem())
         if (_opStruct.GetOperation() == SPARKLE_OP_SAVE)
         {
             var _recentCount = array_length(__saveActivityArray);
-            if ((_recentCount < SPARKLE_MAX_SAVE_FREQUENCY) && (_totalPending < max(1, SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
+            if ((_recentCount < SPARKLE_MAX_SAVE_FREQUENCY) && (_totalPending < max(1, __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
             {
                 array_shift(__queuedArray);
                 _opStruct.__Dispatch();
@@ -49,7 +49,7 @@ with(__SparkleSystem())
         else
         {
             var _recentCount = array_length(__loadActivityArray);
-            if ((_recentCount < SPARKLE_MAX_LOAD_FREQUENCY) && (_totalPending < max(1, SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
+            if ((_recentCount < SPARKLE_MAX_LOAD_FREQUENCY) && (_totalPending < max(1, __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
             {
                 array_shift(__queuedArray);
                 _opStruct.__Dispatch();

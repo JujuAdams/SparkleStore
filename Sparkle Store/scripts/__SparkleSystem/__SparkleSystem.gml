@@ -1,5 +1,7 @@
 // Feather disable all
 
+#macro __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS  (SPARKLE_ON_PS_ANY? 1 : SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)
+
 __SparkleSystem();
 
 function __SparkleSystem()
