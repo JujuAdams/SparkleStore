@@ -21,7 +21,27 @@ with(__SparkleSystem())
         var _opStruct = __savePendingArray[_i];
         if (_opStruct.__asyncID == _id)
         {
-            _opStruct.__Complete(_status? SPARKLE_STATUS_SUCCESS : SPARKLE_STATUS_FAILED);
+            if (_status)
+            {
+                if (SPARKLE_ON_PS5)
+                {
+                    if (SPARKLE_VERBOSE)
+                    {
+                        __SparkleTrace($"Starting backup for {string(ptr(_opStruct))}");
+                    }
+                    
+                    __ps5BackUpOperation = _opStruct;
+                }
+                else
+                {
+                    _opStruct.__Complete(SPARKLE_STATUS_SUCCESS);
+                }
+            }
+            else
+            {
+                _opStruct.__Complete(SPARKLE_STATUS_FAILED);
+            }
+            
             return;
         }
         

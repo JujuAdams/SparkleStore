@@ -30,6 +30,8 @@ function __SparkleSystem()
         __saveActivityArray = [];
         __loadActivityArray = [];
         
+        __ps5BackUpOperation = undefined;
+        
         if (SPARKLE_IDE_GROUP_NAME != undefined)
         {
             __groupName = string(SPARKLE_IDE_GROUP_NAME);
