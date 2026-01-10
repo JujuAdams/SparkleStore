@@ -30,6 +30,6 @@
 // saves and loads. A value of `1` is the safest as it ensures that prior operations complete fully
 // before starting another.
 // 
-// N.B. This macro is internally forced to `1` for PlayStation platforms.
+// N.B. This macro is internally forced to `1` for PlayStation and Xbox platforms.
 // 
 #macro SPARKLE_MAX_SIMULTANEOUS_OPERATIONS  1

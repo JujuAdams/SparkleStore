@@ -1,6 +1,6 @@
 // Feather disable all
 
-#macro __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS  (SPARKLE_ON_PS_ANY? 1 : SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)
+#macro __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS  ((SPARKLE_ON_PS_ANY || SPARKLE_ON_XBOX)? 1 : SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)
 
 __SparkleSystem();
 
@@ -22,7 +22,7 @@ function __SparkleSystem()
         __slotSubtitle   = SPARKLE_CONSOLE_SUBTITLE;
         __psShowDialog   = false;
         __psGamepadIndex = -1;
-        __xboxUserID     = pointer_null;
+        __xboxUser       = pointer_null;
         
         __queuedArray       = [];
         __savePendingArray  = [];

@@ -18,7 +18,7 @@ function __SparkleClassLoad(_filename, _callback) constructor
     __psGamepadIndex = _system.__psGamepadIndex;
     __slotTitle      = _system.__slotTitle;
     __slotSubtitle   = _system.__slotSubtitle;
-    __xboxUserID     = _system.__xboxUserID;
+    __xboxUser       = _system.__xboxUser;
     
     if (SPARKLE_VERBOSE)
     {
@@ -61,9 +61,9 @@ function __SparkleClassLoad(_filename, _callback) constructor
         
         __buffer = buffer_create(1, buffer_grow, 1);
         
-        if (SPARKLE_ON_XBOX)
+        if (SPARKLE_ON_XBOX_ONE)
         {
-            xboxone_set_savedata_user(__xboxUserID);
+            xboxone_set_savedata_user(__xboxUser);
         }
         
         buffer_async_group_begin(__groupName);

@@ -25,7 +25,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) const
     __psGamepadIndex = _system.__psGamepadIndex;
     __slotTitle      = _system.__slotTitle;
     __slotSubtitle   = _system.__slotSubtitle;
-    __xboxUserID     = _system.__xboxUserID;
+    __xboxUser       = _system.__xboxUser;
     
     if (SPARKLE_VERBOSE)
     {
@@ -65,9 +65,9 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) const
             __SparkleTrace($"Dispatching SAVE operation {string(ptr(self))}");
         }
         
-        if (SPARKLE_ON_XBOX)
+        if (SPARKLE_ON_XBOX_ONE)
         {
-            xboxone_set_savedata_user(__xboxUserID);
+            xboxone_set_savedata_user(__xboxUser);
         }
         
         buffer_async_group_begin(__groupName);

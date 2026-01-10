@@ -39,16 +39,17 @@
 ///////
 
 #macro SPARKLE_RUNNING_FROM_IDE  (GM_build_type == "run")
-
-#macro SPARKLE_ON_WINDOWS  (os_type == os_windows)
-#macro SPARKLE_ON_MAC      (os_type == os_macosx)
-#macro SPARKLE_ON_LINUX    (os_type == os_linux)
-#macro SPARKLE_ON_SWITCH   (os_type == os_switch)
-#macro SPARKLE_ON_PS4      (os_type == os_ps4)
-#macro SPARKLE_ON_PS5      (os_type == os_ps5)
-#macro SPARKLE_ON_XBOX     ((os_type == os_xboxone) || (os_type == os_xboxseriesxs))
-#macro SPARKLE_ON_ANDROID  (os_type == os_android)
-#macro SPARKLE_ON_IOS      (os_type == os_ios)
+                            
+#macro SPARKLE_ON_WINDOWS   (os_type == os_windows)
+#macro SPARKLE_ON_MAC       (os_type == os_macosx)
+#macro SPARKLE_ON_LINUX     (os_type == os_linux)
+#macro SPARKLE_ON_SWITCH    (os_type == os_switch)
+#macro SPARKLE_ON_PS4       (os_type == os_ps4)
+#macro SPARKLE_ON_PS5       (os_type == os_ps5)
+#macro SPARKLE_ON_XBOX_ONE  (os_type == os_xboxone)
+#macro SPARKLE_ON_XBOX      ((os_type == os_xboxone) || (os_type == os_xboxseriesxs))
+#macro SPARKLE_ON_ANDROID   (os_type == os_android)
+#macro SPARKLE_ON_IOS       (os_type == os_ios)
 
 #macro SPARKLE_ON_PS_ANY   (SPARKLE_ON_PS4 || SPARKLE_ON_PS5)
 #macro SPARKLE_ON_CONSOLE  (SPARKLE_ON_SWITCH || SPARKLE_ON_PS_ANY || SPARKLE_ON_XBOX)

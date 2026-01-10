@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"SparkleGetXboxUserID",
+  "%Name":"SparkleGetXboxUser",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SparkleGetXboxUserID",
+  "name":"SparkleGetXboxUser",
   "parent":{
     "name":"Options",
     "path":"folders/Sparkle Store/Options.yy",
