@@ -8,7 +8,7 @@
 
 // Group name to initialize to when running from the IDE. Setting this macro to anything other than
 // `undefined` wil cause Sparkle Store to initialize the group name to the macro value, overriding
-// `SPARKLE_DEFAULT_GROUP_NAME` above. This is helpful when testing.
+// `SPARKLE_DEFAULT_GROUP_NAME` above. This is sometimes helpful when testing.
 #macro SPARKLE_IDE_GROUP_NAME  undefined
 
 // Default values for console-specific operations. You can change these values at runtime using the

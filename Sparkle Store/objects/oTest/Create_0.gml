@@ -6,7 +6,7 @@ loadedGraphicAlpha = 0;
 
 gamepadFocus = -1;
 
-contentText  = "Juliett";
+contentText  = "Alfa";
 contentImage = 0;
 
 optionIndex = 0;
@@ -97,7 +97,7 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleSaveJSON("test.json", textArray, function(_status)
+        SparkleSaveJSON("test.json", { contentText: contentText, contentImage: contentImage }, function(_status)
         {
             show_debug_message($"Returned status {_status}");
         });
@@ -113,6 +113,8 @@ array_push(optionArray, {
         SparkleLoadJSON("test.json", function(_status, _json)
         {
             show_debug_message($"Returned status {_status}, json = {json_stringify(_json)}");
+            contentText  = _json.contentText;
+            contentImage = _json.contentImage;
         });
     }),
 });
@@ -131,7 +133,7 @@ array_push(optionArray, {
 });
     
 array_push(optionArray, {
-    name: "Load Screenshot (fades out)",
+    name: "Load Screenshot",
     func: method(other, function()
     {
         watchStart = current_time;
@@ -147,7 +149,7 @@ array_push(optionArray, {
             }
             
             loadedSurface = _surface;
-            loadedGraphicAlpha = 1;
+            loadedGraphicAlpha = 1.1;
         });
     }),
 });

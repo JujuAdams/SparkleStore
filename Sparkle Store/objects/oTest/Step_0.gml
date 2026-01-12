@@ -2,7 +2,7 @@
 
 if (loadedGraphicAlpha > 0)
 {
-    loadedGraphicAlpha = max(loadedGraphicAlpha - 0.01, 0);
+    loadedGraphicAlpha = max(loadedGraphicAlpha - 0.008, 0);
     if (loadedGraphicAlpha <= 0)
     {
         if (loadedSurface != undefined)
@@ -20,6 +20,7 @@ repeat(gamepad_get_device_count())
     {
         gamepadFocus = _i;
         SparkleSetPSGamepadIndex(_i);
+        SparkleSetXboxUser(xboxone_user_for_pad_safe(_i));
     }
     
     ++_i;
