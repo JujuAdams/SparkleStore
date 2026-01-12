@@ -14,7 +14,7 @@ function __SparkleSystem()
     
     with(_system)
     {
-        __SparkleTrace("Welcome to Sparkle Store by Juju Adams!");
+        __SparkleTrace($"Welcome to Sparkle Store by Juju Adams! This is version {SPARKLE_VERSION}, {SPARKLE_DATE}");
         
         __lastActivityTime = -infinity;
         __anyRequestMade = false;
