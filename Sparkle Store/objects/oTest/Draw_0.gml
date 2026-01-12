@@ -4,24 +4,25 @@ var _string = string_join("\n",
 $"Sparkle Store = {SPARKLE_VERSION}, {SPARKLE_DATE}",
 $"Time = {date_datetime_string(date_current_datetime())}",
 $"Gamepad focus = {gamepadFocus}",
-" ",
 $"Group name    = \"{SparkleGetGroupName()}\"",
 $"Slot title    = \"{SparkleGetConsoleSlotTitle()}\"",
 $"Slot subtitle = \"{SparkleGetConsoleSlotSubtitle()}\"");
 
+_string += "\n\n";
+
 if (SPARKLE_ON_PS_ANY)
 {
-    _string += $"PS show dialog = {SparkleGetPSShowDialog()}\n";
+    _string += $"PS show dialog   = {SparkleGetPSShowDialog()}\n";
     _string += $"PS gamepad index = {SparkleGetPSGamepadIndex()}\n";
 }
 
 if (SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK())
 {
-    _string += $"Windows using GDK = {SparkleGetWindowsUseGDK()? "true" : "false"}";
-    _string += $"Xbox user = {SparkleGetXboxUser()}";
+    _string += $"Windows using GDK = {SparkleGetWindowsUseGDK()? "true" : "false"}\n";
+    _string += $"Xbox user         = {SparkleGetXboxUser()}\n";
 }
 
-_string += "\n\n";
+_string += "\n";
 
 _string += string_join("\n",
 $"Total pending = {SparkleGetTotalPending()}",
@@ -36,7 +37,7 @@ $"Activity      = {SparkleGetActivity()? "true" : "false"}",
 "Press escape/gp_face4 to cancel all pending operations",
 );
 
-_string += "\n\n\n";
+_string += "\n\n";
 _string += $"Random text = {contentText}\n";
 _string += $"Image = {contentImage}\n";
 _string += "\n";
