@@ -72,19 +72,19 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) const
         
         if (SparkleGetSteamCloud())
         {
-            if ((__offset == 0) && (buffer_get_size(__buffer) != __size))
+            if ((__offset != 0) || (buffer_get_size(__buffer) != __size))
             {
                 var _tempBuffer = buffer_create(__size, buffer_fixed, 1);
                 buffer_copy(__buffer, __offset, __size, _tempBuffer, 0);
-                steam_file_write_buffer($"{__groupName}/{__filename}");
+                var _status = steam_file_write_buffer($"{__groupName}/{__filename}", _tempBuffer);
                 buffer_delete(_tempBuffer);
             }
             else
             {
-                steam_file_write_buffer($"{__groupName}/{__filename}");
+                var _status = steam_file_write_buffer($"{__groupName}/{__filename}", __buffer);
             }
             
-            __Complete(SPARKLE_STATUS_SUCCESS);
+            __Complete(_status? SPARKLE_STATUS_SUCCESS : SPARKLE_STATUS_FAILED);
         }
         else
         {

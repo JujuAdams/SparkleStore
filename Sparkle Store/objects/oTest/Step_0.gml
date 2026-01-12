@@ -1,5 +1,7 @@
 // Feather disable all
 
+steam_update_safe();
+
 if (loadedGraphicAlpha > 0)
 {
     loadedGraphicAlpha = max(loadedGraphicAlpha - 0.008, 0);

@@ -71,6 +71,7 @@
     {"id":{"name":"SparkleSetPSShowDialog","path":"scripts/SparkleSetPSShowDialog/SparkleSetPSShowDialog.yy",},},
     {"id":{"name":"SparkleSetWindowsUseGDK","path":"scripts/SparkleSetWindowsUseGDK/SparkleSetWindowsUseGDK.yy",},},
     {"id":{"name":"SparkleSetXboxUser","path":"scripts/SparkleSetXboxUser/SparkleSetXboxUser.yy",},},
+    {"id":{"name":"steam_update_safe","path":"scripts/steam_update_safe/steam_update_safe.yy",},},
     {"id":{"name":"xboxone_user_for_pad_safe","path":"scripts/xboxone_user_for_pad_safe/xboxone_user_for_pad_safe.yy",},},
     {"id":{"name":"sprIcons","path":"sprites/sprIcons/sprIcons.yy",},},
   ],
