@@ -1,7 +1,7 @@
 // Feather disable all
 
 /// Sets up GDK functions for use with saving and loading. This function should only be called once
-/// and must be called before saving/loading any data (otherwise the library will use the wrong
+/// and must be called before saving/loading any data (otherwise Sparkle Store will use the wrong
 /// internal functions).
 /// 
 /// N.B. You will still need to call `gdk_init()`, `gdk_update()` etc. in your own code.

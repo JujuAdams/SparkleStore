@@ -1,6 +1,6 @@
 // Feather disable all
 
-// Group name to initialize to when the library boots up. This can be overriden later by calling
+// Group name to initialize to when Sparkle Store boots up. This can be overriden later by calling
 // `SparkleSetGroupName()`. The group name determines the save directory that a file gets placed
 // into on most (but not all!) platforms. Please refer to savefile documentation for consoles for
 // further information.

@@ -2,8 +2,8 @@
 
 /// Deletes a file. This is considered to be a "save" operation.
 /// 
-/// N.B. On console platforms, GameMaker does not allow you to directly delete a file. Instead, the
-///      library will save a small empty file.
+/// N.B. On console platforms, GameMaker does not allow you to directly delete a file. Instead,
+///      Sparkle Store will save a small empty file.
 /// 
 /// The callback for this function will be dispatched with one parameter:
 /// 
