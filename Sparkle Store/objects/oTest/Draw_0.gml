@@ -6,33 +6,51 @@ $"Gamepad focus = {gamepadFocus}",
 " ",
 $"Group name = \"{SparkleGetGroupName()}\"",
 $"Slot title = \"{SparkleGetConsoleSlotTitle()}\"",
-$"Slot subtitle = \"{SparkleGetConsoleSlotSubtitle()}\"",
-$"PS show dialog = {SparkleGetPSShowDialog()}",
-$"PS gamepad index = {SparkleGetPSGamepadIndex()}",
-$"Windows using GDK = {SparkleGetWindowsUseGDK()? "true" : "false"}",
-$"Xbox user = {SparkleGetXboxUser()}",
-" ",
+$"Slot subtitle = \"{SparkleGetConsoleSlotSubtitle()}\"");
+
+if (SPARKLE_ON_PS_ANY)
+{
+    _string += $"PS show dialog = {SparkleGetPSShowDialog()}\n";
+    _string += $"PS gamepad index = {SparkleGetPSGamepadIndex()}\n";
+}
+
+if (SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK())
+{
+    _string += $"Windows using GDK = {SparkleGetWindowsUseGDK()? "true" : "false"}";
+    _string += $"Xbox user = {SparkleGetXboxUser()}";
+}
+
+_string += string_join("\n",
 $"Total pending = {SparkleGetTotalPending()}",
 $"Save pending = {SparkleGetSavePending()}",
 $"Save recent = {SparkleGetSaveRecent()}",
 $"Load pending = {SparkleGetLoadPending()}",
 $"Load recent = {SparkleGetLoadRecent()}",
 $"Activity = {SparkleGetActivity()}",
+" ",
+"Press START to focus a gamepad. Press any keyboard key to focus the keyboard",
+"Press up/down to choose an option. Press enter/space/gp_face1 to select an option",
+"Press escape/gp_face4 to cancel all operations",
 );
 
-_string += "\n\n";
+_string += "\n\n\n";
+_string += $"Random text = {contentText}\n";
+_string += $"Image = {contentImage}\n";
+_string += "\n";
 
 var _i = 0;
 repeat(array_length(optionArray))
 {
+    _string += (_i == optionIndex)? " --> " : "     ";
     _string += optionArray[_i].name;
-    if (_i == optionIndex) _string += " <--";
     _string += "\n";
     
     ++_i;
 }
 
 draw_text(10, 10, _string);
+
+draw_sprite(sprIcons, contentImage, room_width - sprite_get_width(sprIcons), 0);
 
 if (surface_exists(loadedSurface))
 {

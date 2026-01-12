@@ -6,9 +6,30 @@ loadedGraphicAlpha = 0;
 
 gamepadFocus = -1;
 
-optionIndex = 0;
+contentText  = "Juliett";
+contentImage = 0;
 
+optionIndex = 0;
 optionArray = [];
+
+textArray = ["Alfa",    "Bravo",    "Charlie",
+             "Delta",   "Echo",     "Foxtrot",
+             "Golf",    "Hotel",    "India",
+             "Juliett", "Kilo",     "Lima",
+             "Mike",    "November", "Oscar",
+             "Papa",    "Quebec",   "Romeo",
+             "Sierra",  "Tango",    "Uniform",
+             "Victor",  "Whiskey",  "Xray",
+             "Yankee",  "Zulu"];
+
+array_push(optionArray, {
+    name: "Cycle content",
+    func: method(other, function()
+    {
+        contentText = textArray[irandom(array_length(textArray)-1)];
+        contentImage = (contentImage + 1) mod sprite_get_number(sprIcons);
+    }),
+});
 
 array_push(optionArray, {
     name: "Save text",
@@ -16,7 +37,7 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleSaveString("test.txt", "Test String", function(_status)
+        SparkleSaveString("test.txt", contentText, function(_status)
         {
             show_debug_message($"Returned status {_status}");
         });
@@ -31,7 +52,7 @@ array_push(optionArray, {
         
         repeat(20)
         {
-            SparkleSaveString("test.txt", "Test String", function(_status)
+            SparkleSaveString("test.txt", contentText, function(_status)
             {
                 show_debug_message($"Returned status {_status}");
             });
@@ -48,6 +69,7 @@ array_push(optionArray, {
         SparkleLoadString("test.txt", function(_status, _string)
         {
             show_debug_message($"Returned status {_status}, string = \"{_string}\"");
+            contentText = _string;
         });
     }),
 });
@@ -63,6 +85,7 @@ array_push(optionArray, {
             SparkleLoadString("test.txt", function(_status, _string)
             {
                 show_debug_message($"Returned status {_status}, string = \"{_string}\"");
+                contentText = _string;
             });
         }
     }),
@@ -74,7 +97,7 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleSaveJSON("test.json", { woah: "we're halfway there", woahoh: "living on a prayer" }, function(_status)
+        SparkleSaveJSON("test.json", textArray, function(_status)
         {
             show_debug_message($"Returned status {_status}");
         });
@@ -108,7 +131,7 @@ array_push(optionArray, {
 });
     
 array_push(optionArray, {
-    name: "Load Screenshot",
+    name: "Load Screenshot (fades out)",
     func: method(other, function()
     {
         watchStart = current_time;
