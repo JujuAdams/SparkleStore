@@ -1,6 +1,7 @@
 // Feather disable all
 
 #macro __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS  1
+#macro __SPARKLE_EMPTY_BUFFER_SIZE  1
 
 __SparkleSystem();
 
@@ -26,9 +27,11 @@ function __SparkleSystem()
         __windowsUseGDK  = false;
         __xboxUser       = pointer_null;
         
-        __queuedArray       = [];
-        __savePendingArray  = [];
-        __loadPendingArray  = [];
+        __queuedArray = [];
+        
+        __savePendingArray = [];
+        __loadPendingArray = [];
+        
         __saveActivityArray = [];
         __loadActivityArray = [];
         

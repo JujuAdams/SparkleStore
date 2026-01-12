@@ -74,7 +74,7 @@ function __SparkleClassLoad(_filename, _callback) constructor
                 
                 if (__buffer < 0)
                 {
-                    __buffer = buffer_create(1, buffer_grow, 1);
+                    __buffer = __SparkleEmptyBuffer();
                 }
                 else
                 {
@@ -83,14 +83,14 @@ function __SparkleClassLoad(_filename, _callback) constructor
             }
             else
             {
-                __buffer = buffer_create(1, buffer_grow, 1);
+                __buffer = __SparkleEmptyBuffer();
             }
             
             __Complete(_status);
         }
         else
         {
-            __buffer = buffer_create(1, buffer_grow, 1);
+            __buffer = __SparkleEmptyBuffer();
             
             if (SparkleGetWindowsUseGDK())
             {
@@ -106,11 +106,15 @@ function __SparkleClassLoad(_filename, _callback) constructor
                 
                 buffer_async_group_begin(__groupName);
                 
+                if (SPARKLE_ON_CONSOLE)
+                {
+                    buffer_async_group_option("slottitle", __slotTitle);
+                }
+                
                 if (SPARKLE_ON_PS_ANY)
                 {
                     buffer_async_group_option("showdialog",   __psShowDialog);
                     buffer_async_group_option("savepadindex", __psGamepadIndex);
-                    buffer_async_group_option("slottitle",    __slotTitle);
                 }
                 
                 buffer_load_async(__buffer, __filename, 0, -1);
@@ -129,6 +133,36 @@ function __SparkleClassLoad(_filename, _callback) constructor
         
         __completed = true;
         __activityTime = current_time;
+        
+        if (SPARKLE_ON_CONSOLE && _status)
+        {
+            if (buffer_get_size(__buffer) == __SPARKLE_EMPTY_BUFFER_SIZE)
+            {
+                var _valid = false;
+                
+                var _i = 0;
+                repeat(__SPARKLE_EMPTY_BUFFER_SIZE)
+                {
+                    if (buffer_peek(__buffer, _i, buffer_u8) != 0x00)
+                    {
+                        _valid = true;
+                        break;
+                    }
+                    
+                    ++_i;
+                }
+                
+                if (not _valid)
+                {
+                    _status = SPARKLE_STATUS_FAILED;
+                    
+                    if (SPARKLE_VERBOSE)
+                    {
+                        __SparkleTrace("Buffer is empty, making LOAD as failed");
+                    }
+                }
+            }
+        }
         
         if (SPARKLE_VERBOSE)
         {

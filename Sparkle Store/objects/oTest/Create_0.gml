@@ -61,6 +61,19 @@ array_push(optionArray, {
 });
 
 array_push(optionArray, {
+    name: "Delete text",
+    func: method(other, function()
+    {
+        watchStart = current_time;
+        
+        SparkleDelete("test.txt", function(_status)
+        {
+            show_debug_message($"Returned status {_status}");
+        });
+    }),
+});
+
+array_push(optionArray, {
     name: "Load text",
     func: method(other, function()
     {
@@ -120,7 +133,7 @@ array_push(optionArray, {
 });
 
 array_push(optionArray, {
-    name: "Save Screenshot",
+    name: "Save screenshot",
     func: method(other, function()
     {
         watchStart = current_time;
@@ -133,7 +146,7 @@ array_push(optionArray, {
 });
     
 array_push(optionArray, {
-    name: "Load Screenshot",
+    name: "Load screenshot",
     func: method(other, function()
     {
         watchStart = current_time;
