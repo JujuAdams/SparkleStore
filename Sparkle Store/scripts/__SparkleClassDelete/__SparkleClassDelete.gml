@@ -80,10 +80,14 @@ function __SparkleClassDelete(_filename, _callback) constructor
                 __asyncID = gdk_save_group_end();
                 
                 buffer_delete(_buffer);
+                
+                __status = SPARKLE_STATUS_PENDING;
+                array_push(_savePendingArray, self);
             }
             else if (SPARKLE_ON_DESKTOP || SPARKLE_ON_MOBILE)
             {
                 file_delete($"{__groupName}/{__filename}");
+                __Complete(SPARKLE_STATUS_SUCCESS);
             }
             else //Console
             {
@@ -113,10 +117,10 @@ function __SparkleClassDelete(_filename, _callback) constructor
                 
                 __asyncID = buffer_async_group_end();
                 buffer_delete(_buffer);
+                
+                __status = SPARKLE_STATUS_PENDING;
+                array_push(_savePendingArray, self);
             }
-            
-            __status = SPARKLE_STATUS_PENDING;
-            array_push(_savePendingArray, self);
         }
     }
     
