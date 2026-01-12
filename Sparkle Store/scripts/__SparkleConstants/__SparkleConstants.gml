@@ -1,6 +1,6 @@
 // Feather disable all
 
-#macro SPARKLE_VERSION  "1.0.0"
+#macro SPARKLE_VERSION  "1.1.0"
 #macro SPARKLE_DATE     "2026-01-12"
 
 ///////
