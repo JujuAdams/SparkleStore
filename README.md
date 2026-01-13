@@ -64,12 +64,6 @@ You must call `SparkleSetXboxUser()` to set the player whose savedata you're goi
 
 &nbsp;
 
-## HTML5
-
-This platform is unsupported. It'll probably work fine but no support is provided.
-
-&nbsp;
-
 ## Other Platforms (Opera GX etc.)
 
 These platforms have not been tested and are not officially supported by Sparkle Store. However, the underlying code that is used by Sparkle Store conforms to standard GameMaker practices. Saving and loading on unofficial platforms should work fine.
