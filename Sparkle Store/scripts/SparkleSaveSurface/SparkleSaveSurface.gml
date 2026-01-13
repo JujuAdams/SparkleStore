@@ -16,10 +16,10 @@
 /// 
 /// @param filename
 /// @param surface
-/// @param callback
+/// @param [callback]
 /// @param [priority=normal]
 
-function SparkleSaveSurface(_filename, _surface, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleSaveSurface(_filename, _surface, _callback = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     var _buffer = buffer_create(2*8 + 4*surface_get_width(_surface)*surface_get_height(_surface), buffer_fixed, 1);
     buffer_write(_buffer, buffer_u64, surface_get_width(_surface));

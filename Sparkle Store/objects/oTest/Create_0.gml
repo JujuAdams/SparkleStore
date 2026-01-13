@@ -151,7 +151,7 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleLoadSurface("test.img", function(_surface)
+        SparkleLoadSurface("test.img", function(_status, _surface)
         {
             show_debug_message($"Surface = {_surface}");
             

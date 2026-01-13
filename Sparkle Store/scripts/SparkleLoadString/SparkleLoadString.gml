@@ -17,18 +17,40 @@
 
 function SparkleLoadString(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
 {
+    static _system = __SparkleSystem();
+    
+    _system.__anyRequestMade = true;
+    
+    if (not is_callable(_callback))
+    {
+        if (SPARKLE_VERBOSE)
+        {
+            __SparkleTrace($"Warning! Callback is not callable (typeof={typeof(_callback)}). Aborting load of \"{_filename}\"");
+        }
+        
+        return;
+    }
+    
     var _newCallback = method({
         __callback: _callback,
     },
     function(_status, _buffer)
     {
-        if (_status)
+        var _string = "";
+        
+        if (_status == SPARKLE_STATUS_SUCCESS)
         {
-            var _string = buffer_read(_buffer, buffer_string);
-        }
-        else
-        {
-            var _string = "";
+            try
+            {
+                var _string = buffer_read(_buffer, buffer_string);
+            }
+            catch(_error)
+            {
+                __SparkleTrace(_error);
+                __SparkleTrace("Warning! Failed to read string");
+                
+                _status = SPARKLE_STATUS_FAILED;
+            }
         }
         
         buffer_delete(_buffer);

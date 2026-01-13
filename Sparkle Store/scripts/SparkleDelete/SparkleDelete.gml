@@ -53,6 +53,14 @@ function SparkleDelete(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL
         __SparkleError($"Gamepad index is invalid {__psGamepadIndex}");
     }
     
+    if (not is_callable(_callback))
+    {
+        if (SPARKLE_VERBOSE)
+        {
+            __SparkleTrace($"Warning! Callback is not callable (typeof={typeof(_callback)})");
+        }
+    }
+    
     var _struct = new __SparkleClassDelete(_filename, _callback);
     
     if (_priority == SPARKLE_PRIORITY_HIGH)

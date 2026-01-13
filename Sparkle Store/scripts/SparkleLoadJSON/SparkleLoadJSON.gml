@@ -18,15 +18,43 @@
 
 function SparkleLoadJSON(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
 {
+    static _system = __SparkleSystem();
+    
+    _system.__anyRequestMade = true;
+    
+    if (not is_callable(_callback))
+    {
+        if (SPARKLE_VERBOSE)
+        {
+            __SparkleTrace($"Warning! Callback is not callable (typeof={typeof(_callback)}). Aborting load of \"{_filename}\"");
+        }
+        
+        return;
+    }
+    
     var _newCallback = method({
         __callback: _callback,
     },
     function(_status, _string)
     {
-        if (is_callable(__callback))
+        var _json = undefined;
+        
+        if (_status == SPARKLE_STATUS_SUCCESS)
         {
-            __callback(_status, (_status && (_string != ""))? json_parse(_string) : undefined);
+            try
+            {
+                _json = json_parse(_string);
+            }
+            catch(_error)
+            {
+                __SparkleTrace(_error);
+                __SparkleTrace("Warning! Failed to parse JSON");
+                
+                _status = SPARKLE_STATUS_CANCELLED;
+            }
         }
+        
+        __callback(_status, _json);
     });
     
     return SparkleLoadString(_filename, _newCallback, _priority);

@@ -49,6 +49,16 @@ function SparkleLoad(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
     
     _system.__anyRequestMade = true;
     
+    if (not is_callable(_callback))
+    {
+        if (SPARKLE_VERBOSE)
+        {
+            __SparkleTrace($"Warning! Callback is not callable (typeof={typeof(_callback)}). Aborting load of \"{_filename}\"");
+        }
+        
+        return;
+    }
+    
     if ((SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK()) && (_system.__xboxUser == 0))
     {
         __SparkleError($"Xbox user is invalid {_system.__xboxUser}");

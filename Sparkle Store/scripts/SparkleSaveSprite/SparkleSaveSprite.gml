@@ -14,13 +14,13 @@
 /// argument1: This parameter is always `undefined`. Normally, this is the buffer used to save
 ///            the file but Sparkle Store handles this for you.
 /// 
-/// @param callback
 /// @param filename
 /// @param sprite
 /// @param image
+/// @param [callback]
 /// @param [priority=normal]
 
-function SparkleSaveSprite(_callback, _filename, _sprite, _image, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleSaveSprite(_filename, _sprite, _image, _callback = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     var _surface = surface_create(sprite_get_width(_sprite), sprite_get_height(_sprite));
     

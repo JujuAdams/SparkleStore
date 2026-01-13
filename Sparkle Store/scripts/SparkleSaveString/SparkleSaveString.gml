@@ -13,10 +13,10 @@
 /// 
 /// @param filename
 /// @param string
-/// @param callback
+/// @param [callback]
 /// @param [priority=normal]
 
-function SparkleSaveString(_filename, _string, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleSaveString(_filename, _string, _callback = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     var _buffer = buffer_create(string_byte_length(_string), buffer_fixed, 1);
     buffer_write(_buffer, buffer_text, _string);

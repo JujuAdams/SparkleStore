@@ -20,18 +20,38 @@
 
 function SparkleLoadSprite(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
 {
+    static _system = __SparkleSystem();
+    
+    _system.__anyRequestMade = true;
+    
+    if (not is_callable(_callback))
+    {
+        if (SPARKLE_VERBOSE)
+        {
+            __SparkleTrace($"Warning! Callback is not callable (typeof={typeof(_callback)}). Aborting load of \"{_filename}\"");
+        }
+        
+        return;
+    }
+    
     var _newCallback = method({
         __callback: _callback,
     },
     function(_status, _surface)
     {
-        if (_status && surface_exists(_surface))
+        var _sprite = -1;
+        
+        if (_status == SPARKLE_STATUS_SUCCESS)
         {
-            var _sprite = sprite_create_from_surface(_surface, 0, 0, surface_get_width(_surface), surface_get_height(_surface), false, false, 0, 0);
-        }
-        else
-        {
-            var _sprite = -1;
+            if (surface_exists(_surface))
+            {
+                _sprite = sprite_create_from_surface(_surface, 0, 0, surface_get_width(_surface), surface_get_height(_surface), false, false, 0, 0);
+            }
+            
+            if (not sprite_exists(_sprite))
+            {
+                _status = SPARKLE_STATUS_FAILED;
+            }
         }
         
         if (surface_exists(_surface))
@@ -39,10 +59,7 @@ function SparkleLoadSprite(_filename, _callback, _priority = SPARKLE_PRIORITY_NO
             surface_free(_surface);
         }
         
-        if (is_callable(__callback))
-        {
-            __callback(_status, _sprite);
-        }
+        __callback(_status, _sprite);
     });
     
     return SparkleLoad(_filename, _newCallback, _priority);
