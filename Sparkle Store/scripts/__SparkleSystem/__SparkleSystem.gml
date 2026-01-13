@@ -38,6 +38,19 @@ function __SparkleSystem()
         
         __ps5BackUpOperation = undefined;
         
+        if (string_pos(" ", __slotTitle) > 0)
+        {
+            if (SPARKLE_RUNNING_FROM_IDE)
+            {
+                __SparkleError("`SPARKLE_CONSOLE_SLOT_TITLE` title must not contain spaces");
+            }
+            else
+            {
+                __SparkleTrace("Warning! `SPARKLE_CONSOLE_SLOT_TITLE` must not contain spaces");
+                __slotTitle = string_replace_all(__slotTitle, " ", "");
+            }
+        }
+        
         if (SPARKLE_IDE_GROUP_NAME != undefined)
         {
             __groupName = string(SPARKLE_IDE_GROUP_NAME);

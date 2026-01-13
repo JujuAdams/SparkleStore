@@ -12,7 +12,7 @@
 #macro SPARKLE_IDE_GROUP_NAME  undefined
 
 // Default values for console-specific operations. You can change these values at runtime using the
-// relevant Sparkle Store functions. Please note that the slot title should not contain spaces for
+// relevant Sparkle Store functions. Please note that the slot title must not contain spaces for
 // compatibility cross-platform.
 #macro SPARKLE_CONSOLE_SLOT_TITLE  "GameWithName"
 #macro SPARKLE_CONSOLE_SUBTITLE    "Game savedata"
