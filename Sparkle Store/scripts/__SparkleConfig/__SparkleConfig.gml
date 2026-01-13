@@ -17,6 +17,10 @@
 #macro SPARKLE_CONSOLE_SLOT_TITLE  "GameWithName"
 #macro SPARKLE_CONSOLE_SUBTITLE    "Game savedata"
 
+// Whether Steam Cloud is allowed. Setting this to `false` will ignore Steam Cloud and will save
+// and load files to local storage. Please see `SparkleGetSteamCloud()` for more information.
+#macro SPARKLE_ALLOW_STEAM_CLOUD  true
+
 // Whether to log Sparkle Store operations. This is helpful when debugging your game but ordinarily
 // can be left turned off.
 #macro SPARKLE_VERBOSE  true

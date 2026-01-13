@@ -19,6 +19,7 @@ function __SparkleClassDelete(_filename, _callback) constructor
     __slotTitle      = _system.__slotTitle;
     __slotSubtitle   = _system.__slotSubtitle;
     __xboxUser       = _system.__xboxUser;
+    __trySteamCloud  = _system.__trySteamCloud;
     
     if (SPARKLE_VERBOSE)
     {
@@ -63,7 +64,7 @@ function __SparkleClassDelete(_filename, _callback) constructor
         
         array_push(_saveActivityArray, self);
         
-        if (SparkleGetSteamCloud())
+        if (__trySteamCloud && __SparkleGetSteamCloudInternal())
         {
             var _status = steam_file_delete($"{__groupName}/{__filename}");
             __Complete(_status? SPARKLE_STATUS_SUCCESS : SPARKLE_STATUS_FAILED);

@@ -27,6 +27,7 @@ function __SparkleSystem()
         __psGamepadIndex = -1;
         __windowsUseGDK  = false;
         __xboxUser       = int64(0);
+        __trySteamCloud  = SPARKLE_ALLOW_STEAM_CLOUD;
         
         __queuedArray = [];
         
@@ -54,12 +55,12 @@ function __SparkleSystem()
         if (SPARKLE_IDE_GROUP_NAME != undefined)
         {
             __groupName = string(SPARKLE_IDE_GROUP_NAME);
-            __SparkleTrace($"Initialized group name to \"{__groupName}\" (forced from IDE)");
+            __SparkleTrace($"Initialized group name to \"{__groupName}\" (via `SPARKLE_IDE_GROUP_NAME`)");
         }
         else
         {
             __groupName = string(SPARKLE_DEFAULT_GROUP_NAME);
-            __SparkleTrace($"Initialized group name to \"{__groupName}\"");
+            __SparkleTrace($"Initialized group name to \"{__groupName}\" (via `SPARKLE_DEFAULT_GROUP_NAME`)");
         }
         
         __SparkleInitializeSteam();
