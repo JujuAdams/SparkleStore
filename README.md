@@ -1,4 +1,4 @@
-<h1 align="center">Sparkle Store 1.0</h1>
+<h1 align="center">Sparkle Store 1.2</h1>
 
 <p align="center">Cross-platform file save/load for GameMaker 2024.14</p>
 
