@@ -17,7 +17,7 @@
     {"$GMFolder":"","%Name":"Options","folderPath":"folders/Sparkle Store/Options.yy","name":"Options","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"PlayStation","folderPath":"folders/Sparkle Store/Options/PlayStation.yy","name":"PlayStation","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Xbox & GDK","folderPath":"folders/Sparkle Store/Options/Xbox & GDK.yy","name":"Xbox & GDK","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Save","folderPath":"folders/Sparkle Store/Save.yy","name":"Save","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Save & Delete","folderPath":"folders/Sparkle Store/Save & Delete.yy","name":"Save","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
