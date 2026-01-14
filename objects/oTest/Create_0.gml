@@ -1,5 +1,7 @@
 // Feather disable all
 
+randomize();
+
 watchStart = undefined;
 loadedSurface = undefined;
 loadedGraphicAlpha = 0;
