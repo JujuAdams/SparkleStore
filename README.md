@@ -36,7 +36,7 @@ By default, Sparkle Store will behave the same as on desktop platforms by saving
 
 However, if you have enabled Steam Cloud for your game then Sparkle Store will attempt to use `steam_file_*()` functions to save files to Steam Cloud without accessing local storage at all. If you would like to use Steam Cloud in a different configuration, such as automatically backing up contents of the sandbox directory, then you should set `SPARKLE_ALLOW_STEAM_FILE` to `false`. You can further toggle whether a specific file should be accessed using `steam_file_*()` functions by calling `SoarkleSetSteamFile()`.
 
-**N.B.** The above behaviour means that when running the game without Steam open during development you will save files to local storage in the sandbox area. This can be confusing because different files will be accessed depending on whether you have Steam open or not. No data will be *lost* however, just stored in a different location.
+**N.B.** The above behaviour means that if you run the game *without Steam being open* (e.g. during development) you will save files to local storage in the sandbox area. This can be confusing because different files will be accessed depending on whether you have Steam open or not. No data will be *lost* however, just stored in a different location.
 
 &nbsp;
 
