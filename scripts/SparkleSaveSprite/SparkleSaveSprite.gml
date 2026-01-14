@@ -6,7 +6,7 @@
 /// N.B. This function saves using a custom format and is not a PNG file. You can load a sprite
 ///      saved by this function with either `SparkleLoadSurface()` or `...LoadSprite()`.
 /// 
-/// The callback for this function will be executed with two parameters:
+/// The callback for this function will be executed with three parameters:
 /// 
 /// argument0: The "status" of the save operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.

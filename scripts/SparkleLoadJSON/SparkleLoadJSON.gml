@@ -4,7 +4,7 @@
 /// is a wrapper around `SparkleLoad()`. Please see documentation for that function for more
 /// information.
 /// 
-/// The callback for this function will be executed with two parameters:
+/// The callback for this function will be executed with three parameters:
 /// 
 /// argument0: The "status" of the load operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.

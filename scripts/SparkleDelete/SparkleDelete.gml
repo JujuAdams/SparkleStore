@@ -12,7 +12,7 @@
 ///      system sandbox, please use `SparkleSetGroupName()`. Deleting files outside the sandbox is
 ///      not supported.
 /// 
-/// The callback for this function will be executed with one parameter:
+/// The callback for this function will be executed with two parameters:
 /// 
 /// argument0: The "status" of the delete operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.

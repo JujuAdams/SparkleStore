@@ -6,7 +6,7 @@
 /// N.B. This function expects the file to be saved by `SparkleSaveSurface()` or
 ///      `SparkleSaveSprite()` and cannot read PNG, JPEG, GIF files etc.
 /// 
-/// The callback for this function will be executed with two parameters:
+/// The callback for this function will be executed with three parameters:
 /// 
 /// argument0: The "status" of the load operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.

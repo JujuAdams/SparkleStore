@@ -9,7 +9,7 @@
 ///      changes. If you would like to save into a particular directory within the file system
 ///      sandbox, please use `SparkleSetGroupName()`. Saving outside the sandbox is not supported.
 /// 
-/// The callback for this function will be executed with two parameters:
+/// The callback for this function will be executed with three parameters:
 /// 
 /// argument0: The "status" of the save operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.
