@@ -22,13 +22,27 @@
 
 function SparkleSaveSurface(_filename, _surface, _callback = undefined, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
-    var _buffer = buffer_create(2*8 + 4*surface_get_width(_surface)*surface_get_height(_surface), buffer_fixed, 1);
-    buffer_write(_buffer, buffer_u64, surface_get_width(_surface));
-    buffer_write(_buffer, buffer_u64, surface_get_height(_surface));
-    buffer_get_surface(_buffer, _surface, buffer_tell(_buffer));
-    
-    var _compressedBuffer = buffer_compress(_buffer, 0, buffer_get_size(_buffer));
-    buffer_delete(_buffer);
+    if (surface_exists(_surface))
+    {
+        var _buffer = buffer_create(2*8 + 4*surface_get_width(_surface)*surface_get_height(_surface), buffer_fixed, 1);
+        buffer_write(_buffer, buffer_u64, surface_get_width(_surface));
+        buffer_write(_buffer, buffer_u64, surface_get_height(_surface));
+        buffer_get_surface(_buffer, _surface, buffer_tell(_buffer));
+        
+        var _compressedBuffer = buffer_compress(_buffer, 0, buffer_get_size(_buffer));
+        buffer_delete(_buffer);
+    }
+    else
+    {
+        __SparkleTrace("Warning! Surface doesn't exist");
+        
+        var _buffer = buffer_create(2*8, buffer_fixed, 1);
+        buffer_write(_buffer, buffer_u64, 0);
+        buffer_write(_buffer, buffer_u64, 0);
+        
+        var _compressedBuffer = buffer_compress(_buffer, 0, buffer_get_size(_buffer));
+        buffer_delete(_buffer);
+    }
     
     var _newCallback = method({
         __callback: _callback,

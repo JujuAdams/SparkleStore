@@ -8,7 +8,7 @@ $"Group name    = \"{SparkleGetGroupName()}\"",
 $"Slot title    = \"{SparkleGetConsoleSlotTitle()}\"",
 $"Slot subtitle = \"{SparkleGetConsoleSlotSubtitle()}\"");
 
-_string += "\n\n";
+_string += "\n";
 
 if (SPARKLE_ON_PS_ANY)
 {

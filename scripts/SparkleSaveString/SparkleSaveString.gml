@@ -24,7 +24,6 @@ function SparkleSaveString(_filename, _string, _callback = undefined, _callbackM
     
     var _newCallback = method({
         __callback: _callback,
-        __callbackMetadata: _callbackMetadata,
     },
     function(_status, _buffer, _callbackMetadata)
     {

@@ -23,13 +23,22 @@
 
 function SparkleSaveSprite(_filename, _sprite, _image, _callback = undefined, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
-    var _surface = surface_create(sprite_get_width(_sprite), sprite_get_height(_sprite));
-    
-    surface_set_target(_surface);
-    gpu_set_blendmode_ext(bm_one, bm_zero);
-    draw_sprite(_sprite, _image, sprite_get_xoffset(_sprite), sprite_get_yoffset(_sprite));
-    gpu_set_blendmode(bm_normal);
-    surface_reset_target();
+    if (sprite_exists(_sprite))
+    {
+        var _surface = surface_create(sprite_get_width(_sprite), sprite_get_height(_sprite));
+        
+        surface_set_target(_surface);
+        gpu_set_blendmode_ext(bm_one, bm_zero);
+        draw_sprite(_sprite, _image, sprite_get_xoffset(_sprite), sprite_get_yoffset(_sprite));
+        gpu_set_blendmode(bm_normal);
+        surface_reset_target();
+    }
+    else
+    {
+        __SparkleTrace("Warning! Sprite doesn't exist");
+        
+        var _surface = -1;
+    }
     
     var _result = SparkleSaveSurface(_filename, _surface, _callback, _callbackMetadata, _priority);
     
