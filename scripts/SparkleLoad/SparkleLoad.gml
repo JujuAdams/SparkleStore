@@ -23,6 +23,8 @@
 ///            if it has content before using it. However, a buffer is always returned and you are
 ///            responsible for destroying this buffer if when you don't need it.
 /// 
+/// argument2: The callback metadata specified when calling `SparkleLoad()`.
+/// 
 /// This function returns a struct that contains private information that Sparkle Store needs to
 /// track file saving. The struct has no public variables. However, it has the following public
 /// methods:

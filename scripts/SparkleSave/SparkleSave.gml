@@ -17,6 +17,8 @@
 /// argument1: The buffer used to save the file. You must destroy this buffer with `buffer_delete()`
 ///            if you have no other use for it otherwise you will have a memory leak.
 /// 
+/// argument2: The callback metadata specified when calling `SparkleSave()`.
+/// 
 /// This function returns a struct that contains private information that Sparkle Store needs to
 /// track file saving. The struct has no public variables. However, it has the following public
 /// methods:

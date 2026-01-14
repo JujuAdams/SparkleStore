@@ -12,6 +12,8 @@
 /// argument1: The JSON (struct/array assembly) that was found in the file. If there was a problem
 ///            or the file was empty then this parameter will be set to `undefined`.
 /// 
+/// argument2: The callback metadata specified when calling `SparkleLoadJSON()`.
+/// 
 /// @param filename
 /// @param callback
 /// @param [callbackMetadata]

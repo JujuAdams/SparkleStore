@@ -11,6 +11,8 @@
 /// argument1: The string that was found in the file. If there was a problem then this parameter
 ///            will be set to an empty string.
 /// 
+/// argument2: The callback metadata specified when calling `SparkleLoadString()`.
+/// 
 /// @param filename
 /// @param callback
 /// @param [callbackMetadata]

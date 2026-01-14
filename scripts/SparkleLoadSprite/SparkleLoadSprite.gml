@@ -14,6 +14,8 @@
 /// argument1: The sprite that was found in the file. If there was a problem or the file was empty
 ///            then this parameter will be set to `-1`.
 /// 
+/// argument2: The callback metadata specified when calling `SparkleLoadSprite()`.
+/// 
 /// @param filename
 /// @param callback
 /// @param [callbackMetadata]

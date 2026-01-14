@@ -17,6 +17,8 @@
 /// argument0: The "status" of the delete operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.
 /// 
+/// argument1: The callback metadata specified when calling `SparkleDelete()`.
+/// 
 /// This function returns a struct that contains private information that Sparkle Store needs to
 /// track file saving. The struct has no public variables. However, it has the following public
 /// methods:

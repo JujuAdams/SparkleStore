@@ -12,6 +12,8 @@
 /// argument1: This parameter is always `undefined`. Normally, this is the buffer used to save
 ///            the file but Sparkle Store handles this for you.
 /// 
+/// argument2: The callback metadata specified when calling `SparkleSaveJSON()`.
+/// 
 /// @param filename
 /// @param json
 /// @param [callback]
