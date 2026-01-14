@@ -13,9 +13,10 @@
 /// 
 /// @param filename
 /// @param callback
+/// @param [callbackMetadata]
 /// @param [priority=normal]
 
-function SparkleLoadString(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleLoadString(_filename, _callback, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     static _system = __SparkleSystem();
     
@@ -34,7 +35,7 @@ function SparkleLoadString(_filename, _callback, _priority = SPARKLE_PRIORITY_NO
     var _newCallback = method({
         __callback: _callback,
     },
-    function(_status, _buffer)
+    function(_status, _buffer, _callbackMetadata)
     {
         var _string = "";
         
@@ -55,8 +56,8 @@ function SparkleLoadString(_filename, _callback, _priority = SPARKLE_PRIORITY_NO
         
         buffer_delete(_buffer);
         
-        __callback(_status, _string);
+        __callback(_status, _string, _callbackMetadata);
     });
     
-    return SparkleLoad(_filename, _newCallback, _priority);
+    return SparkleLoad(_filename, _newCallback, _callbackMetadata, _priority);
 }

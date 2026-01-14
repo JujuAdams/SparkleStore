@@ -36,11 +36,12 @@
 /// @param filename
 /// @param buffer
 /// @param [callback]
+/// @param [callbackMetadata]
 /// @param [offset=0]
 /// @param [size]
 /// @param [priority=normal]
 
-function SparkleSave(_filename, _buffer, _callback = undefined, _offset = 0, _size = infinity, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleSave(_filename, _buffer, _callback = undefined, _callbackMetadata = undefined, _offset = 0, _size = infinity, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     static _system = __SparkleSystem();
     static _queuedArray = _system.__queuedArray;
@@ -60,7 +61,7 @@ function SparkleSave(_filename, _buffer, _callback = undefined, _offset = 0, _si
     _offset = max(0, min(_offset, buffer_get_size(_buffer)-1));
     _size = max(0, min(_size, buffer_get_size(_buffer) - _offset));
     
-    var _struct = new __SparkleClassSave(_filename, _buffer, _offset, _size, _callback);
+    var _struct = new __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _callbackMetadata);
     
     if (_priority == SPARKLE_PRIORITY_HIGH)
     {

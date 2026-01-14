@@ -37,9 +37,9 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleSaveString("test.txt", contentText, function(_status)
+        SparkleSaveString("test.txt", contentText, function(_status, _buffer_UNUSED, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}");
+            show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
         });
     }),
 });
@@ -52,9 +52,9 @@ array_push(optionArray, {
         
         repeat(20)
         {
-            SparkleSaveString("test.txt", contentText, function(_status)
+            SparkleSaveString("test.txt", contentText, function(_status, _buffer_UNUSED, _callbackMetadata)
             {
-                show_debug_message($"Returned status {_status}");
+                show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
             });
         }
     }),
@@ -66,9 +66,9 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleDelete("test.txt", function(_status)
+        SparkleDelete("test.txt", function(_status, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}");
+            show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
         });
     }),
 });
@@ -79,9 +79,9 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleLoadString("test.txt", function(_status, _string)
+        SparkleLoadString("test.txt", function(_status, _string, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}, string = \"{_string}\"");
+            show_debug_message($"Returned status {_status}, string = \"{_string}\", callbackMetadata = {_callbackMetadata}");
             contentText = _string;
         });
     }),
@@ -95,9 +95,9 @@ array_push(optionArray, {
         
         repeat(40)
         {
-            SparkleLoadString("test.txt", function(_status, _string)
+            SparkleLoadString("test.txt", function(_status, _string, _callbackMetadata)
             {
-                show_debug_message($"Returned status {_status}, string = \"{_string}\"");
+                show_debug_message($"Returned status {_status}, string = \"{_string}\", callbackMetadata = {_callbackMetadata}");
                 contentText = _string;
             });
         }
@@ -110,9 +110,9 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleSaveJSON("test.json", { contentText: contentText, contentImage: contentImage }, function(_status)
+        SparkleSaveJSON("test.json", { contentText: contentText, contentImage: contentImage }, function(_status, _buffer_UNUSED, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}");
+            show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
         });
     }),
 });
@@ -123,9 +123,9 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleLoadJSON("test.json", function(_status, _json)
+        SparkleLoadJSON("test.json", function(_status, _json, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}, json = {json_stringify(_json)}");
+            show_debug_message($"Returned status {_status}, json = {json_stringify(_json)}, callbackMetadata = {_callbackMetadata}");
             contentText  = _json.contentText;
             contentImage = _json.contentImage;
         });
@@ -138,9 +138,9 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleSaveSurface("test.img", application_surface, function(_status)
+        SparkleSaveSurface("test.img", application_surface, function(_status, _buffer_UNUSED, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}");
+            show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
         });
     }),
 });
@@ -151,9 +151,9 @@ array_push(optionArray, {
     {
         watchStart = current_time;
         
-        SparkleLoadSurface("test.img", function(_status, _surface)
+        SparkleLoadSurface("test.img", function(_status, _surface, _callbackMetadata)
         {
-            show_debug_message($"Surface = {_surface}");
+            show_debug_message($"Returned status = {_status}, surface = {_surface}, callbackMetadata = {_callbackMetadata}");
             
             if (loadedSurface != undefined)
             {

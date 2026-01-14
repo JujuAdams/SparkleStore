@@ -14,25 +14,27 @@
 /// @param filename
 /// @param string
 /// @param [callback]
+/// @param [callbackMetadata]
 /// @param [priority=normal]
 
-function SparkleSaveString(_filename, _string, _callback = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleSaveString(_filename, _string, _callback = undefined, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     var _buffer = buffer_create(string_byte_length(_string), buffer_fixed, 1);
     buffer_write(_buffer, buffer_text, _string);
     
     var _newCallback = method({
         __callback: _callback,
+        __callbackMetadata: _callbackMetadata,
     },
-    function(_status, _buffer)
+    function(_status, _buffer, _callbackMetadata)
     {
         buffer_delete(_buffer);
         
         if (is_callable(__callback))
         {
-            __callback(_status, undefined);
+            __callback(_status, undefined, _callbackMetadata);
         }
     });
     
-    return SparkleSave(_filename, _buffer, _newCallback, undefined, undefined, _priority);
+    return SparkleSave(_filename, _buffer, _newCallback, _callbackMetadata, undefined, undefined, _priority);
 }

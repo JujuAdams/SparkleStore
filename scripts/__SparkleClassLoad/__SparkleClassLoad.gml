@@ -2,16 +2,18 @@
 
 /// @param filename
 /// @param callback
+/// @param callbackMetadata
 
-function __SparkleClassLoad(_filename, _callback) constructor
+function __SparkleClassLoad(_filename, _callback, _callbackMetadata) constructor
 {
     static _system = __SparkleSystem();
     static _queuedArray       = _system.__queuedArray;
     static _loadPendingArray  = _system.__loadPendingArray;
     static _loadActivityArray = _system.__loadActivityArray;
     
-    __filename = _filename;
-    __callback = _callback;
+    __filename         = _filename;
+    __callback         = _callback;
+    __callbackMetadata = _callbackMetadata;
     
     __groupName      = _system.__groupName;
     __psShowDialog   = _system.__psShowDialog;
@@ -181,7 +183,7 @@ function __SparkleClassLoad(_filename, _callback) constructor
         
         if (is_callable(__callback))
         {
-            __callback(_status, __buffer);
+            __callback(_status, __buffer, __callbackMetadata);
         }
     }
 }

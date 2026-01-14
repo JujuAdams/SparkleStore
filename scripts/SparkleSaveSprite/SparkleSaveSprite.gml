@@ -18,9 +18,10 @@
 /// @param sprite
 /// @param image
 /// @param [callback]
+/// @param [callbackMetadata]
 /// @param [priority=normal]
 
-function SparkleSaveSprite(_filename, _sprite, _image, _callback = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleSaveSprite(_filename, _sprite, _image, _callback = undefined, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     var _surface = surface_create(sprite_get_width(_sprite), sprite_get_height(_sprite));
     
@@ -30,7 +31,7 @@ function SparkleSaveSprite(_filename, _sprite, _image, _callback = undefined, _p
     gpu_set_blendmode(bm_normal);
     surface_reset_target();
     
-    var _result = SparkleSaveSurface(_filename, _surface, _callback, _priority);
+    var _result = SparkleSaveSurface(_filename, _surface, _callback, _callbackMetadata, _priority);
     
     surface_free(_surface);
     

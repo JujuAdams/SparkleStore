@@ -16,9 +16,10 @@
 /// 
 /// @param filename
 /// @param callback
+/// @param [callbackMetadata]
 /// @param [priority=normal]
 
-function SparkleLoadSprite(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleLoadSprite(_filename, _callback, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     static _system = __SparkleSystem();
     
@@ -37,7 +38,7 @@ function SparkleLoadSprite(_filename, _callback, _priority = SPARKLE_PRIORITY_NO
     var _newCallback = method({
         __callback: _callback,
     },
-    function(_status, _surface)
+    function(_status, _surface, _callbackMetadata)
     {
         var _sprite = -1;
         
@@ -59,8 +60,8 @@ function SparkleLoadSprite(_filename, _callback, _priority = SPARKLE_PRIORITY_NO
             surface_free(_surface);
         }
         
-        __callback(_status, _sprite);
+        __callback(_status, _sprite, _callbackMetadata);
     });
     
-    return SparkleLoad(_filename, _newCallback, _priority);
+    return SparkleLoad(_filename, _newCallback, _callbackMetadata, _priority);
 }

@@ -14,9 +14,10 @@
 /// 
 /// @param filename
 /// @param callback
+/// @param [callbackMetadata]
 /// @param [priority=normal]
 
-function SparkleLoadJSON(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleLoadJSON(_filename, _callback, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     static _system = __SparkleSystem();
     
@@ -35,7 +36,7 @@ function SparkleLoadJSON(_filename, _callback, _priority = SPARKLE_PRIORITY_NORM
     var _newCallback = method({
         __callback: _callback,
     },
-    function(_status, _string)
+    function(_status, _string, _callbackMetadata)
     {
         var _json = undefined;
         
@@ -54,8 +55,8 @@ function SparkleLoadJSON(_filename, _callback, _priority = SPARKLE_PRIORITY_NORM
             }
         }
         
-        __callback(_status, _json);
+        __callback(_status, _json, _callbackMetadata);
     });
     
-    return SparkleLoadString(_filename, _newCallback, _priority);
+    return SparkleLoadString(_filename, _newCallback, _callbackMetadata, _priority);
 }

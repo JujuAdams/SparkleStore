@@ -17,9 +17,10 @@
 /// @param filename
 /// @param surface
 /// @param [callback]
+/// @param [callbackMetadata]
 /// @param [priority=normal]
 
-function SparkleSaveSurface(_filename, _surface, _callback = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleSaveSurface(_filename, _surface, _callback = undefined, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     var _buffer = buffer_create(2*8 + 4*surface_get_width(_surface)*surface_get_height(_surface), buffer_fixed, 1);
     buffer_write(_buffer, buffer_u64, surface_get_width(_surface));
@@ -32,15 +33,15 @@ function SparkleSaveSurface(_filename, _surface, _callback = undefined, _priorit
     var _newCallback = method({
         __callback: _callback,
     },
-    function(_status, _buffer)
+    function(_status, _buffer, _callbackMetadata)
     {
         buffer_delete(_buffer);
         
         if (is_callable(__callback))
         {
-            __callback(_status, undefined);
+            __callback(_status, undefined, _callbackMetadata);
         }
     });
     
-    return SparkleSave(_filename, _compressedBuffer, _newCallback, undefined, undefined, _priority);
+    return SparkleSave(_filename, _compressedBuffer, _newCallback, _callbackMetadata, undefined, undefined, _priority);
 }

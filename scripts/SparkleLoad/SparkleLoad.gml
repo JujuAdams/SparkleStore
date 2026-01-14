@@ -40,9 +40,10 @@
 /// 
 /// @param filename
 /// @param callback
+/// @param [callbackMetadata]
 /// @param [priority=normal]
 
-function SparkleLoad(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleLoad(_filename, _callback, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     static _system = __SparkleSystem();
     static _queuedArray = _system.__queuedArray;
@@ -69,7 +70,7 @@ function SparkleLoad(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
         __SparkleError($"Gamepad index is invalid {__psGamepadIndex}");
     }
     
-    var _struct = new __SparkleClassLoad(_filename, _callback);
+    var _struct = new __SparkleClassLoad(_filename, _callback, _callbackMetadata);
     
     if (_priority == SPARKLE_PRIORITY_HIGH)
     {

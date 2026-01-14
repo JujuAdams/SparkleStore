@@ -16,9 +16,10 @@
 /// 
 /// @param filename
 /// @param callback
+/// @param [callbackMetadata]
 /// @param [priority=normal]
 
-function SparkleLoadSurface(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleLoadSurface(_filename, _callback, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     static _system = __SparkleSystem();
     
@@ -37,7 +38,7 @@ function SparkleLoadSurface(_filename, _callback, _priority = SPARKLE_PRIORITY_N
     var _newCallback = method({
         __callback: _callback,
     },
-    function(_status, _compressedBuffer)
+    function(_status, _compressedBuffer, _callbackMetadata)
     {
         var _surface = -1;
         
@@ -78,8 +79,8 @@ function SparkleLoadSurface(_filename, _callback, _priority = SPARKLE_PRIORITY_N
             }
         }
         
-        __callback(_status, _surface);
+        __callback(_status, _surface, _callbackMetadata);
     });
     
-    return SparkleLoad(_filename, _newCallback, _priority);
+    return SparkleLoad(_filename, _newCallback, _callbackMetadata, _priority);
 }

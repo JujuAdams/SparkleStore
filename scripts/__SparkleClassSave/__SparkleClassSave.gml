@@ -5,20 +5,21 @@
 /// @param offset
 /// @param size
 /// @param callback
-/// @param gamepadIndex
+/// @param callbackMetadata
 
-function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) constructor
+function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _callbackMetadata) constructor
 {
     static _system            = __SparkleSystem();
     static _queuedArray       = _system.__queuedArray;
     static _savePendingArray  = _system.__savePendingArray;
     static _saveActivityArray = _system.__saveActivityArray;
     
-    __filename = _filename;
-    __buffer   = _buffer;
-    __offset   = _offset;
-    __size     = _size;
-    __callback = _callback;
+    __filename         = _filename;
+    __buffer           = _buffer;
+    __offset           = _offset;
+    __size             = _size;
+    __callback         = _callback;
+    __callbackMetadata = _callbackMetadata;
     
     __groupName      = _system.__groupName;
     __psShowDialog   = _system.__psShowDialog;
@@ -156,7 +157,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback) const
         
         if (is_callable(__callback))
         {
-            __callback(_status, __buffer);
+            __callback(_status, __buffer, __callbackMetadata);
         }
     }
 }

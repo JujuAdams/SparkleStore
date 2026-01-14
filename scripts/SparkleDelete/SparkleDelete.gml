@@ -34,9 +34,10 @@
 /// 
 /// @param filename
 /// @param callback
+/// @param callbackMetadata
 /// @param [priority=normal]
 
-function SparkleDelete(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleDelete(_filename, _callback, _callbackMetadata = undefined, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     static _system = __SparkleSystem();
     static _queuedArray = _system.__queuedArray;
@@ -61,7 +62,7 @@ function SparkleDelete(_filename, _callback, _priority = SPARKLE_PRIORITY_NORMAL
         }
     }
     
-    var _struct = new __SparkleClassDelete(_filename, _callback);
+    var _struct = new __SparkleClassDelete(_filename, _callback, _callbackMetadata);
     
     if (_priority == SPARKLE_PRIORITY_HIGH)
     {
