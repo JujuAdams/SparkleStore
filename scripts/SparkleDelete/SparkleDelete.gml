@@ -26,6 +26,12 @@
 /// `.GetOperation()`
 ///     Returns `SPARKLE_OP_DELETE`.
 /// 
+/// `.GetFilename()`
+///     Returns the filename that the operation is targeting.
+/// 
+/// `.GetCallbackMetadata()`
+///     Returns the callback metadaata set when calling `SparkleDelete()`.
+/// 
 /// `.Cancel()`
 ///     Cancels the operation immediately. This will execute the callback with the
 ///     `SPARKLE_STATUS_CANCELLED` status.

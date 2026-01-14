@@ -39,6 +39,16 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) construct
         return SPARKLE_OP_DELETE;
     }
     
+    static GetFilename = function()
+    {
+        return __filename;
+    }
+    
+    static GetCallbackMetadata = function()
+    {
+        return __callbackMetadata;
+    }
+    
     static Cancel = function()
     {
         __Complete(SPARKLE_STATUS_CANCELLED);

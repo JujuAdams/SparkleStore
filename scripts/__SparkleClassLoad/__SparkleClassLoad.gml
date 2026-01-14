@@ -40,6 +40,16 @@ function __SparkleClassLoad(_filename, _callback, _callbackMetadata) constructor
         return SPARKLE_OP_LOAD;
     }
     
+    static GetFilename = function()
+    {
+        return __filename;
+    }
+    
+    static GetCallbackMetadata = function()
+    {
+        return __callbackMetadata;
+    }
+    
     static Cancel = function()
     {
         __Complete(SPARKLE_STATUS_CANCELLED);

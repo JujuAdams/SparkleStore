@@ -32,6 +32,12 @@
 /// `.GetOperation()`
 ///     Returns `SPARKLE_OP_LOAD`.
 /// 
+/// `.GetFilename()`
+///     Returns the filename that the operation is targeting.
+/// 
+/// `.GetCallbackMetadata()`
+///     Returns the callback metadaata set when calling `SparkleLoad()`.
+/// 
 /// `.Cancel()`
 ///     Cancels the operation immediately. This will execute the callback with the
 ///     `SPARKLE_STATUS_CANCELLED` status.

@@ -26,6 +26,12 @@
 /// `.GetOperation()`
 ///     Returns `SPARKLE_OP_SAVE`.
 /// 
+/// `.GetFilename()`
+///     Returns the filename that the operation is targeting.
+/// 
+/// `.GetCallbackMetadata()`
+///     Returns the callback metadaata set when calling `SparkleSave()`.
+/// 
 /// `.Cancel()`
 ///     Cancels the operation immediately. This will execute the callback with the
 ///     `SPARKLE_STATUS_CANCELLED` status. If the operation is cancelled afer the OS has started
