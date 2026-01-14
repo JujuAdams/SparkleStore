@@ -8,11 +8,11 @@
 /// 
 /// The callback for this function will be executed with two parameters:
 /// 
-/// argument0: The "status" of the load operation. This is one of the `SPARKLE_STATUS_*`
-///            constants. Please see the `__SparkleConstants` script for more information.
+/// argument0: The "status" of the load operation. This is one of the `SPARKLE_STATUS_*` constants.
+///            Please see the `__SparkleConstants` script for more information.
 /// 
-/// argument1: The surface (struct/array assembly) that was found in the file. If there was a
-///            problem or the file was empty then this parameter will be set to `-1`.
+/// argument1: The surface that was found in the file. If there was a problem or the file was empty
+///            then this parameter will be set to `-1`.
 /// 
 /// @param filename
 /// @param callback
@@ -55,8 +55,15 @@ function SparkleLoadSurface(_filename, _callback, _callbackMetadata = undefined,
                     var _width  = buffer_read(_buffer, buffer_u64);
                     var _height = buffer_read(_buffer, buffer_u64);
                     
-                    var _surface = surface_create(_width, _height);
-                    buffer_set_surface(_buffer, _surface, buffer_tell(_buffer));
+                    if ((_width <= 0) || (_height <= 0))
+                    {
+                        __SparkleTrace("Warning! Image buffer is empty");
+                    }
+                    else
+                    {
+                        _surface = surface_create(_width, _height);
+                        buffer_set_surface(_buffer, _surface, buffer_tell(_buffer));
+                    }
                 }
                 catch(_error)
                 {
