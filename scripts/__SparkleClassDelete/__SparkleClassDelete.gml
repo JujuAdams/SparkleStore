@@ -18,14 +18,14 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) construct
     __groupName      = _system.__groupName;
     __psShowDialog   = _system.__psShowDialog;
     __psGamepadIndex = _system.__psGamepadIndex;
-    __slotTitle      = _system.__slotTitle;
-    __slotSubtitle   = _system.__slotSubtitle;
+    __psSlotTitle    = _system.__psSlotTitle;
+    __psSlotSubtitle = _system.__psSlotSubtitle;
     __xboxUser       = _system.__xboxUser;
     __steamFile      = _system.__steamFile;
     
     if (SPARKLE_VERBOSE)
     {
-        __SparkleTrace($"Created DELETE operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__slotTitle}\", filename = \"{_filename}\", callback = {_callback}");
+        __SparkleTrace($"Created DELETE operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__psSlotTitle}\", filename = \"{_filename}\", callback = {_callback}");
     }
     
     __dispatched   = false;
@@ -111,8 +111,8 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) construct
                 
                 var _buffer = __SparkleEmptyBuffer();
                 buffer_async_group_begin(__groupName);
-                buffer_async_group_option("slottitle", __slotTitle);
-                buffer_async_group_option("subtitle",  __slotSubtitle);
+                buffer_async_group_option("slottitle", __psSlotTitle);
+                buffer_async_group_option("subtitle",  __psSlotSubtitle);
                 
                 if (SPARKLE_ON_PS_ANY)
                 {

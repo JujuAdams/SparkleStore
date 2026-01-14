@@ -1,12 +1,12 @@
 // Feather disable all
 
-/// Sets the current slot title for future save/load operations. This value will not impact any
-/// operations that have already been started. Please note that the slot title must not contain
-/// spaces for compatibility cross-platform.
+/// Sets the current PlayStation slot title for future save/load operations. This value will not
+/// impact any operations that have already been started. Please note that the slot title must not
+/// contain spaces for compatibility cross-platform.
 /// 
 /// @param slotTitle
 
-function SparkleSetConsoleSlotTitle(_slotTitle)
+function SparkleSetPSSlotTitle(_slotTitle)
 {
     static _system = __SparkleSystem();
     
@@ -23,5 +23,5 @@ function SparkleSetConsoleSlotTitle(_slotTitle)
         }
     }
     
-    _system.__slotTitle = string(_slotTitle);
+    _system.__psSlotTitle = string(_slotTitle);
 }

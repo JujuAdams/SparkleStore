@@ -21,13 +21,15 @@ function __SparkleSystem()
         __lastActivityTime = -infinity;
         __anyRequestMade = false;
         
-        __slotTitle      = SPARKLE_CONSOLE_SLOT_TITLE;
-        __slotSubtitle   = SPARKLE_CONSOLE_SUBTITLE;
+        __steamFile = SPARKLE_ALLOW_STEAM_FILE;
+        
+        __psSlotTitle    = SPARKLE_CONSOLE_SLOT_TITLE;
+        __psSlotSubtitle = SPARKLE_CONSOLE_SUBTITLE;
         __psShowDialog   = false;
         __psGamepadIndex = -1;
+        
         __windowsUseGDK  = false;
         __xboxUser       = int64(0);
-        __steamFile  = SPARKLE_ALLOW_STEAM_FILE;
         
         __queuedArray = [];
         
@@ -39,7 +41,7 @@ function __SparkleSystem()
         
         __ps5BackUpOperation = undefined;
         
-        if (string_pos(" ", __slotTitle) > 0)
+        if (string_pos(" ", __psSlotTitle) > 0)
         {
             if (SPARKLE_RUNNING_FROM_IDE)
             {
@@ -48,7 +50,7 @@ function __SparkleSystem()
             else
             {
                 __SparkleTrace("Warning! `SPARKLE_CONSOLE_SLOT_TITLE` must not contain spaces");
-                __slotTitle = string_replace_all(__slotTitle, " ", "");
+                __psSlotTitle = string_replace_all(__psSlotTitle, " ", "");
             }
         }
         

@@ -5,8 +5,8 @@ $"Sparkle Store = {SPARKLE_VERSION}, {SPARKLE_DATE}",
 $"Time = {date_datetime_string(date_current_datetime())}",
 $"Gamepad focus = {gamepadFocus}",
 $"Group name    = \"{SparkleGetGroupName()}\"",
-$"Slot title    = \"{SparkleGetConsoleSlotTitle()}\"",
-$"Slot subtitle = \"{SparkleGetConsoleSlotSubtitle()}\"");
+$"Slot title    = \"{SparkleGetPSSlotTitle()}\"",
+$"Slot subtitle = \"{SparkleGetPSSlotSubtitle()}\"");
 
 _string += "\n";
 

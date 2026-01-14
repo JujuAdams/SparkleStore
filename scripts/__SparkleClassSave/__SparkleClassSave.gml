@@ -24,14 +24,14 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
     __groupName      = _system.__groupName;
     __psShowDialog   = _system.__psShowDialog;
     __psGamepadIndex = _system.__psGamepadIndex;
-    __slotTitle      = _system.__slotTitle;
-    __slotSubtitle   = _system.__slotSubtitle;
+    __psSlotTitle    = _system.__psSlotTitle;
+    __psSlotSubtitle = _system.__psSlotSubtitle;
     __xboxUser       = _system.__xboxUser;
     __steamFile      = _system.__steamFile;
     
     if (SPARKLE_VERBOSE)
     {
-        __SparkleTrace($"Created SAVE operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__slotTitle}\", filename = \"{_filename}\", buffer = {_buffer}, offset = {_offset}, size = {_size}, callback = {_callback}");
+        __SparkleTrace($"Created SAVE operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__psSlotTitle}\", filename = \"{_filename}\", buffer = {_buffer}, offset = {_offset}, size = {_size}, callback = {_callback}");
     }
     
     __dispatched   = false;
@@ -120,8 +120,8 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
                 {
                     buffer_async_group_option("showdialog",   __psShowDialog);
                     buffer_async_group_option("savepadindex", __psGamepadIndex);
-                    buffer_async_group_option("slottitle",    __slotTitle);
-                    buffer_async_group_option("subtitle",     __slotSubtitle);
+                    buffer_async_group_option("slottitle",    __psSlotTitle);
+                    buffer_async_group_option("subtitle",     __psSlotSubtitle);
                 }
                 
                 if (__SPARKLE_PS_SAVE_BACKUP)

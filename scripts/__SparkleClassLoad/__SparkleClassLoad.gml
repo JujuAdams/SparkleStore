@@ -18,14 +18,14 @@ function __SparkleClassLoad(_filename, _callback, _callbackMetadata) constructor
     __groupName      = _system.__groupName;
     __psShowDialog   = _system.__psShowDialog;
     __psGamepadIndex = _system.__psGamepadIndex;
-    __slotTitle      = _system.__slotTitle;
-    __slotSubtitle   = _system.__slotSubtitle;
+    __psSlotTitle    = _system.__psSlotTitle;
+    __psSlotSubtitle = _system.__psSlotSubtitle;
     __xboxUser       = _system.__xboxUser;
     __steamFile      = _system.__steamFile;
     
     if (SPARKLE_VERBOSE)
     {
-        __SparkleTrace($"Created LOAD operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__slotTitle}\", filename = \"{_filename}\", callback = {_callback}");
+        __SparkleTrace($"Created LOAD operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__psSlotTitle}\", filename = \"{_filename}\", callback = {_callback}");
     }
     
     __buffer       = undefined;
@@ -121,7 +121,7 @@ function __SparkleClassLoad(_filename, _callback, _callbackMetadata) constructor
                 
                 if (SPARKLE_ON_CONSOLE)
                 {
-                    buffer_async_group_option("slottitle", __slotTitle);
+                    buffer_async_group_option("slottitle", __psSlotTitle);
                 }
                 
                 if (SPARKLE_ON_PS_ANY)
