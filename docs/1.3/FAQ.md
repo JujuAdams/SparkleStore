@@ -5,6 +5,7 @@
 **What platforms does SparkleStore support?**
 
 PictureFrame supports Windows, MacOS, Linux, Nintendo Switch, Sony PlayStation 4/5, Xbox Series X/S, iOS, tvOS, and Android. Other platforms will very likely work fine too but they aren't officially supported.
+
 &nbsp;
 
 **What versions of GameMaker does SparkleStore support?**
