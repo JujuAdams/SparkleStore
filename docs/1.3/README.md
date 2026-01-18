@@ -19,7 +19,7 @@ SparkleStore can save and load binary buffers as you'd expect but it can also sa
 
 SparkleStore will save into the file system sandbox on these platforms. You may configre what sandbox directory files are saved to by calling `SparkleSetGroupName()` or setting `SPARKLE_DEFAULT_GROUP_NAME`. You may set an optional group name (and therefore directory) when running from the IDE by setting `SPARKLE_IDE_GROUP_NAME`.
 
-**N.B.** Saving outside of the sandbox is not supported.
+?> Saving outside of the sandbox is not supported.
 
 &nbsp;
 
@@ -37,9 +37,9 @@ The above behaviour means that if you run the game *without Steam being open* (e
 
 `switch_save_data_commit()` is called automatically for each file that is saved successfully. File save and load rate limits are automatically enforced by SparkleStore. You can adjust the rate limiting by editing `SPARKLE_MAX_SAVE_FREQUENCY` and `SPARKLE_MAX_LOAD_FREQUENCY`.
 
-**N.B.** Files are saved and loaded for the user that opened the game (which is GameMaker's default behaviour). You will most likely want to use the `Required` option in the `Console account selection at startup` section of your game's .nmeta file. If you would like to save and load files for another user, you will need to call the mount and unmount functions yourself.
+?> Files are saved and loaded for the user that opened the game (which is GameMaker's default behaviour). You will most likely want to use the `Required` option in the `Console account selection at startup` section of your game's .nmeta file. If you would like to save and load files for another user, you will need to call the mount and unmount functions yourself.
 
-**N.B.** I do not have access to a Switch 2 for testing. My understanding is that little in the API has changed. Please get in touch if adjustments need to be made for Switch 2.
+?> I do not have access to a Switch 2 for testing. My understanding is that little in the API has changed. Please get in touch if adjustments need to be made for Switch 2.
 
 &nbsp;
 
@@ -47,7 +47,7 @@ The above behaviour means that if you run the game *without Steam being open* (e
 
 You must call `SparkleSetPSGamepadIndex()` to set the player whose savedata you're going to access. You may also choose to call `SparkleSetPSShowDialog()` to control whether the save/load OS dialog is shown. On this platform, you will also want to set `SPARKLE_PLAYSTATION_SLOT_TITLE` and `SPARKLE_PLAYSTATION_SUBTITLE` so that the correct information is shown in the OS. You can adjust the current slot title and slot subtitle at runtime using the associated functions. SparkleStore will automatically use the backup system on PlayStation 4.
 
-**N.B.** SparkleStore only supports SDK 12.00 and above.
+!> SparkleStore only supports SDK 12.00 and above.
 
 &nbsp;
 
@@ -55,7 +55,7 @@ You must call `SparkleSetPSGamepadIndex()` to set the player whose savedata you'
 
 You must call `SparkleSetXboxUser()` to set the player whose savedata you're going to access. When running on Windows and are using the GDK, you must call `SparkleSetWindowsUseGDK()` immediately when the game boots to ensure that the correct savedata functions are called. GDK file access will not work unless `gdk_init()` and `gdk_update()` are being used correctly so bear that in mind during testing.
 
-**N.B.** SparkleStore does not support the legacy XDK API.
+?> SparkleStore does not support the legacy XDK API.
 
 &nbsp;
 
