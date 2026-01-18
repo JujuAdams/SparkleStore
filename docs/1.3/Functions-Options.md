@@ -26,7 +26,7 @@ The group name determines the save directory that a file gets placed into on mos
 
 `SparkleGetGroupName()`
 
-**Returns:** String
+**Returns:** string
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -58,7 +58,7 @@ This setting will be used for future save/load operations but will not impact an
 
 `SoarkleGetSteamFile()`
 
-**Returns:** Boolean
+**Returns:** boolean
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -90,7 +90,7 @@ Sets the current PlayStation gamepad index for future save/load operations. This
 
 `SparkleGetPSGamepadIndex()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -118,7 +118,7 @@ Sets the current PlayStation slot title for future save/load operations. This va
 
 `SparkleGetPSSlotTitle()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -146,7 +146,7 @@ Sets the current PlayStation slot subtitle for future save/load operations. This
 
 `SparkleGetPSSlotSubtitle()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -174,7 +174,7 @@ Sets whether a OS dialog should appear when saving or loading a file. This value
 
 `SparkleGetPSShowDialog()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -204,7 +204,7 @@ Sets the current Xbox user for future save/load operations. This value will not 
 
 `SparkleGetXboxUser()`
 
-**Returns:** Int64
+**Returns:** int64
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -234,7 +234,7 @@ Sets up GDK functions for use with saving and loading. This function should only
 
 `SparkleGetWindowsUseGDK()`
 
-**Returns:** Int64
+**Returns:** int64
 
 |Name|Datatype|Purpose|
 |----|--------|-------|

@@ -8,7 +8,7 @@ Functions on this page return values that track the work that SparkleStore is do
 
 `SparkleGetRecentActivity([milliseconds=1200])`
 
-**Returns:** Number
+**Returns:** number
 
 |Name          |Datatype|Purpose                                                                      |
 |--------------|--------|-----------------------------------------------------------------------------|
@@ -22,7 +22,7 @@ Returns whether there was save/load activity recently within the given timespan.
 
 `SparkleGetSteamCloud()`
 
-**Returns:** Boolean
+**Returns:** boolean
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -46,7 +46,7 @@ Please note that `SPARKLE_ALLOW_STEAM_FILE` and `SoarkleSetSteamFile()` can alte
 
 `SparkleGetTotalPending()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -60,7 +60,7 @@ Returns the total number of pending operations.
 
 `SparkleGetSavePending()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -74,7 +74,7 @@ Returns the number of pending save operations.
 
 `SparkleGetLoadPending()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -88,7 +88,7 @@ Returns the number of pending load operations.
 
 `SparkleGetSaveRecent()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|
@@ -102,7 +102,7 @@ Returns the number of save operations completed in the last minute.
 
 `SparkleGetLoadRecent()`
 
-**Returns:** Number
+**Returns:** number
 
 |Name|Datatype|Purpose|
 |----|--------|-------|

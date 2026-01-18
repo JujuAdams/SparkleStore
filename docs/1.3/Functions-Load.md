@@ -8,7 +8,7 @@ Functions on this page relate to loading data that has previously been saved by 
 
 `SparkleLoad(filename, [callback], [callbackMetadata], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|
@@ -49,7 +49,7 @@ This function returns a struct that contains private information that SparkleSto
 
 `SparkleLoadString(filename, [callback], [callbackMetadata], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|
@@ -80,7 +80,7 @@ This function returns a struct that contains private information that SparkleSto
 
 `SparkleLoadJSON(filename, [callback], [callbackMetadata], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|
@@ -111,7 +111,7 @@ This function returns a struct that contains private information that SparkleSto
 
 `SparkleLoadSprite(filename, [callback], [callbackMetadata], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|
@@ -144,7 +144,7 @@ This function returns a struct that contains private information that SparkleSto
 
 `SparkleLoadSurface(filename, [callback], [callbackMetadata], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|

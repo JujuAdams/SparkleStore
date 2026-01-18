@@ -2,7 +2,7 @@
 
 `SparkleDelete(filename, callback, callbackMetadata, [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name              |Datatype|Purpose                                                                                          |
 |------------------|--------|-------------------------------------------------------------------------------------------------|

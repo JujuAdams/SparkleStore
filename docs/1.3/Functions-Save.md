@@ -8,7 +8,7 @@ Functions on this page relate to saving data to storage. There are a few variant
 
 `SparkleSave(filename, buffer, [callback], [callbackMetadata], [offset=0], [size], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|
@@ -50,7 +50,7 @@ This function returns a struct that contains private information that SparkleSto
 
 `SparkleSaveString(filename, string, [callback], [callbackMetadata], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|
@@ -80,7 +80,7 @@ This function returns a struct that contains private information that SparkleSto
 
 `SparkleSaveJSON(filename, json, [callback], [callbackMetadata], [pretty=false], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype    |Purpose                                                                                           |
 |--------------------|------------|--------------------------------------------------------------------------------------------------|
@@ -111,7 +111,7 @@ This function returns a struct that contains private information that SparkleSto
 
 `SparkleSaveSprite(filename, sprite, image, [callback], [callbackMetadata], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|
@@ -142,7 +142,7 @@ This function returns a struct that contains private information that SparkleSto
 
 `SparkleSaveSurface(filename, surface, [callback], [callbackMetadata], [priority=normal])`
 
-**Returns:** N/A (`undefined`)
+**Returns:** struct
 
 |Name                |Datatype|Purpose                                                                                        |
 |--------------------|--------|-----------------------------------------------------------------------------------------------|
