@@ -1,4 +1,6 @@
-# Load
+# Load Functions
+
+Functions on this page relate to loading data that has previously been saved by SparkleStore. There are a few variants but all work fundamentally the same way. Please read the documentation for `SparkleLoad()` before other functions.
 
 &nbsp;
 

@@ -1,8 +1,4 @@
-# Save
-
-&nbsp;
-
-## …Delete
+# SparkleDelete
 
 `SparkleDelete(filename, callback, callbackMetadata, [priority=normal])`
 

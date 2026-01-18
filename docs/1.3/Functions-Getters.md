@@ -1,4 +1,6 @@
-# Getters
+# Getter Functions
+
+Functions on this page return values that track the work that SparkleStore is doing. `SparkleGetRecentActivity()` is particularly useful for showing disk activity as part of console compliance requirements. The other functions are less useful but can occasionally assist with debugging.
 
 &nbsp;
 

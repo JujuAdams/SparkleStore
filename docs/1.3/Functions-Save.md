@@ -1,4 +1,6 @@
-# Save
+# Save Functions
+
+Functions on this page relate to saving data to storage. There are a few variants but all work fundamentally the same way. Please read the documentation for `SparkleSave()` before other functions.
 
 &nbsp;
 

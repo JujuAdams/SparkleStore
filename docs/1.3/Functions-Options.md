@@ -1,4 +1,6 @@
-# General Options
+# Option Functions
+
+SparkleStore, in addition to its configuration macros, allows you to customise behaviour at runtime by calling these functions. The PlayStation and Xbox functions are of particular note because you will need to call `SparkleSetPSGamepadIndex()` and `SparkleSetXboxUser()` for saves to work properly at all.
 
 &nbsp;
 
