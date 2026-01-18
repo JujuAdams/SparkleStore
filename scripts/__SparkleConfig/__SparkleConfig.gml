@@ -20,18 +20,23 @@
 #macro SPARKLE_PLAYSTATION_SLOT_TITLE  "GameWithName"
 #macro SPARKLE_PLAYSTATION_SUBTITLE    "Game savedata"
 
-// Whether SparkleStore is allowed to use `steam_file_*` functions to save and load data (provided
-// Steam Cloud has been enabled for the game). If you disallow `steam_file_*` functions, Sparkle
-// Store will always save data to local storage regardless of whether Steam Cloud has been enabled.
-// You can further toggle the use of `steam_file_*` functions by using `SparkleSetSteamFile()` which
-// is useful to save particular kinds of files to local storage rather than into the cloud (e.g. for
-// local settings files).
+// Whether SparkleStore is allowed to use `steam_file_*` functions to save and load data. This
+// macro only applies if you have enabled Steam Cloud for your game and the player has enabled
+// Steam Cloud for their account. In the event that either has been disabled, SparkleStore will
+// save to local storage in the file system sandbox regardless of the value of this macro.
 // 
-// For basic operation that requires minimum setup in Steam's backend, set this macro to `true`. If
-// you want to use Steam Cloud's automatic savedata backup system (where files found into a
-// particular directory are backed up automatically) then set this macro to `false` and configure
-// Steam Cloud accordingly.
-#macro SPARKLE_ALLOW_STEAM_FILE  true
+// If you set this macro to `true` then SparkleStore will default to trying to save files to
+// Steam's own storage, avoiding saving the file to the sandbox area entirely. You don't need to
+// configure anything for Steam Cloud to work beyond the maximum space and file count.
+// 
+// If you want to use Steam Auto-Cloud system - where files found into a particular directory are
+// backed up automatically - then set this macro to `false` and configure Steam Cloud to point to
+// the file system sandbox location (given by `game_save_id`).
+// 
+// If this macro is set to `true`, you can further toggle the use of `steam_file_*` functions by
+// using `SparkleSetSteamFile()` which is useful to save particular kinds of files to local storage
+// rather than into the cloud (e.g. for local settings files).
+#macro SPARKLE_ALLOW_STEAM_FILE  false
 
 // Maximum number of save/load operations that can be completed in a minute. These numbers are
 // used to calculate the delays between operations. Default values for Nintendo Switch are

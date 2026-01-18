@@ -32,11 +32,11 @@ SparkleStore will save into the file system sandbox on these platforms. You may 
 
 ## Steam
 
-By default, SparkleStore will behave the same as on desktop platforms by saving and loading files from local storage (see above).
+By default, SparkleStore will behave the same as on desktop platforms by saving and loading files from local storage (see above). For your game to store files with Steam Cloud, you will need to set up Steam Auto-Cloud by pointing it to the local file system sandbox (given by `game_save_id`).
 
-However, if you have enabled Steam Cloud for your game (and Steam is open) then SparkleStore will attempt to use `steam_file_*()` functions to save files to Steam Cloud without accessing local storage at all. If you would like to use Steam Cloud in a different configuration, such as automatically backing up contents of the sandbox directory, then you should set `SPARKLE_ALLOW_STEAM_FILE` to `false`. You can further toggle whether a specific file should be accessed using `steam_file_*()` functions by calling `SoarkleSetSteamFile()`.
+However, you can skip setting up Auto-Cloud by setting the SparkleStore config macro `SPARKLE_ALLOW_STEAM_FILE` to `true`. With this macro enabled, and provided 1) Steam Cloud is enabled for your game 2) the player has enabled Steam Cloud for their account 3) Steam is running,  SparkleStore will attempt to use `steam_file_*()` functions to save files to Steam Cloud without accessing local storage at all. You can further toggle whether a specific file should be accessed using `steam_file_*()` functions by calling `SoarkleSetSteamFile()` which is helpful for saving local settings that shouldn't be shared across devices.
 
-The above behaviour means that if you run the game *without Steam being open* (e.g. during development) you will save files to local storage in the sandbox area. This can be confusing because different files will be accessed depending on whether you have Steam open or not. No data will be *lost* however, just stored in a different location, and this will never happen for players because Steam must be open for the game to run anyway.
+Using `steam_file_*()` by setting `SPARKLE_ALLOW_STEAM_FILE` to `true` means that if you run the game without Steam being open (e.g. during development) you will save files to local storage in the sandbox area. This can be confusing because different files will be accessed depending on whether you have Steam open or not. No data will be *lost* however, just stored in a different location, and this will never happen for players because Steam must be open for the game to run anyway.
 
 &nbsp;
 
