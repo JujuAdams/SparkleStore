@@ -10,7 +10,7 @@
 /// - The application is set up to use Steam Cloud
 /// - The user has enabled Steam Cloud for their account
 /// 
-/// Please note that `SPARKLE_ALLOW_STEAM_FILE` and `SoarkleSetSteamFile()` can alter where and
+/// Please note that `SPARKLE_ALLOW_STEAM_FILE` and `SparkleSetSteamFile()` can alter where and
 /// how files are saved/loaded. If either is `false`, files will be saved to local storage and
 /// won't necesarily be backed up using Steam Cloud.
 

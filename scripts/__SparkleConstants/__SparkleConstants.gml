@@ -13,7 +13,7 @@
 // The operation was reported to have failed by GameMaker.
 #macro SPARKLE_STATUS_FAILED  -1
 
-// THe operation has been queued and has not yet started.
+// The operation has been queued and has not yet started.
 #macro SPARKLE_STATUS_QUEUED  0
 
 // The operation has started and we are waiting for it to complete.

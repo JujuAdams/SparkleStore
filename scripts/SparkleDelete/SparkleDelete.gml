@@ -20,7 +20,7 @@
 /// argument1: The callback metadata specified when calling `SparkleDelete()`.
 /// 
 /// This function returns a struct that contains private information that SparkleStore needs to
-/// track file saving. The struct has no public variables. However, it has the following public
+/// track file deleting. The struct has no public variables. However, it has the following public
 /// methods:
 /// 
 /// `.GetOperation()`

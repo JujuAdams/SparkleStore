@@ -40,6 +40,6 @@
 
 // Maximum number of save/load operations that can be completed in a minute. These numbers are
 // used to calculate the delays between operations. Default values for Nintendo Switch are
-// conservative and are designed to offer extra wiggle room without violating guidelines.
+// conservative and offers extra wiggle room without violating guidelines.
 #macro SPARKLE_MAX_SAVE_FREQUENCY  (SPARKLE_ON_SWITCH? 25 : infinity)
 #macro SPARKLE_MAX_LOAD_FREQUENCY  (SPARKLE_ON_SWITCH? 25 : infinity)

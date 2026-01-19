@@ -20,13 +20,13 @@
 /// 
 /// argument1: A buffer that, hopefully, contains data loaded from the file. The buffer can be
 ///            empty but the status can be `true` in some edge cases on console. Be sure to check
-///            if it has content before using it. However, a buffer is always returned and you are
-///            responsible for destroying this buffer if when you don't need it.
+///            if it has content before using it. Regardless, a buffer is always returned and you
+///            are responsible for destroying this buffer if you don't need it.
 /// 
 /// argument2: The callback metadata specified when calling `SparkleLoad()`.
 /// 
 /// This function returns a struct that contains private information that SparkleStore needs to
-/// track file saving. The struct has no public variables. However, it has the following public
+/// track file loading. The struct has no public variables. However, it has the following public
 /// methods:
 /// 
 /// `.GetOperation()`
