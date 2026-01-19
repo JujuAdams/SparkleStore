@@ -7,6 +7,7 @@
 
 &nbsp;
 
+- ### Read the [documentation](http://jujuadams.github.io/SparkleStore)
 - ### Got questions? [Make a new issue!](https://github.com/JujuAdams/SparkleStore/issues/new)
 - ### There is also a [Discord server](https://discord.gg/hwgWpnsNw2) (but GitHub issues are preferred)
 - ### [Download the .yymps](https://github.com/JujuAdams/SparkleStore/releases/)
