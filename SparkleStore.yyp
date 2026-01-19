@@ -22,6 +22,7 @@
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"sparkle_store_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"sparkle_store_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"sparklestore_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"sparklestore_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
