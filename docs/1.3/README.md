@@ -1,5 +1,4 @@
-&nbsp;
-
+<img src="https://raw.githubusercontent.com/JujuAdams/SparkleStore/master/LOGO.png" width="50%" style="display: block; margin: auto;" />
 <h1 align="center">SparkleStore 1.3</h1>
 <p align="center">Cross-platform savedata save/load system for GameMaker 2024.14</p>
 
