@@ -16,7 +16,7 @@
 
 ## What is SparkleStore?
 
-SparkleStore is a set of helper functions that wrap around GameMaker's native buffer functions and makes saving and loading savedata more convenient and more robust. Internally, the file access flow is handled so that every platform behaves in similar and predictable ways without you needing to figure out the correct steps yourself. The goal is that you can build your game with SparkleStore on one platform and then deploy that game onto other platforms with the minimum amount of work.
+SparkleStore is a set of helper functions that wrap around GameMaker's native buffer functions and makes saving and loading savedata more convenient and more robust. The file access flow is handled so that every platform behaves in similar and predictable ways without you needing to figure out the correct steps yourself. The goal is that you can build your game with SparkleStore on one platform and then deploy that game onto other platforms with the minimum amount of work.
 
 All file access - save, load, delete - is done using asynchronous functions. These are the only functions that are guaranteed in GameMaker to work in all situations cross-platform. SparkleStore's API uses function callbacks rather than you having to built inside of the clumsy GameMaker async event system. Callbacks are far easier to use and lend themselves to better organisation of code.
 
