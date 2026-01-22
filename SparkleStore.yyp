@@ -34,6 +34,7 @@
     {"id":{"name":"__oSparkleStore","path":"objects/__oSparkleStore/__oSparkleStore.yy",},},
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},},
     {"id":{"name":"rMain","path":"rooms/rMain/rMain.yy",},},
+    {"id":{"name":"__SparkleClassCommonOp","path":"scripts/__SparkleClassCommonOp/__SparkleClassCommonOp.yy",},},
     {"id":{"name":"__SparkleClassDelete","path":"scripts/__SparkleClassDelete/__SparkleClassDelete.yy",},},
     {"id":{"name":"__SparkleClassLoad","path":"scripts/__SparkleClassLoad/__SparkleClassLoad.yy",},},
     {"id":{"name":"__SparkleClassSave","path":"scripts/__SparkleClassSave/__SparkleClassSave.yy",},},

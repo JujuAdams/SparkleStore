@@ -7,63 +7,27 @@
 /// @param callback
 /// @param callbackMetadata
 
-function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _callbackMetadata) constructor
+function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _callbackMetadata) : __SparkleClassCommonOp(_filename, _callback, _callbackMetadata) constructor
 {
-    static _system            = __SparkleSystem();
-    static _queuedArray       = _system.__queuedArray;
     static _savePendingArray  = _system.__savePendingArray;
     static _saveActivityArray = _system.__saveActivityArray;
-    static _presenceCacheMap  = _system.__presenceCacheMap;
     
-    __filename         = _filename;
-    __buffer           = _buffer;
-    __offset           = _offset;
-    __size             = _size;
-    __callback         = _callback;
-    __callbackMetadata = _callbackMetadata;
-    
-    __groupName      = _system.__groupName;
-    __psShowDialog   = _system.__psShowDialog;
-    __psGamepadIndex = _system.__psGamepadIndex;
-    __psSlotTitle    = _system.__psSlotTitle;
-    __psSlotSubtitle = _system.__psSlotSubtitle;
-    __xboxUser       = _system.__xboxUser;
-    __steamFile      = _system.__steamFile;
+    __buffer = _buffer;
+    __offset = _offset;
+    __size   = _size;
     
     if (SPARKLE_VERBOSE)
     {
         __SparkleTrace($"Created SAVE operation {string(ptr(self))}: group name = \"{__groupName}\", slot title = \"{__psSlotTitle}\", filename = \"{_filename}\", buffer = {_buffer}, offset = {_offset}, size = {_size}, callback = {_callback}");
     }
     
-    __dispatched   = false;
-    __completed    = false;
-    __activityTime = infinity;
-    __asyncID      = undefined;
-    __status       = SPARKLE_STATUS_QUEUED;
+    __opType = SPARKLE_OP_SAVE;
+    
+    
     
     static GetOperation = function()
     {
-        return SPARKLE_OP_SAVE;
-    }
-    
-    static GetFilename = function()
-    {
-        return __filename;
-    }
-    
-    static GetCallbackMetadata = function()
-    {
-        return __callbackMetadata;
-    }
-    
-    static Cancel = function()
-    {
-        __Complete(SPARKLE_STATUS_CANCELLED);
-    }
-    
-    static GetStatus = function()
-    {
-        return __status;
+        return __opType;
     }
     
     static __Dispatch = function()
