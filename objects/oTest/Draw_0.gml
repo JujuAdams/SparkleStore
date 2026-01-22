@@ -40,7 +40,10 @@ $"Recent activity = {SparkleGetRecentActivity()? "true" : "false"}",
 _string += "\n\n";
 _string += $"Random text = {contentText}\n";
 _string += $"Image = {contentImage}\n";
-_string += "\n";
+
+draw_text(10, 10, _string);
+
+var _string = "";
 
 var _i = 0;
 repeat(array_length(optionArray))
@@ -52,9 +55,9 @@ repeat(array_length(optionArray))
     ++_i;
 }
 
-draw_text(10, 10, _string);
+draw_text(900, 10, _string);
 
-draw_sprite(sprIcons, contentImage, room_width - sprite_get_width(sprIcons), 0);
+draw_sprite(sprIcons, contentImage, 0, room_height - sprite_get_height(sprIcons));
 
 if (surface_exists(loadedSurface))
 {

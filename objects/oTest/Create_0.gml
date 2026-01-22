@@ -261,3 +261,28 @@ array_push(optionArray, {
         "test_bin DELETE");
     }),
 });
+
+array_push(optionArray, {
+    name: "\"test.txt\" exists",
+    func: method(other, function()
+    {
+        var _exists = SparkleExist("test.txt", undefined, function(_state, _cached, _callbackMetadata)
+        {
+            if (not _cached)
+            {
+                show_debug_message($"Callback said: \"{_callbackMetadata}\" exists = {_state}");
+            }
+        },
+        "test.txt");
+        
+        show_debug_message($"\"test.txt\" exists = {_exists}");
+    }),
+});
+
+array_push(optionArray, {
+    name: "Clear cache",
+    func: method(other, function()
+    {
+        SparkleExistClearCache();
+    }),
+});
