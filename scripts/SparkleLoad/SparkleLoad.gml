@@ -9,6 +9,9 @@
 /// N.B. For compatibility with `SparkleDelete()` on consoles, very small empty files will be
 ///      treated as though they don't exist and load operations will return as failed.
 /// 
+/// N.B. When calling `SparkleLoad*()` you should always handle failed operations in that callback
+///      regardless of whatever this `SparkleExist()` returns.
+/// 
 /// N.B. The filename you provide must be a simple filename and not a path that includes directory
 ///      changes. If you would like to load from a particular directory within the file system
 ///      sandbox, please use `SparkleSetGroupName()`. Loading outside the sandbox is not supported.

@@ -13,7 +13,7 @@
     {"$GMFolder":"","%Name":"SparkleStore","folderPath":"folders/SparkleStore.yy","name":"SparkleStore","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"(System)","folderPath":"folders/SparkleStore/(System).yy","name":"(System)","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Getters","folderPath":"folders/SparkleStore/Getters.yy","name":"Getters","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Exists","folderPath":"folders/SparkleStore/Exists.yy","name":"Exists","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Exist","folderPath":"folders/SparkleStore/Exist.yy","name":"Exist","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Load","folderPath":"folders/SparkleStore/Load.yy","name":"Load","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Options","folderPath":"folders/SparkleStore/Options.yy","name":"Options","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"PlayStation","folderPath":"folders/SparkleStore/Options/PlayStation.yy","name":"PlayStation","resourceType":"GMFolder","resourceVersion":"2.0",},

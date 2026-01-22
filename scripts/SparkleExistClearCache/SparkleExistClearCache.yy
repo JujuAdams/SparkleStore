@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"SparkleExistClearCache",
   "parent":{
-    "name":"Exists",
-    "path":"folders/SparkleStore/Exists.yy",
+    "name":"Exist",
+    "path":"folders/SparkleStore/Exist.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

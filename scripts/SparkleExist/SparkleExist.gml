@@ -2,9 +2,12 @@
 
 /// Returns if a file exists, or `undefined` if the state of the file is not yet known.
 /// 
-/// N.B. This function will often return `undefined` which indicates that the state of the file is
-///      not known. You must handle this case in your case. Please continue reading for more
-///      information.
+/// N.B. This function will often return `undefined` due to the underlying asynchronous operation
+///      take time to complete. You must handle this case in your case. Please continue reading for
+///      more information.
+/// 
+/// N.B. When calling `SparkleLoad*()` you should always handle failed operations in that callback
+///      regardless of whatever this `SparkleExist()` returns.
 /// 
 /// Returning whether a file exists on desktop is easy because we have a synchronous "instant"
 /// native function call in `file_exists()`. Unfortunately, this function is not available across
@@ -17,7 +20,7 @@
 /// you successfully save or delete a file, the file's cached state is updated accordingly.
 /// 
 /// If you call `SparkleExist()` on a file that has not previously been saved or loaded (which is
-/// usually the case) then the function will execute a silent load in the background and then log
+/// usually the case) then the function will execute a silent load in the background and then cache
 /// the result. You can force a load to happen, i.e. refresh the cache, by setting the optional
 /// `forceLoad` parameter to `true`. You can return if a file state has been cached by calling
 /// `SparkleExistCached()`.
@@ -38,7 +41,8 @@
 /// `SparkleExist()` is considered to be a "load" operation internally and this function will
 /// increment `SparkleGetLoadPending()` and `SparkleGetLoadRecent()` in particular.
 /// 
-/// You may optionally specify a callback and callback metadata. The callback for this function
+/// You may optionally specify a callback and callback metadata. The callback, if provided, will
+/// always be executed whether or not a value exists in the cache. The callback for this function
 /// will be executed with three parameters:
 /// 
 /// argument0: Whether the file exists, or `undefined` if SparkleStore could not execute the load
