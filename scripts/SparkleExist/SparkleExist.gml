@@ -3,11 +3,11 @@
 /// Returns if a file exists, or `undefined` if the state of the file is not yet known.
 /// 
 /// N.B. This function will often return `undefined` due to the underlying asynchronous operation
-///      take time to complete. You must handle this case in your case. Please continue reading for
-///      more information.
+///      take time to complete. You must handle this case in your code or you will encounter bugs.
+///      Please continue reading for more information.
 /// 
 /// N.B. When calling `SparkleLoad*()` you should always handle failed operations in that callback
-///      regardless of whatever this `SparkleExist()` returns.
+///      regardless of whatever `SparkleExist()` returns.
 /// 
 /// Returning whether a file exists on desktop is easy because we have a synchronous "instant"
 /// native function call in `file_exists()`. Unfortunately, this function is not available across
