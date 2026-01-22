@@ -1,5 +1,5 @@
 <p align="center"><img src="https://raw.githubusercontent.com/JujuAdams/SparkleStore/master/LOGO.png" style="display:block; margin:auto; width:300px"></p>
-<h1 align="center">SparkleStore 1.3.0.1</h1>
+<h1 align="center">SparkleStore 1.4.0</h1>
 
 <p align="center">Cross-platform file save/load for GameMaker 2024.14</p>
 
