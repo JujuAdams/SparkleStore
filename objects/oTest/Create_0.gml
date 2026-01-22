@@ -128,8 +128,11 @@ array_push(optionArray, {
         SparkleLoadJSON("test.json", function(_status, _json, _callbackMetadata)
         {
             show_debug_message($"Returned status {_status}, json = {json_stringify(_json)}, callbackMetadata = {_callbackMetadata}");
-            contentText  = _json.contentText;
-            contentImage = _json.contentImage;
+            if (_status == SPARKLE_STATUS_SUCCESS)
+            {
+                contentText  = _json.contentText;
+                contentImage = _json.contentImage;
+            }
         });
     }),
 });
