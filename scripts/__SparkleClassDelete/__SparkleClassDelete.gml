@@ -89,7 +89,7 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) : __Spark
                     buffer_async_group_option("ps_create_backup", true);
                 }
                 
-                buffer_save_async(__buffer, __filename, 0, __SPARKLE_EMPTY_BUFFER_SIZE);
+                buffer_save_async(_buffer, __filename, 0, __SPARKLE_EMPTY_BUFFER_SIZE);
                 
                 __asyncID = buffer_async_group_end();
                 buffer_delete(_buffer);
