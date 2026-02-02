@@ -71,7 +71,7 @@ function SparkleLoad(_filename, _callback, _callbackMetadata = undefined, _prior
         return;
     }
     
-    if ((SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK()) && (_system.__xboxUser == 0))
+    if (SPARKLE_ON_GDK && (_system.__xboxUser == 0))
     {
         __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
     }

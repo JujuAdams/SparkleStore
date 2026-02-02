@@ -1,8 +1,7 @@
 // Feather disable all
 
 var _string = string_join("\n",
-$"SparkleStore = {SPARKLE_VERSION}, {SPARKLE_DATE}",
-$"Time = {date_datetime_string(date_current_datetime())}",
+$"SparkleStore = {SPARKLE_VERSION}, {SPARKLE_DATE} / time = {date_datetime_string(date_current_datetime())}",
 $"Gamepad focus = {gamepadFocus}",
 $"Group name    = \"{SparkleGetGroupName()}\"",
 $"Slot title    = \"{SparkleGetPSSlotTitle()}\"",
@@ -16,10 +15,11 @@ if (SPARKLE_ON_PS_ANY)
     _string += $"PS gamepad index = {SparkleGetPSGamepadIndex()}\n";
 }
 
-if (SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK())
+if (SPARKLE_ON_GDK)
 {
     _string += $"Windows using GDK = {SparkleGetWindowsUseGDK()? "true" : "false"}\n";
-    _string += $"Xbox user         = {SparkleGetXboxUser()}\n";
+    _string += $"Xbox user         = {SparkleGetXboxUser()} \"{XboxGetUserDisplayNameExt(SparkleGetXboxUser())}\"\n";
+    _string += $"Invalid state     = {XboxGetInvalidState()}\n";
 }
 
 _string += "\n";
@@ -65,4 +65,13 @@ draw_sprite(sprIcons, contentImage, 0, room_height - sprite_get_height(sprIcons)
 if (surface_exists(loadedSurface))
 {
     draw_surface_ext(loadedSurface, 0, 0, 1, 1, 0, c_white, min(1, loadedGraphicAlpha));
+}
+
+if (SPARKLE_ON_XBOX)
+{
+    var _sprite = XboxGetAvatar();
+    if (sprite_exists(_sprite))
+    {
+        draw_sprite(_sprite, 0, room_width - 74, room_height - 74);
+    }
 }

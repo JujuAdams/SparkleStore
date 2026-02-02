@@ -1,16 +1,5 @@
 // Feather disable all
 
-// See Game Options / Xbox One & Series X/S / Simplified User Model
-xboxSimplifiedUserModel = true;
-
-if (SPARKLE_ON_XBOX)
-{
-    if (xboxSimplifiedUserModel)
-    {
-        SparkleSetXboxUser(xboxone_get_activating_user());
-    }
-}
-
 randomize();
 
 watchStart = undefined;
@@ -34,6 +23,13 @@ textArray = ["Alfa",    "Bravo",    "Charlie",
              "Sierra",  "Tango",    "Uniform",
              "Victor",  "Whiskey",  "Xray",
              "Yankee",  "Zulu"];
+
+if (SPARKLE_ON_XBOX)
+{
+    instance_create_depth(0, 0, 0, oXbox);
+    SparkleSetXboxUser(XboxGetUser());
+    gamepadFocus = XboxGetGamepad();
+}
 
 array_push(optionArray, {
     name: "Cycle content",

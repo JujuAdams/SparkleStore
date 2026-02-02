@@ -70,6 +70,15 @@ function SparkleExist(_filename, _callback = undefined, _callbackMetadata = unde
     static _queuedArray      = _system.__queuedArray;
     static _loadPendingArray = _system.__loadPendingArray;
     
+    if (SPARKLE_ON_XBOX && (SparkleGetXboxUser() == int64(0)))
+    {
+        return false;
+    }
+    else if (SPARKLE_ON_PS_ANY && (SparkleGetPSGamepadIndex() < 0))
+    {
+        return false;
+    }
+    
     var _fileCacheKey = __SparkleFileCacheKey(_filename);
     if (_forceLoad)
     {

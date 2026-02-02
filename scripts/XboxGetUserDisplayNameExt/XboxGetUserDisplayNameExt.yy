@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"XboxGetUserDisplayNameExt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"XboxGetUserDisplayNameExt",
+  "parent":{
+    "name":"Ext",
+    "path":"folders/Xbox/Ext.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

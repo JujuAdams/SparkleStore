@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"XboxGetDisplayName",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"XboxGetDisplayName",
+  "parent":{
+    "name":"Xbox",
+    "path":"folders/Xbox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

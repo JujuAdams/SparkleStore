@@ -13,5 +13,8 @@
 function SparkleSetXboxUser(_xboxUser)
 {
     static _system = __SparkleSystem();
+    
+    __SparkleTrace($"xbox user = {_xboxUser}          {debug_get_callstack()}");
+    
     _system.__xboxUser = _xboxUser;
 }

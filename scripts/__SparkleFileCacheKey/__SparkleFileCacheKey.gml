@@ -10,7 +10,7 @@ function __SparkleFileCacheKey(_filename)
     {
         return $"{psn_user_for_pad(_system.__psGamepadIndex)}\\{_system.__psSlotTitle}\\{_system.__groupName}\\{_filename}";
     }
-    else if (SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK())
+    else if (SPARKLE_ON_GDK)
     {
         return $"{_system.__xboxUser}\\{_system.__groupName}\\{_filename}";
     }

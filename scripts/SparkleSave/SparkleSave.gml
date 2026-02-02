@@ -56,9 +56,17 @@ function SparkleSave(_filename, _buffer, _callback = undefined, _callbackMetadat
     
     _system.__anyRequestMade = true;
     
-    if ((SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK()) && (_system.__xboxUser == 0))
+    if (SPARKLE_ON_GDK)
     {
-        __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
+        if (_system.__xboxUser == 0)
+        {
+            __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
+        }
+        
+        if (not xboxone_user_is_signed_in(_system.__xboxUser))
+        {
+            __SparkleTrace($"Warning! Xbox user {_system.__xboxUser} is not signed in");
+        }
     }
     
     if (SPARKLE_ON_PS_ANY && (__psGamepadIndex < 0))

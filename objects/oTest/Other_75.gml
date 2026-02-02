@@ -1,25 +1,3 @@
 // Feather disable all
 
-show_debug_message(json_encode(async_load, true));
-
-if (SPARKLE_ON_XBOX)
-{
-    if (not xboxSimplifiedUserModel)
-    {
-        if (async_load[? "event_type"] == "user controller associated")
-        {
-            if (async_load[? "pad_index"] == gamepadFocus)
-            {
-                SparkleSetXboxUser(async_load[? "user"]);
-            }
-        }
-        
-        if (async_load[? "event_type"] == "user controller disassociated")
-        {
-            if (async_load[? "pad_index"] == gamepadFocus)
-            {
-                SparkleSetXboxUser(int64(0));
-            }
-        }
-    }
-}
+show_debug_message("system: " + json_encode(async_load, true));

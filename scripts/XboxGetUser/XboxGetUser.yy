@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"XboxGetUser",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"XboxGetUser",
+  "parent":{
+    "name":"Xbox",
+    "path":"folders/Xbox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

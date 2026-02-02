@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"XboxGetGamepad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"XboxGetGamepad",
+  "parent":{
+    "name":"Xbox",
+    "path":"folders/Xbox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

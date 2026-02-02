@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"xboxone_user_for_pad_safe",
+  "%Name":"__XboxConfig",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"xboxone_user_for_pad_safe",
+  "name":"__XboxConfig",
   "parent":{
-    "name":"SparkleStore",
-    "path":"SparkleStore.yyp",
+    "name":"Xbox",
+    "path":"folders/Xbox.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

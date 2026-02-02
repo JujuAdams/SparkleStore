@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"XboxGetAvatar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"XboxGetAvatar",
+  "parent":{
+    "name":"Xbox",
+    "path":"folders/Xbox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
