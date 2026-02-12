@@ -148,10 +148,12 @@ function __SparkleClassLoad(_filename, _callback, _callbackMetadata) : __Sparkle
         
         if (_status == SPARKLE_STATUS_FAILED)
         {
+            //FIXME - If key data has changed since this process was started then the cache key will be wrong
             _presenceCacheMap[? __SparkleFileCacheKey(__filename)] = false;
         }
         else if (_status == SPARKLE_STATUS_SUCCESS)
         {
+            //FIXME - If key data has changed since this process was started then the cache key will be wrong
             _presenceCacheMap[? __SparkleFileCacheKey(__filename)] = true;
         }
         

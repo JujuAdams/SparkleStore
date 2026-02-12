@@ -119,6 +119,7 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) : __Spark
         
         if (_status == SPARKLE_STATUS_SUCCESS)
         {
+            //FIXME - If key data has changed since this process was started then the cache key will be wrong
             _presenceCacheMap[? __SparkleFileCacheKey(__filename)] = false;
         }
         
