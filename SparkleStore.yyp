@@ -58,6 +58,7 @@
     {"id":{"name":"__SparkleInitializeSteam","path":"scripts/__SparkleInitializeSteam/__SparkleInitializeSteam.yy",},},
     {"id":{"name":"__SparkleSystem","path":"scripts/__SparkleSystem/__SparkleSystem.yy",},},
     {"id":{"name":"__SparkleTrace","path":"scripts/__SparkleTrace/__SparkleTrace.yy",},},
+    {"id":{"name":"__WindowsGDKConfig","path":"scripts/__WindowsGDKConfig/__WindowsGDKConfig.yy",},},
     {"id":{"name":"__XboxConfig","path":"scripts/__XboxConfig/__XboxConfig.yy",},},
     {"id":{"name":"SparkleCancelAll","path":"scripts/SparkleCancelAll/SparkleCancelAll.yy",},},
     {"id":{"name":"SparkleDelete","path":"scripts/SparkleDelete/SparkleDelete.yy",},},

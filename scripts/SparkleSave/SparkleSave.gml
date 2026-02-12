@@ -62,7 +62,11 @@ function SparkleSave(_filename, _buffer, _callback = undefined, _callbackMetadat
         {
             __SparkleError($"Xbox user is invalid ({_system.__xboxUser})");
         }
-        
+    }
+    
+    //For some reason, the Windows GDK extension doesn't allow you to check if a user is signed in 
+    if (SPARKLE_ON_XBOX)
+    {
         if (not xboxone_user_is_signed_in(_system.__xboxUser))
         {
             __SparkleTrace($"Warning! Xbox user {_system.__xboxUser} is not signed in");

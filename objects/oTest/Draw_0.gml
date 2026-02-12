@@ -37,7 +37,7 @@ $"Recent activity = {SparkleGetRecentActivity()? "true" : "false"}",
 "Press escape/gp_face4 to cancel all pending operations",
 );
 
-var _value = SparkleExist("test.json");
+var _value = undefined; //SparkleExist("test.json");
 
 _string += "\n\n";
 _string += $"Random text = {contentText}\n";

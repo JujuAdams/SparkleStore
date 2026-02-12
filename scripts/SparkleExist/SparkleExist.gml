@@ -70,7 +70,7 @@ function SparkleExist(_filename, _callback = undefined, _callbackMetadata = unde
     static _queuedArray      = _system.__queuedArray;
     static _loadPendingArray = _system.__loadPendingArray;
     
-    if (SPARKLE_ON_XBOX && (SparkleGetXboxUser() == int64(0)))
+    if (SPARKLE_ON_GDK && (SparkleGetXboxUser() == int64(0)))
     {
         return false;
     }
