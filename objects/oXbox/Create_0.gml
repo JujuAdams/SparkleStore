@@ -51,7 +51,7 @@ __xboxGamepad = XboxGetGamepadExt(__xboxUser);
 __xboxAvatar  = -1; __funcEnsureAvatar();
 
 __xboxActivatingUser = __xboxUser;
-__xboxSeenGamepad = (__xboxGamepad >= 0);
+__xboxSeenGamepad = XBOX_SIMPLIFIED_USER_MODEL || (__xboxGamepad >= 0);
 
 __xboxUserChanged  = false;
 __xboxUserPrevious = __xboxUser;
@@ -67,6 +67,6 @@ if (XBOX_SIMPLIFIED_USER_MODEL)
 {
     if (__xboxUser == int64(0))
     {
-        show_error(" \nThere has an error initializing user accounts. Please try again.\n ", true);
+        show_error("There has an error initializing user accounts. Please try again.\n ", true);
     }
 }

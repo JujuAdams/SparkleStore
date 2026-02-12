@@ -55,7 +55,11 @@ function XboxSetGamepad(_gamepad)
             }
             else
             {
-                __xboxUser    = _user;
+                if (not XBOX_SIMPLIFIED_USER_MODEL)
+                {
+                    __xboxUser = _user;
+                }
+                
                 __xboxGamepad = _gamepad;
                 
                 __xboxSeenGamepad = true;

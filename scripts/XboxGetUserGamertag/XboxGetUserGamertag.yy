@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"XboxGetUserDisplayNameExt",
+  "%Name":"XboxGetUserGamertag",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"XboxGetUserDisplayNameExt",
+  "name":"XboxGetUserGamertag",
   "parent":{
-    "name":"Ext",
-    "path":"folders/Xbox/Ext.yy",
+    "name":"Xbox",
+    "path":"folders/Xbox.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

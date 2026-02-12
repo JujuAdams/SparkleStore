@@ -18,7 +18,7 @@ if (SPARKLE_ON_PS_ANY)
 if (SPARKLE_ON_GDK)
 {
     _string += $"Windows using GDK = {SparkleGetWindowsUseGDK()? "true" : "false"}\n";
-    _string += $"Xbox user         = {SparkleGetXboxUser()} \"{XboxGetUserDisplayNameExt(SparkleGetXboxUser())}\"\n";
+    _string += $"Xbox user         = {SparkleGetXboxUser()} \"{XboxGetUserGamertagExt(SparkleGetXboxUser())}\"\n";
     _string += $"Invalid state     = {XboxGetInvalidState()}\n";
 }
 
