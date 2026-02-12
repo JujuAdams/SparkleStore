@@ -66,3 +66,4 @@ Temporary Items
 # GameMaker temporary files
 *.resource_order
 *.old
+datafiles/MicrosoftGame.config
