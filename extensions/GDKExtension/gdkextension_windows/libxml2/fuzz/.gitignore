@@ -1,0 +1,13 @@
+api
+corpus/
+genSeed
+html
+regexp
+schema
+seed/
+testFuzzer
+uri
+valid
+xinclude
+xml
+xpath

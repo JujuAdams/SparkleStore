@@ -10,8 +10,7 @@
   },
   "defaultScriptType":1,
   "Folders":[
-    {"$GMFolder":"","%Name":"Xbox","folderPath":"folders/Xbox.yy","name":"Xbox","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Ext","folderPath":"folders/Xbox/Ext.yy","name":"Ext","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"SparkleStore","folderPath":"folders/SparkleStore.yy","name":"SparkleStore","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"(System)","folderPath":"folders/SparkleStore/(System).yy","name":"(System)","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Exist","folderPath":"folders/SparkleStore/Exist.yy","name":"Exist","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -21,6 +20,9 @@
     {"$GMFolder":"","%Name":"PlayStation","folderPath":"folders/SparkleStore/Options/PlayStation.yy","name":"PlayStation","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Xbox & GDK","folderPath":"folders/SparkleStore/Options/Xbox & GDK.yy","name":"Xbox & GDK","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Save & Delete","folderPath":"folders/SparkleStore/Save & Delete.yy","name":"Save & Delete","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Windows GDK","folderPath":"folders/Windows GDK.yy","name":"Windows GDK","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Xbox","folderPath":"folders/Xbox.yy","name":"Xbox","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Ext","folderPath":"folders/Xbox/Ext.yy","name":"Ext","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
@@ -33,8 +35,10 @@
   },
   "name":"SparkleStore",
   "resources":[
+    {"id":{"name":"GDKExtension","path":"extensions/GDKExtension/GDKExtension.yy",},},
     {"id":{"name":"__oSparkleStore","path":"objects/__oSparkleStore/__oSparkleStore.yy",},},
     {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},},
+    {"id":{"name":"oWinGDK","path":"objects/oWinGDK/oWinGDK.yy",},},
     {"id":{"name":"oXbox","path":"objects/oXbox/oXbox.yy",},},
     {"id":{"name":"rMain","path":"rooms/rMain/rMain.yy",},},
     {"id":{"name":"__SparkleClassCommonOp","path":"scripts/__SparkleClassCommonOp/__SparkleClassCommonOp.yy",},},
