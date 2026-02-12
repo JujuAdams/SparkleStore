@@ -117,8 +117,8 @@
   "optionsFile":"options.json",
   "packageId":"",
   "parent":{
-    "name":"Extensions",
-    "path":"folders/Extensions.yy",
+    "name":"Windows GDK",
+    "path":"folders/Windows GDK.yy",
   },
   "productId":"",
   "resourceType":"GMExtension",

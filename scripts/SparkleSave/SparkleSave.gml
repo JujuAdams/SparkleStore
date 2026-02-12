@@ -60,7 +60,7 @@ function SparkleSave(_filename, _buffer, _callback = undefined, _callbackMetadat
     {
         if (_system.__xboxUser == 0)
         {
-            __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
+            __SparkleError($"Xbox user is invalid ({_system.__xboxUser})");
         }
         
         if (not xboxone_user_is_signed_in(_system.__xboxUser))
@@ -71,7 +71,7 @@ function SparkleSave(_filename, _buffer, _callback = undefined, _callbackMetadat
     
     if (SPARKLE_ON_PS_ANY && (__psGamepadIndex < 0))
     {
-        __SparkleError($"Gamepad index is invalid {__psGamepadIndex}");
+        __SparkleError($"Gamepad index is invalid ({__psGamepadIndex})");
     }
     
     _offset = max(0, min(_offset, buffer_get_size(_buffer)-1));

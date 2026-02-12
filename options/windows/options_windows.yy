@@ -6,7 +6,7 @@
   "option_windows_borderless":false,
   "option_windows_company_info":"Juju Adams",
   "option_windows_copyright_info":"Juju Adams (c) 2026",
-  "option_windows_copy_exe_to_dest":false,
+  "option_windows_copy_exe_to_dest":true,
   "option_windows_d3dswapeffectdiscard":false,
   "option_windows_description_info":"SparkleStore",
   "option_windows_disable_sandbox":false,

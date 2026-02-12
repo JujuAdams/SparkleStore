@@ -73,12 +73,12 @@ function SparkleLoad(_filename, _callback, _callbackMetadata = undefined, _prior
     
     if (SPARKLE_ON_GDK && (_system.__xboxUser == 0))
     {
-        __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
+        __SparkleError($"Xbox user is invalid ({_system.__xboxUser})");
     }
     
     if (SPARKLE_ON_PS_ANY && (__psGamepadIndex < 0))
     {
-        __SparkleError($"Gamepad index is invalid {__psGamepadIndex}");
+        __SparkleError($"Gamepad index is invalid ({__psGamepadIndex})");
     }
     
     var _struct = new __SparkleClassLoad(_filename, _callback, _callbackMetadata);

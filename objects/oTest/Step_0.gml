@@ -15,29 +15,7 @@ if (loadedGraphicAlpha > 0)
     }
 }
 
-if (not SPARKLE_ON_XBOX)
-{
-    //On Xbox we need to do some special things
-    
-    var _i = 0;
-    repeat(gamepad_get_device_count())
-    {
-        if (gamepad_button_check_pressed(_i, gp_start))
-        {
-            gamepadFocus = _i;
-            SparkleSetPSGamepadIndex(_i);
-        }
-        
-        ++_i;
-    }
-    
-    if (keyboard_check(vk_anykey))
-    {
-        gamepadFocus = -1;
-        SparkleSetPSGamepadIndex(-1);
-    }
-}
-else
+if (SPARKLE_ON_XBOX)
 {
     if (XboxGetUserChanged())
     {
@@ -76,6 +54,32 @@ else
         {
             xboxone_suspend();
         }
+    }
+}
+else if (SparkleGetWindowsUseGDK())
+{
+    
+}
+else
+{
+    //On Xbox we need to do some special things
+    
+    var _i = 0;
+    repeat(gamepad_get_device_count())
+    {
+        if (gamepad_button_check_pressed(_i, gp_start))
+        {
+            gamepadFocus = _i;
+            SparkleSetPSGamepadIndex(_i);
+        }
+        
+        ++_i;
+    }
+    
+    if (keyboard_check(vk_anykey))
+    {
+        gamepadFocus = -1;
+        SparkleSetPSGamepadIndex(-1);
     }
 }
 

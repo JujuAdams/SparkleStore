@@ -54,12 +54,12 @@ function SparkleDelete(_filename, _callback, _callbackMetadata = undefined, _pri
     
     if (SPARKLE_ON_GDK && (_system.__xboxUser == 0))
     {
-        __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
+        __SparkleError($"Xbox user is invalid ({_system.__xboxUser})");
     }
     
     if (SPARKLE_ON_PS_ANY && (__psGamepadIndex < 0))
     {
-        __SparkleError($"Gamepad index is invalid {__psGamepadIndex}");
+        __SparkleError($"Gamepad index is invalid ({__psGamepadIndex})");
     }
     
     if (not is_callable(_callback))
