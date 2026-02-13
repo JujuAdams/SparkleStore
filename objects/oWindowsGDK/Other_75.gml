@@ -19,32 +19,6 @@ if (async_load[? "event_type"] == "user sign in failed")
 else if (async_load[? "event_type"] == "user signed in")
 {
     SparkleSetXboxUser(async_load[? "user"]);
-    
-    SparkleLoadString("settings.ini", function(_status, _string, _metadata)
-    {
-        if (_status == SPARKLE_STATUS_SUCCESS)
-        {
-            show_debug_message($"settings.ini = {_string}");
-        }
-        else
-        {
-            show_debug_message("Failed to load .ini");
-        }
-    });
-    
-    SparkleLoadString("sparkleCloudTest.txt", function(_status, _string, _metadata)
-    {
-        if (_status == SPARKLE_STATUS_SUCCESS)
-        {
-            show_debug_message($"sparkleCloudTest.txt = {_string}");
-        }
-        else
-        {
-            show_debug_message("Failed to load sparkleCloudTest.txt");
-        }
-    });
-    
-    SparkleSaveString("sparkleCloudTest.txt", date_datetime_string(date_current_datetime()));
 }
 else if (async_load[? "event_type"] == "user signed out")
 {
