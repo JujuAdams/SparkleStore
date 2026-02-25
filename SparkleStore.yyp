@@ -65,6 +65,7 @@
     {"id":{"name":"SparkleExist","path":"scripts/SparkleExist/SparkleExist.yy",},},
     {"id":{"name":"SparkleExistCached","path":"scripts/SparkleExistCached/SparkleExistCached.yy",},},
     {"id":{"name":"SparkleExistClearCache","path":"scripts/SparkleExistClearCache/SparkleExistClearCache.yy",},},
+    {"id":{"name":"SparkleGetBusy","path":"scripts/SparkleGetBusy/SparkleGetBusy.yy",},},
     {"id":{"name":"SparkleGetGroupName","path":"scripts/SparkleGetGroupName/SparkleGetGroupName.yy",},},
     {"id":{"name":"SparkleGetLoadPending","path":"scripts/SparkleGetLoadPending/SparkleGetLoadPending.yy",},},
     {"id":{"name":"SparkleGetLoadRecent","path":"scripts/SparkleGetLoadRecent/SparkleGetLoadRecent.yy",},},
