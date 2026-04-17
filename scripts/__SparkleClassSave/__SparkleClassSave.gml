@@ -12,9 +12,10 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
     static _savePendingArray  = _system.__savePendingArray;
     static _saveActivityArray = _system.__saveActivityArray;
     
-    __buffer = _buffer;
-    __offset = _offset;
-    __size   = _size;
+    //Make a copy of the buffer
+    __buffer = buffer_create(_size, buffer_fixed, 1);
+    buffer_copy(_buffer, _offset, _size, __buffer, 0);
+    __size = _size;
     
     if (SPARKLE_VERBOSE)
     {
@@ -49,18 +50,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
         
         if (__steamFile && SparkleGetSteamCloud())
         {
-            if ((__offset != 0) || (buffer_get_size(__buffer) != __size))
-            {
-                var _tempBuffer = buffer_create(__size, buffer_fixed, 1);
-                buffer_copy(__buffer, __offset, __size, _tempBuffer, 0);
-                var _status = steam_file_write_buffer($"{__groupName}/{__filename}", _tempBuffer);
-                buffer_delete(_tempBuffer);
-            }
-            else
-            {
-                var _status = steam_file_write_buffer($"{__groupName}/{__filename}", __buffer);
-            }
-            
+            var _status = steam_file_write_buffer($"{__groupName}/{__filename}", __buffer);
             __Complete(_status? SPARKLE_STATUS_SUCCESS : SPARKLE_STATUS_FAILED);
         }
         else
@@ -69,7 +59,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
             {
                 xboxone_set_savedata_user(_system.__xboxUser);
                 gdk_save_group_begin($"root/{__groupName}"); //Recommended by YYG for cross-platform save support
-                gdk_save_buffer(__buffer, __filename, __offset, __size);
+                gdk_save_buffer(__buffer, __filename, 0, __size);
                 __asyncID = gdk_save_group_end();
             }
             else
@@ -94,8 +84,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
                     buffer_async_group_option("ps_create_backup", true);
                 }
                 
-                buffer_save_async(__buffer, __filename, __offset, __size);
-                
+                buffer_save_async(__buffer, __filename, 0, __size);
                 __asyncID = buffer_async_group_end();
             }
             
@@ -130,6 +119,9 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
         __status = _status;
         __asyncID = undefined;
         
+        buffer_delete(__buffer);
+        __buffer = undefined;
+        
         var _index = array_get_index(_queuedArray, self);
         if (_index >= 0) array_delete(_queuedArray, _index, 1);
         
@@ -138,7 +130,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
         
         if (is_callable(__callback))
         {
-            __callback(_status, __buffer, __callbackMetadata);
+            __callback(_status, __callbackMetadata);
         }
     }
 }

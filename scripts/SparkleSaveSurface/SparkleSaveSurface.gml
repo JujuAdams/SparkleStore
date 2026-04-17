@@ -11,10 +11,7 @@
 /// argument0: The "status" of the save operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.
 /// 
-/// argument1: This parameter is always `undefined`. Normally, this is the buffer used to save
-///            the file but SparkleStore handles this for you.
-/// 
-/// argument2: The callback metadata specified when calling `SparkleSaveSurface()`.
+/// argument1: The callback metadata specified when calling `SparkleSaveSurface()`.
 /// 
 /// @param filename
 /// @param surface
@@ -49,15 +46,16 @@ function SparkleSaveSurface(_filename, _surface, _callback = undefined, _callbac
     var _newCallback = method({
         __callback: _callback,
     },
-    function(_status, _buffer, _callbackMetadata)
+    function(_status, _callbackMetadata)
     {
-        buffer_delete(_buffer);
-        
         if (is_callable(__callback))
         {
-            __callback(_status, undefined, _callbackMetadata);
+            __callback(_status, _callbackMetadata);
         }
     });
     
-    return SparkleSave(_filename, _compressedBuffer, _newCallback, _callbackMetadata, undefined, undefined, _priority);
+    var _result = SparkleSave(_filename, _compressedBuffer, _newCallback, _callbackMetadata, undefined, undefined, _priority);
+    buffer_delete(_compressedBuffer);
+    
+    return _result;
 }

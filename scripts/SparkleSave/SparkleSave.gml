@@ -14,10 +14,7 @@
 /// argument0: The "status" of the save operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.
 /// 
-/// argument1: The buffer used to save the file. You must destroy this buffer with `buffer_delete()`
-///            if you have no other use for it otherwise you will have a memory leak.
-/// 
-/// argument2: The callback metadata specified when calling `SparkleSave()`.
+/// argument1: The callback metadata specified when calling `SparkleSave()`.
 /// 
 /// This function returns a struct that contains private information that SparkleStore needs to
 /// track file saving. The struct has no public variables. However, it has the following public

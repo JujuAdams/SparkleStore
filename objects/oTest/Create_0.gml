@@ -53,7 +53,7 @@ array_push(optionArray, {
         
         SparkleSaveString("test.txt", contentText, function(_status, _buffer_UNUSED, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"Returned status {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         });
     }),
 });
@@ -68,7 +68,7 @@ array_push(optionArray, {
         {
             SparkleSaveString("test.txt", contentText, function(_status, _buffer_UNUSED, _callbackMetadata)
             {
-                show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
+                show_debug_message($"Returned status {_status}, callbackMetadata = \"{_callbackMetadata}\"");
             });
         }
     }),
@@ -82,7 +82,7 @@ array_push(optionArray, {
         
         SparkleDelete("test.txt", function(_status, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"Returned status {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         });
     }),
 });
@@ -95,7 +95,7 @@ array_push(optionArray, {
         
         SparkleLoadString("test.txt", function(_status, _string, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}, string = \"{_string}\", callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"Returned status {_status}, string = \"{_string}\", callbackMetadata = \"{_callbackMetadata}\"");
             contentText = _string;
         });
     }),
@@ -111,7 +111,7 @@ array_push(optionArray, {
         {
             SparkleLoadString("test.txt", function(_status, _string, _callbackMetadata)
             {
-                show_debug_message($"Returned status {_status}, string = \"{_string}\", callbackMetadata = {_callbackMetadata}");
+                show_debug_message($"Returned status {_status}, string = \"{_string}\", callbackMetadata = \"{_callbackMetadata}\"");
                 contentText = _string;
             });
         }
@@ -126,7 +126,7 @@ array_push(optionArray, {
         
         SparkleSaveJSON("test.json", { contentText: contentText, contentImage: contentImage }, function(_status, _buffer_UNUSED, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"Returned status {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         });
     }),
 });
@@ -139,7 +139,7 @@ array_push(optionArray, {
         
         SparkleLoadJSON("test.json", function(_status, _json, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}, json = {json_stringify(_json)}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"Returned status {_status}, json = {json_stringify(_json)}, callbackMetadata = \"{_callbackMetadata}\"");
             if (_status == SPARKLE_STATUS_SUCCESS)
             {
                 contentText  = _json.contentText;
@@ -157,7 +157,7 @@ array_push(optionArray, {
         
         SparkleSaveSurface("test.img", application_surface, function(_status, _buffer_UNUSED, _callbackMetadata)
         {
-            show_debug_message($"Returned status {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"Returned status {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         });
     }),
 });
@@ -170,7 +170,7 @@ array_push(optionArray, {
         
         SparkleLoadSurface("test.img", function(_status, _surface, _callbackMetadata)
         {
-            show_debug_message($"Returned status = {_status}, surface = {_surface}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"Returned status = {_status}, surface = {_surface}, callbackMetadata = \"{_callbackMetadata}\"");
             
             if (loadedSurface != undefined)
             {
@@ -197,59 +197,58 @@ array_push(optionArray, {
         var _testSprite  = sprIcons;
         var _testImage   = 4;
         
-        SparkleSave("test_bin", _testBuffer, function(_status, _buffer, _callbackMetadata)
+        SparkleSave("test_bin", _testBuffer, function(_status, _callbackMetadata)
         {
-            show_debug_message($"\"test_bin\" SAVE returned status = {_status}, buffer = {_buffer} (size={buffer_get_size(_buffer)}), callbackMetadata = {_callbackMetadata}");
-            buffer_delete(_buffer);
+            show_debug_message($"\"test_bin\" SAVE returned status = {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         },
         "test_bin SAVE");
         
-        SparkleSaveString("test_string", _testString, function(_status, _buffer_UNUSED, _callbackMetadata)
+        SparkleSaveString("test_string", _testString, function(_status, _callbackMetadata)
         {
-            show_debug_message($"\"test_string\" SAVE returned status = {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_string\" SAVE returned status = {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         },
         "test_string SAVE");
         
-        SparkleSaveJSON("test_json", _testJSON, function(_status, _buffer_UNUSED, _callbackMetadata)
+        SparkleSaveJSON("test_json", _testJSON, function(_status, _callbackMetadata)
         {
-            show_debug_message($"\"test_json\" SAVE returned status = {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_json\" SAVE returned status = {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         },
         "test_json SAVE");
         
-        SparkleSaveSurface("test_surface", _testSurface, function(_status, _buffer_UNUSED, _callbackMetadata)
+        SparkleSaveSurface("test_surface", _testSurface, function(_status, _callbackMetadata)
         {
-            show_debug_message($"\"test_surface\" SAVE returned status = {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_surface\" SAVE returned status = {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         },
         "test_surface SAVE");
         
-        SparkleSaveSprite("test_sprite", _testSprite, _testImage, function(_status, _buffer_UNUSED, _callbackMetadata)
+        SparkleSaveSprite("test_sprite", _testSprite, _testImage, function(_status, _callbackMetadata)
         {
-            show_debug_message($"\"test_sprite\" SAVE returned status = {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_sprite\" SAVE returned status = {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         },
         "test_sprite SAVE");
         
         SparkleLoad("test_bin", function(_status, _buffer, _callbackMetadata)
         {
-            show_debug_message($"\"test_bin\" LOAD returned status = {_status}, buffer = {_buffer}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_bin\" LOAD returned status = {_status}, buffer = {_buffer}, callbackMetadata = \"{_callbackMetadata}\"");
             buffer_delete(_buffer);
         },
         "test_bin LOAD");
         
         SparkleLoadString("test_string", function(_status, _string, _callbackMetadata)
         {
-            show_debug_message($"\"test_string\" LOAD returned status = {_status}, string = \"{_string}\", callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_string\" LOAD returned status = {_status}, string = \"{_string}\", callbackMetadata = \"{_callbackMetadata}\"");
         },
         "test_string LOAD");
         
         SparkleLoadJSON("test_json", function(_status, _json, _callbackMetadata)
         {
-            show_debug_message($"\"test_json\" LOAD returned status = {_status}, JSON = \"{json_stringify(_json)}\", callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_json\" LOAD returned status = {_status}, JSON = \"{json_stringify(_json)}\", callbackMetadata = \"{_callbackMetadata}\"");
         },
         "test_json LOAD");
         
         SparkleLoadSurface("test_surface", function(_status, _surface, _callbackMetadata)
         {
-            show_debug_message($"\"test_surface\" LOAD returned status = {_status}, buffer = {_surface}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_surface\" LOAD returned status = {_status}, buffer = {_surface}, callbackMetadata = \"{_callbackMetadata}\"");
             
             if (surface_exists(_surface))
             {
@@ -260,7 +259,7 @@ array_push(optionArray, {
         
         SparkleLoadSprite("test_sprite", function(_status, _sprite, _callbackMetadata)
         {
-            show_debug_message($"\"test_sprite\" LOAD returned status = {_status}, buffer = {_sprite}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_sprite\" LOAD returned status = {_status}, buffer = {_sprite}, callbackMetadata = \"{_callbackMetadata}\"");
             
             if (sprite_exists(_sprite))
             {
@@ -271,7 +270,7 @@ array_push(optionArray, {
         
         SparkleDelete("test_bin", function(_status, _callbackMetadata)
         {
-            show_debug_message($"\"test_bin\" DELETE returned status = {_status}, callbackMetadata = {_callbackMetadata}");
+            show_debug_message($"\"test_bin\" DELETE returned status = {_status}, callbackMetadata = \"{_callbackMetadata}\"");
         },
         "test_bin DELETE");
     }),
