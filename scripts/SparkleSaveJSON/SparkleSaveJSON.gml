@@ -17,6 +17,7 @@
 /// @param filename
 /// @param json
 /// @param [callback]
+/// @param [callbackMetadata]
 /// @param [pretty=false]
 /// @param [priority=normal]
 
