@@ -71,3 +71,55 @@ You must call `SparkleSetXboxUser()` to set the player whose savedata you're goi
 ## Other Platforms (Opera GX etc.)
 
 These platforms have not been tested and are not officially supported by SparkleStore. However, the underlying code that is used by SparkleStore conforms to standard GameMaker practices. Saving and loading on unofficial platforms should work fine.
+
+&nbsp;
+
+## db
+
+[db](https://github.com/jujuadams/db) is a simple JSON-based database system that is compatible with Sparkle Store. A recommended pattern for saving and loading db data follows. Please refer to the [db repo](https://github.com/jujuadams/db) for further information.
+
+#### Saving:
+
+```gml
+/// Save Function
+
+var _buffer = db_buffer_create(database);
+SparkleSave("filename.json", _buffer, function(_status, _buffer)
+{
+    //Clean up
+    buffer_delete(_buffer);
+    
+    if (_status)
+    {
+    	//File saved successfully
+    }
+    else
+    {
+    	//File failed to save
+    }
+});
+```
+
+#### Loading:
+
+```gml
+/// Load Function
+
+SparkleLoad("filename.json", _buffer, function(_status, _buffer)
+{
+    var _loadedDatabase = _status? db_buffer_read(_buffer) : undefined;
+
+    //Clean up
+    buffer_delete(_buffer);
+
+    if (_loadedDatabase != undefined)
+    {
+    	database = _loadedDatabase;
+    	//File loaded successfully
+    }
+    else
+    {
+    	//File failed to load
+    }
+});
+```
