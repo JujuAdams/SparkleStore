@@ -70,9 +70,9 @@ function SparkleSave(_filename, _buffer, _callback = undefined, _callbackMetadat
         }
     }
     
-    if (SPARKLE_ON_PS_ANY && (__psGamepadIndex < 0))
+    if (SPARKLE_ON_PS_ANY && (_system.__psGamepadIndex < 0))
     {
-        __SparkleError($"Gamepad index is invalid ({__psGamepadIndex})");
+        __SparkleError($"Gamepad index is invalid ({_system.__psGamepadIndex})");
     }
     
     _offset = max(0, min(_offset, buffer_get_size(_buffer)-1));

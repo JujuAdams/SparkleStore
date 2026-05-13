@@ -10,6 +10,7 @@
   },
   "defaultScriptType":1,
   "Folders":[
+    {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"SparkleStore","folderPath":"folders/SparkleStore.yy","name":"SparkleStore","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"(System)","folderPath":"folders/SparkleStore/(System).yy","name":"(System)","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Exist","folderPath":"folders/SparkleStore/Exist.yy","name":"Exist","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -36,7 +37,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.3.217",
+    "IDEVersion":"2024.1400.5.1052",
   },
   "name":"SparkleStore",
   "resources":[
@@ -67,8 +68,10 @@
     {"id":{"name":"SparkleExistClearCache","path":"scripts/SparkleExistClearCache/SparkleExistClearCache.yy",},},
     {"id":{"name":"SparkleGetBusy","path":"scripts/SparkleGetBusy/SparkleGetBusy.yy",},},
     {"id":{"name":"SparkleGetGroupName","path":"scripts/SparkleGetGroupName/SparkleGetGroupName.yy",},},
+    {"id":{"name":"SparkleGetIdle","path":"scripts/SparkleGetIdle/SparkleGetIdle.yy",},},
     {"id":{"name":"SparkleGetLoadPending","path":"scripts/SparkleGetLoadPending/SparkleGetLoadPending.yy",},},
     {"id":{"name":"SparkleGetLoadRecent","path":"scripts/SparkleGetLoadRecent/SparkleGetLoadRecent.yy",},},
+    {"id":{"name":"SparkleGetPath","path":"scripts/SparkleGetPath/SparkleGetPath.yy",},},
     {"id":{"name":"SparkleGetPSGamepadIndex","path":"scripts/SparkleGetPSGamepadIndex/SparkleGetPSGamepadIndex.yy",},},
     {"id":{"name":"SparkleGetPSShowDialog","path":"scripts/SparkleGetPSShowDialog/SparkleGetPSShowDialog.yy",},},
     {"id":{"name":"SparkleGetPSSlotSubtitle","path":"scripts/SparkleGetPSSlotSubtitle/SparkleGetPSSlotSubtitle.yy",},},

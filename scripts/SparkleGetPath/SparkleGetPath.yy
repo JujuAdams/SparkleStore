@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SparkleGetPath",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SparkleGetPath",
+  "parent":{
+    "name":"Getters",
+    "path":"folders/SparkleStore/Getters.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
