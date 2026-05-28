@@ -165,3 +165,17 @@ The callback for this function will be executed with three parameters:
 |2              |The callback metadata specified when calling `SparkleSaveSurface()`                                                                                 |
 
 This function returns a struct that contains private information that SparkleStore needs to track file saving. The struct has no public variables. However, it has several public method that are identical to `SparkleSave()`, please see above for more information.
+
+&nbsp;
+
+## …SubmitAllSaves
+
+`SparkleSubmitAllSaves()`
+
+**Returns:** N/A (`undefined`)
+
+|Name|Datatype|Purpose|
+|----|--------|-------|
+|None|        |       |
+
+Dispatches all save operations (and also delete operations) immediately. This is helpful when running on Xbox. This should be used when the Xbox OS says that the game is suspending. Any load operations will be cancelled and all callbacks will be ignored entirely for all operation types.
