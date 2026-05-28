@@ -45,6 +45,7 @@ On this page are various constants (implemented as macros) that this library rel
 |`SPARKLE_OP_SAVE`  |Save operation as begun by `SparkleSave()` etc.|
 |`SPARKLE_OP_LOAD`  |Save operation as begun by `SparkleLoad()` etc.|
 |`SPARKLE_OP_DELETE`|Save operation as begun by `SparkleDelete()`   |
+|`SPARKLE_OP_EXISTS`|Save operation as begun by `SparkleExists()`   |
 
 &nbsp;
 
