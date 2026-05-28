@@ -21,6 +21,8 @@ Starts an asynchronous load operation for a buffer (or part of a buffer). If the
 
 ?> For compatibility with `SparkleDelete()` on consoles, very small empty files will be treated as though they don't exist and load operations will return as failed.
 
+!> When calling `SparkleLoad*()` you should always handle failed operations in that callback regardless of whatever this `SparkleExist()` returns.
+
 !> The filename you provide must be a simple filename and not a path that includes directory changes. If you would like to load from a particular directory within the file system sandbox, please use `SparkleSetGroupName()`. Loading outside the sandbox is not supported.
 
 The callback for this function will be executed with three parameters:
