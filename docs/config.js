@@ -22,8 +22,8 @@
 const config = {
 	name: 'SparkleStore',
 	description: 'Cross-platform savedata save/load system for GameMaker 2024.14',
-	latestVersion: '1.3',
-	otherVersions: [],
+	latestVersion: '2.0',
+	otherVersions: ['1.3'],
 	favicon: 'assets/favicon.ico',
 	themeColor: '#cbc3e3',
 };
