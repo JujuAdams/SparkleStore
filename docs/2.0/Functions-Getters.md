@@ -18,6 +18,34 @@ Returns whether there was save/load activity recently within the given timespan.
 
 &nbsp;
 
+## …GetBusy
+
+`SparkleGetBusy()`
+
+**Returns:** number
+
+|Name|Datatype|Purpose|
+|----|--------|-------|
+|None|        |       |
+
+Returns if SparkleStore is waiting for any save/load/delete/exists operations to complete. This function returns the opposite of `SpakleGetIdle()`.
+
+&nbsp;
+
+## …GetIdle
+
+`SparkleGetIdle()`
+
+**Returns:** number
+
+|Name|Datatype|Purpose|
+|----|--------|-------|
+|None|        |       |
+
+Returns if SparkleStore has no pending jobs that are yet to complete. This function returns the opposite of `SpakleGetBusy()`.
+
+&nbsp;
+
 ## …GetSteamCloud
 
 `SparkleGetSteamCloud()`
