@@ -60,6 +60,21 @@ Cancels all current pending operations. If you set the optional `executeCallback
 
 &nbsp;
 
+## …GetPath
+
+`SparkleGetPath()`
+
+**Returns:** number
+
+|Name         |Datatype|Purpose                                                             |
+|-------------|--------|--------------------------------------------------------------------|
+|`filename`   |string  |Filename to get the path for                                        |
+|`[groupName]`|string  |Save operation group name to use. Defaults to the current group name|
+
+Returns the absolute path to a file. This function only works when running on a desktop platform; on other platforms, this function will return `undefined`. By default, this function will use the current group name to build the returned path. However, you may override the group name by specifying the `groupName` parameter.
+
+&nbsp;
+
 ## …GetSteamCloud
 
 `SparkleGetSteamCloud()`
