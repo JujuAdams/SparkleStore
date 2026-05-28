@@ -8,5 +8,6 @@
 -    [Save](Functions-Save)
 -    [Load](Functions-Load)
 -    [Delete](Functions-Delete)
+-    [Exists](Functions-Exists)
 -    [Options](Functions-Options)
 -    [Getters](Functions-Getters)
