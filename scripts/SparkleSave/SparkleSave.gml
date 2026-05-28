@@ -14,10 +14,7 @@
 /// argument0: The "status" of the save operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.
 /// 
-/// argument1: The buffer used to save the file. You must destroy this buffer with `buffer_delete()`
-///            if you have no other use for it otherwise you will have a memory leak.
-/// 
-/// argument2: The callback metadata specified when calling `SparkleSave()`.
+/// argument1: The callback metadata specified when calling `SparkleSave()`.
 /// 
 /// This function returns a struct that contains private information that SparkleStore needs to
 /// track file saving. The struct has no public variables. However, it has the following public
@@ -56,14 +53,26 @@ function SparkleSave(_filename, _buffer, _callback = undefined, _callbackMetadat
     
     _system.__anyRequestMade = true;
     
-    if ((SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK()) && (_system.__xboxUser == 0))
+    if (SPARKLE_ON_GDK)
     {
-        __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
+        if (_system.__xboxUser == 0)
+        {
+            __SparkleError($"Xbox user is invalid ({_system.__xboxUser})");
+        }
     }
     
-    if (SPARKLE_ON_PS_ANY && (__psGamepadIndex < 0))
+    //For some reason, the Windows GDK extension doesn't allow you to check if a user is signed in 
+    if (SPARKLE_ON_XBOX)
     {
-        __SparkleError($"Gamepad index is invalid {__psGamepadIndex}");
+        if (not xboxone_user_is_signed_in(_system.__xboxUser))
+        {
+            __SparkleTrace($"Warning! Xbox user {_system.__xboxUser} is not signed in");
+        }
+    }
+    
+    if (SPARKLE_ON_PS_ANY && (_system.__psGamepadIndex < 0))
+    {
+        __SparkleError($"Gamepad index is invalid ({_system.__psGamepadIndex})");
     }
     
     _offset = max(0, min(_offset, buffer_get_size(_buffer)-1));

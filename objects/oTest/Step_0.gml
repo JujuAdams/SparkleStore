@@ -15,31 +15,72 @@ if (loadedGraphicAlpha > 0)
     }
 }
 
-var _i = 0;
-repeat(gamepad_get_device_count())
+if (SPARKLE_ON_XBOX)
 {
-    if (gamepad_button_check_pressed(_i, gp_start))
+    if (XboxGetUserChanged())
     {
-        gamepadFocus = _i;
-        SparkleSetPSGamepadIndex(_i);
-        
-        if (not xboxSimplifiedUserModel)
+        if (XBOX_SIMPLIFIED_USER_MODEL)
         {
-            var _user = xboxone_user_for_pad_safe(_i);
-            if (_user != undefined)
-            {
-                SparkleSetXboxUser(_user);
-            }
+            show_error(" \nNo user change should happen!\n ", true);
         }
+        
+        show_debug_message($"SparkleStore saw Xbox user change");
+        SparkleSetXboxUser(XboxGetUser());
     }
     
-    ++_i;
+    if (XboxGetGamepadChanged())
+    {
+        show_debug_message($"SparkleStore saw Xbox gamepad change");
+        gamepadFocus = XboxGetGamepad();
+    }
+    
+    var _i = 0;
+    repeat(gamepad_get_device_count())
+    {
+        if (gamepad_button_check_pressed(_i, gp_start))
+        {
+            XboxSetGamepad(_i);
+            break;
+        }
+        
+        ++_i;
+    }
+    
+    if (xboxone_is_suspending())
+    {
+        SparkleSubmitAllSaves();
+        
+        if (SparkleGetSavePending() <= 0)
+        {
+            xboxone_suspend();
+        }
+    }
 }
-
-if (keyboard_check(vk_anykey))
+else if (SparkleGetWindowsUseGDK())
 {
-    gamepadFocus = -1;
-    SparkleSetPSGamepadIndex(-1);
+    
+}
+else
+{
+    //On Xbox we need to do some special things
+    
+    var _i = 0;
+    repeat(gamepad_get_device_count())
+    {
+        if (gamepad_button_check_pressed(_i, gp_start))
+        {
+            gamepadFocus = _i;
+            SparkleSetPSGamepadIndex(_i);
+        }
+        
+        ++_i;
+    }
+    
+    if (keyboard_check(vk_anykey))
+    {
+        gamepadFocus = -1;
+        SparkleSetPSGamepadIndex(-1);
+    }
 }
 
 var _optionCount = array_length(optionArray);
@@ -68,17 +109,4 @@ if ((watchStart != undefined) && (not SparkleGetRecentActivity(0)))
 {
     show_debug_message($"Operation lasted {current_time - watchStart}ms");
     watchStart = undefined;
-}
-
-if (xboxone_is_suspending())
-{
-    show_debug_message("xboxone_is_suspending()");
-    SparkleSubmitAllSaves();
-    
-    show_debug_message($"SparkleGetSavePending() = {SparkleGetSavePending()}");
-    if (SparkleGetSavePending() <= 0)
-    {
-        show_debug_message("xboxone_suspend()");
-        xboxone_suspend();
-    }
 }

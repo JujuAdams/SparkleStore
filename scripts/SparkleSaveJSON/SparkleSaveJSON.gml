@@ -9,14 +9,12 @@
 /// argument0: The "status" of the save operation. This is one of the `SPARKLE_STATUS_*`
 ///            constants. Please see the `__SparkleConstants` script for more information.
 /// 
-/// argument1: This parameter is always `undefined`. Normally, this is the buffer used to save
-///            the file but SparkleStore handles this for you.
-/// 
-/// argument2: The callback metadata specified when calling `SparkleSaveJSON()`.
+/// argument1: The callback metadata specified when calling `SparkleSaveJSON()`.
 /// 
 /// @param filename
 /// @param json
 /// @param [callback]
+/// @param [callbackMetadata]
 /// @param [pretty=false]
 /// @param [priority=normal]
 

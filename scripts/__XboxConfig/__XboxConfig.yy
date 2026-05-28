@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__XboxConfig",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__XboxConfig",
+  "parent":{
+    "name":"Xbox",
+    "path":"folders/Xbox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

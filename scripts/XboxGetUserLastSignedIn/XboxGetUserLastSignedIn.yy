@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"XboxGetUserLastSignedIn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"XboxGetUserLastSignedIn",
+  "parent":{
+    "name":"Xbox",
+    "path":"folders/Xbox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

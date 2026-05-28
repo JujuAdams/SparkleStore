@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"XboxGetGamepadExt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"XboxGetGamepadExt",
+  "parent":{
+    "name":"Ext",
+    "path":"folders/Xbox/Ext.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

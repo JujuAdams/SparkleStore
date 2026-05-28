@@ -1,7 +1,7 @@
 // Feather disable all
 
-#macro SPARKLE_VERSION  "1.4.2-beta"
-#macro SPARKLE_DATE     "2026-02-01"
+#macro SPARKLE_VERSION  "2.0.0-beta"
+#macro SPARKLE_DATE     "2026-05-28"
 
 ///////
 // Status
@@ -52,18 +52,21 @@
 #macro SPARKLE_ON_MAC       (os_type == os_macosx)
 #macro SPARKLE_ON_LINUX     (os_type == os_linux)
 #macro SPARKLE_ON_SWITCH    (os_type == os_switch)
+#macro SPARKLE_ON_SWITCH_2  (os_type == os_switch2)
+#macro SPARKLE_ON_SWITCH_X  (SPARKLE_ON_SWITCH || SPARKLE_ON_SWITCH_2)
 #macro SPARKLE_ON_PS4       (os_type == os_ps4)
 #macro SPARKLE_ON_PS5       (os_type == os_ps5)
 #macro SPARKLE_ON_XBOX      ((os_type == os_xboxone) || (os_type == os_xboxseriesxs))
+#macro SPARKLE_ON_GDK       ((os_type == os_xboxseriesxs) || SparkleGetWindowsUseGDK())
 #macro SPARKLE_ON_ANDROID   (os_type == os_android)
 #macro SPARKLE_ON_IOS       (os_type == os_ios)
 
 #macro SPARKLE_ON_PS_ANY   (SPARKLE_ON_PS4 || SPARKLE_ON_PS5)
-#macro SPARKLE_ON_CONSOLE  (SPARKLE_ON_SWITCH || SPARKLE_ON_PS_ANY || SPARKLE_ON_XBOX)
+#macro SPARKLE_ON_CONSOLE  (SPARKLE_ON_SWITCH_X || SPARKLE_ON_PS_ANY || SPARKLE_ON_XBOX)
 #macro SPARKLE_ON_MOBILE   (SPARKLE_ON_ANDROID || SPARKLE_ON_IOS)
 #macro SPARKLE_ON_DESKTOP  (SPARKLE_ON_WINDOWS || SPARKLE_ON_MAC || SPARKLE_ON_LINUX)
 
 #macro SPARKLE_OP_SAVE    0
 #macro SPARKLE_OP_LOAD    1
 #macro SPARKLE_OP_DELETE  2
-#macro SPARKLE_OP_EXIST   3
+#macro SPARKLE_OP_EXISTS   3

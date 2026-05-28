@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SparkleExists",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SparkleExists",
+  "parent":{
+    "name":"Exists",
+    "path":"folders/SparkleStore/Exists.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

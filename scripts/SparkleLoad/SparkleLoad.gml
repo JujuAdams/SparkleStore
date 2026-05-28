@@ -10,7 +10,7 @@
 ///      treated as though they don't exist and load operations will return as failed.
 /// 
 /// N.B. When calling `SparkleLoad*()` you should always handle failed operations in that callback
-///      regardless of whatever this `SparkleExist()` returns.
+///      regardless of whatever this `SparkleExists()` returns.
 /// 
 /// N.B. The filename you provide must be a simple filename and not a path that includes directory
 ///      changes. If you would like to load from a particular directory within the file system
@@ -71,14 +71,14 @@ function SparkleLoad(_filename, _callback, _callbackMetadata = undefined, _prior
         return;
     }
     
-    if ((SPARKLE_ON_XBOX || SparkleGetWindowsUseGDK()) && (_system.__xboxUser == 0))
+    if (SPARKLE_ON_GDK && (_system.__xboxUser == 0))
     {
-        __SparkleError($"Xbox user is invalid {_system.__xboxUser}");
+        __SparkleError($"Xbox user is invalid ({_system.__xboxUser})");
     }
     
-    if (SPARKLE_ON_PS_ANY && (__psGamepadIndex < 0))
+    if (SPARKLE_ON_PS_ANY && (_system.__psGamepadIndex < 0))
     {
-        __SparkleError($"Gamepad index is invalid {__psGamepadIndex}");
+        __SparkleError($"Gamepad index is invalid ({_system.__psGamepadIndex})");
     }
     
     var _struct = new __SparkleClassLoad(_filename, _callback, _callbackMetadata);
