@@ -15,7 +15,7 @@ Deletes a file. This is considered to be a "save" operation internally and this 
 
 ?> On console platforms, GameMaker does not allow you to directly delete a file. Instead, SparkleStore will save a very small empty file. SparkleStore's load functions will then treat this empty file as missing entirely.
 
-!> The filename you provide must be a simple filename and not a path that includes directory changes. If you would like to delete a file from a particular directory within the file system sandbox, please use `SparkleSetGroupName()`. Deleting files outside the sandbox is not supported
+!> The filename you provide must be a simple filename and not a path that includes directory changes. If you would like to delete a file from a particular directory within the file system sandbox, please use `SparkleSetGroupName()`. Deleting files outside the sandbox is not supported.
 
 The callback for this function will be executed with two parameters:
 
