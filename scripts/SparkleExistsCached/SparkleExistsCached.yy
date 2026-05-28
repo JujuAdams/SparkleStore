@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"SparkleExistCached",
+  "%Name":"SparkleExistsCached",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SparkleExistCached",
+  "name":"SparkleExistsCached",
   "parent":{
-    "name":"Exist",
-    "path":"folders/SparkleStore/Exist.yy",
+    "name":"Exists",
+    "path":"folders/SparkleStore/Exists.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,12 +1,12 @@
 // Feather disable all
 
-/// Clears the presence cache that tracks whether files do or don't exist (see `SparkleExist()` for
+/// Clears the presence cache that tracks whether files do or don't exist (see `SparkleExists()` for
 /// more information). You may specify a particular file whose cache you wish to clear, or you can
-/// not provide a file in which case `SparkleExistClearCache()` will clear the cache for every file.
+/// not provide a file in which case `SparkleExistsClearCache()` will clear the cache for every file.
 /// 
 /// @param [filename]
 
-function SparkleExistClearCache(_filename = undefined)
+function SparkleExistsClearCache(_filename = undefined)
 {
     static _presenceCacheMap = __SparkleSystem().__presenceCacheMap;
     

@@ -7,7 +7,7 @@
 ///      Please continue reading for more information.
 /// 
 /// N.B. When calling `SparkleLoad*()` you should always handle failed operations in that callback
-///      regardless of whatever `SparkleExist()` returns.
+///      regardless of whatever `SparkleExists()` returns.
 /// 
 /// Returning whether a file exists on desktop is easy because we have a synchronous "instant"
 /// native function call in `file_exists()`. Unfortunately, this function is not available across
@@ -19,14 +19,14 @@
 /// load a file using `SparkeLoad*()`, the result of that load operation is recorded. Similary, if
 /// you successfully save or delete a file, the file's cached state is updated accordingly.
 /// 
-/// If you call `SparkleExist()` on a file that has not previously been saved or loaded (which is
+/// If you call `SparkleExists()` on a file that has not previously been saved or loaded (which is
 /// usually the case) then the function will execute a silent load in the background and then cache
 /// the result. You can force a load to happen, i.e. refresh the cache, by setting the optional
 /// `forceLoad` parameter to `true`. You can return if a file state has been cached by calling
-/// `SparkleExistCached()`.
+/// `SparkleExistsCached()`.
 /// 
 /// Caches can easily get out of sync with reality so you should occasionally clear the cache to
-/// cause SparkleStore to re-check file presence. `SparkleExistClearCache()` is provided to wipe
+/// cause SparkleStore to re-check file presence. `SparkleExistsClearCache()` is provided to wipe
 /// the cache manually. When you should do this is up to you but, as a suggestion, clearing the
 /// when returning to the main menu from gameplay or by exiting a settings menu may be appropriate.
 /// 
@@ -38,7 +38,7 @@
 ///      system sandbox, please use `SparkleSetGroupName()`. Deleting files outside the sandbox is
 ///      not supported.
 /// 
-/// `SparkleExist()` is considered to be a "load" operation internally and this function will
+/// `SparkleExists()` is considered to be a "load" operation internally and this function will
 /// increment `SparkleGetLoadPending()` and `SparkleGetLoadRecent()` in particular.
 /// 
 /// You may optionally specify a callback and callback metadata. The callback, if provided, will
@@ -55,7 +55,7 @@
 /// argument1: Whether the value for `argument0` is a cached value (`true`) or a value obtained by
 ///            loading the file (`false`).
 /// 
-/// argument2: The callback metadata specified when calling `SparkleExist()`.
+/// argument2: The callback metadata specified when calling `SparkleExists()`.
 /// 
 /// @param filename
 /// @param [callback]
@@ -63,7 +63,7 @@
 /// @param [forceLoad=false]
 /// @param [priority=normal]
 
-function SparkleExist(_filename, _callback = undefined, _callbackMetadata = undefined, _forceLoad = false, _priority = SPARKLE_PRIORITY_NORMAL)
+function SparkleExists(_filename, _callback = undefined, _callbackMetadata = undefined, _forceLoad = false, _priority = SPARKLE_PRIORITY_NORMAL)
 {
     static _system           = __SparkleSystem();
     static _presenceCacheMap = _system.__presenceCacheMap;

@@ -280,7 +280,7 @@ array_push(optionArray, {
     name: "\"test.txt\" exists",
     func: method(other, function()
     {
-        var _exists = SparkleExist("test.txt", function(_state, _cached, _callbackMetadata)
+        var _exists = SparkleExists("test.txt", function(_state, _cached, _callbackMetadata)
         {
             if (not _cached)
             {
@@ -297,6 +297,6 @@ array_push(optionArray, {
     name: "Clear cache",
     func: method(other, function()
     {
-        SparkleExistClearCache();
+        SparkleExistsClearCache();
     }),
 });
