@@ -89,7 +89,7 @@ This function returns a struct that contains private information that SparkleSto
 |`[callbackMetadata]`|any     |Metadata to pass to the callback                                                               |
 |`[priority]`        |number  |How soon to load. Defaults to "normal" i.e. after every other queued operation                 |
 
-Starts an asynchronous load operation for a string. This function is a wrapper around `SparkleLoad()`. Please see documentation for that function for more information.
+Starts an asynchronous load operation for a JSON file. This function is a wrapper around `SparkleLoad()`. Please see documentation for that function for more information.
 
 ?> For compatibility with `SparkleDelete()` on consoles, very small empty files will be treated as though they don't exist and load operations will return as failed.
 
