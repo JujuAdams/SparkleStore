@@ -1,5 +1,5 @@
 <img src="https://raw.githubusercontent.com/JujuAdams/SparkleStore/master/LOGO.png" width="50%" style="display: block; margin: auto;" />
-<h1 align="center">SparkleStore 1.3</h1>
+<h1 align="center">SparkleStore 2.0</h1>
 <p align="center">Cross-platform savedata save/load system for GameMaker 2024.14</p>
 
 <p align="center"><a href="https://github.com/JujuAdams/SparkleStore/releases/" target="_blank">Download the .yymps</a></p>
