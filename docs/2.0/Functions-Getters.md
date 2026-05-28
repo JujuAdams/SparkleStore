@@ -46,6 +46,20 @@ Returns if SparkleStore has no pending jobs that are yet to complete. This funct
 
 &nbsp;
 
+## …CancelAll
+
+`SparkleCancelAll([executeCallbacks=false])`
+
+**Returns:** number
+
+|Name                |Datatype|Purpose                                                                                    |
+|--------------------|--------|-------------------------------------------------------------------------------------------|
+|`[executeCallbacks]`|boolean |Whether to execute callbacks. Defaults to `false` which means no callbacks will be executed|
+
+Cancels all current pending operations. If you set the optional `executeCallbacks` parameter to `true` then callbacks for the operations will be executed as "failed".
+
+&nbsp;
+
 ## …GetSteamCloud
 
 `SparkleGetSteamCloud()`
