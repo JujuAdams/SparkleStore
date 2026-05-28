@@ -24,15 +24,14 @@ Starts an asynchronous save operation for a buffer (or part of a buffer). You ma
 
 !> The filename you provide must be a simple filename and not a path that includes directory changes. If you would like to save into a particular directory within the file system sandbox, please use `SparkleSetGroupName()`. Saving outside the sandbox is not supported.
 
-The callback for this function will be executed with three parameters:
+The callback for this function will be executed with the following parameters:
 
 |Parameter Index|Usage                                                                                                                                                      |
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 |0              |The "status" of the save operation. This is one of the `SPARKLE_STATUS_*` constants. Please see the `__SparkleConstants` script for more information       |
-|1              |The buffer used to save the file. You must destroy this buffer with `buffer_delete()` if you have no other use for it otherwise you will have a memory leak|
-|2              |The callback metadata specified when calling `SparkleSave()`                                                                                               |
+|1              |The callback metadata specified when calling `SparkleSave()`                                                                                               |
 
-!> If you do not specify a callback and you have no other use for the buffer, you must destroy the buffer otherwise you will have a memory leak.
+!> This function does not "consume" the input buffer. You should destroy the input buffer if you have no other use for it otherwise you will have a memory leak.
 
 This function returns a struct that contains private information that SparkleStore needs to track file saving. The struct has no public variables. However, it has the following public methods:
 
@@ -64,13 +63,12 @@ Starts an asynchronous save operation for a string. This function is a wrapper a
 
 !> The filename you provide must be a simple filename and not a path that includes directory changes. If you would like to save into a particular directory within the file system sandbox, please use `SparkleSetGroupName()`. Saving outside the sandbox is not supported.
 
-The callback for this function will be executed with three parameters:
+The callback for this function will be executed with the following parameters:
 
 |Parameter Index|Usage                                                                                                                                               |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 |0              |The "status" of the save operation. This is one of the `SPARKLE_STATUS_*` constants. Please see the `__SparkleConstants` script for more information|
-|1              |This parameter is always `undefined`                                                                                                                |
-|2              |The callback metadata specified when calling `SparkleSaveString()`                                                                                  |
+|1              |The callback metadata specified when calling `SparkleSaveString()`                                                                                  |
 
 This function returns a struct that contains private information that SparkleStore needs to track file saving. The struct has no public variables. However, it has several public method that are identical to `SparkleSave()`, please see above for more information.
 
@@ -95,13 +93,12 @@ Starts an asynchronous save operation for JSON (i.e. a struct/array assembly). T
 
 !> The filename you provide must be a simple filename and not a path that includes directory changes. If you would like to save into a particular directory within the file system sandbox, please use `SparkleSetGroupName()`. Saving outside the sandbox is not supported.
 
-The callback for this function will be executed with three parameters:
+The callback for this function will be executed with the following parameters parameters:
 
 |Parameter Index|Usage                                                                                                                                               |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 |0              |The "status" of the save operation. This is one of the `SPARKLE_STATUS_*` constants. Please see the `__SparkleConstants` script for more information|
-|1              |This parameter is always `undefined`                                                                                                                |
-|2              |The callback metadata specified when calling `SparkleSaveJSON()`                                                                                    |
+|1              |The callback metadata specified when calling `SparkleSaveJSON()`                                                                                    |
 
 This function returns a struct that contains private information that SparkleStore needs to track file saving. The struct has no public variables. However, it has several public method that are identical to `SparkleSave()`, please see above for more information.
 
@@ -126,13 +123,12 @@ Starts an asynchronous save operation for one image of a sprite. This function i
 
 !> The filename you provide must be a simple filename and not a path that includes directory changes. If you would like to save into a particular directory within the file system sandbox, please use `SparkleSetGroupName()`. Saving outside the sandbox is not supported.
 
-The callback for this function will be executed with three parameters:
+The callback for this function will be executed with the following parameters:
 
 |Parameter Index|Usage                                                                                                                                               |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 |0              |The "status" of the save operation. This is one of the `SPARKLE_STATUS_*` constants. Please see the `__SparkleConstants` script for more information|
-|1              |This parameter is always `undefined`                                                                                                                |
-|2              |The callback metadata specified when calling `SparkleSaveSprite()`                                                                                  |
+|1              |The callback metadata specified when calling `SparkleSaveSprite()`                                                                                  |
 
 This function returns a struct that contains private information that SparkleStore needs to track file saving. The struct has no public variables. However, it has several public method that are identical to `SparkleSave()`, please see above for more information.
 
@@ -156,13 +152,12 @@ Starts an asynchronous save operation for a surface. This function is a wrapper 
 
 !> The filename you provide must be a simple filename and not a path that includes directory changes. If you would like to save into a particular directory within the file system sandbox, please use `SparkleSetGroupName()`. Saving outside the sandbox is not supported.
 
-The callback for this function will be executed with three parameters:
+The callback for this function will be executed with the following parameters:
 
 |Parameter Index|Usage                                                                                                                                               |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 |0              |The "status" of the save operation. This is one of the `SPARKLE_STATUS_*` constants. Please see the `__SparkleConstants` script for more information|
-|1              |This parameter is always `undefined`                                                                                                                |
-|2              |The callback metadata specified when calling `SparkleSaveSurface()`                                                                                 |
+|1              |The callback metadata specified when calling `SparkleSaveSurface()`                                                                                 |
 
 This function returns a struct that contains private information that SparkleStore needs to track file saving. The struct has no public variables. However, it has several public method that are identical to `SparkleSave()`, please see above for more information.
 
