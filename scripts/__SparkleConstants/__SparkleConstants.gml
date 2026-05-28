@@ -67,4 +67,4 @@
 #macro SPARKLE_OP_SAVE    0
 #macro SPARKLE_OP_LOAD    1
 #macro SPARKLE_OP_DELETE  2
-#macro SPARKLE_OP_EXIST   3
+#macro SPARKLE_OP_EXISTS   3

@@ -99,7 +99,7 @@ function SparkleExists(_filename, _callback = undefined, _callbackMetadata = und
         repeat(array_length(_queuedArray))
         {
             var _operation = _queuedArray[_i];
-            if ((_operation.__opType == SPARKLE_OP_EXIST) && is_callable(_operation.__callback) && (_operation.__fileCacheKey == _fileCacheKey))
+            if ((_operation.__opType == SPARKLE_OP_EXISTS) && is_callable(_operation.__callback) && (_operation.__fileCacheKey == _fileCacheKey))
             {
                 _makeOperation = false;
                 break;
@@ -114,7 +114,7 @@ function SparkleExists(_filename, _callback = undefined, _callbackMetadata = und
             repeat(array_length(_loadPendingArray))
             {
                 var _operation = _loadPendingArray[_i];
-                if ((_operation.__opType == SPARKLE_OP_EXIST) && is_callable(_operation.__callback) && (_operation.__fileCacheKey == _fileCacheKey))
+                if ((_operation.__opType == SPARKLE_OP_EXISTS) && is_callable(_operation.__callback) && (_operation.__fileCacheKey == _fileCacheKey))
                 {
                     _makeOperation = false;
                     break;
@@ -155,7 +155,7 @@ function SparkleExists(_filename, _callback = undefined, _callbackMetadata = und
             _priority);
             
             //Force the operation type so we can
-            _operation.__opType = SPARKLE_OP_EXIST;
+            _operation.__opType = SPARKLE_OP_EXISTS;
             
             //Force the dialog off as this is meant to be a silent operation
             _operation.__psShowDialog = false;
