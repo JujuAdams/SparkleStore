@@ -28,8 +28,7 @@ function __SparkleSystem()
         __psShowDialog   = false;
         __psGamepadIndex = -1;
         
-        __windowsUseGDK  = false;
-        __xboxUser       = int64(0);
+        __xboxUser = int64(0);
         
         __queuedArray = [];
         
