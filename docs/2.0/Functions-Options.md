@@ -211,33 +211,3 @@ Sets the current Xbox user for future save/load operations. This value will not 
 |N/A |        |       |
 
 Returns the current Xbox user for save/load operations.
-
-&nbsp;
-
-## …SetWindowsUseGDK
-
-`SparkleSetWindowsUseGDK()`
-
-**Returns:** N/A (`undefined`)
-
-|Name|Datatype|Purpose|
-|----|--------|-------|
-|N/A |        |       |
-
-Sets up GDK functions for use with saving and loading. This function should only be called once and must be called before saving/loading any data (otherwise SparkleStore will use the wrong internal functions).
-
-!> You will still need to call `gdk_init()`, `gdk_update()` etc. in your own code.
-
-&nbsp;
-
-## …GetWindowsUseGDK
-
-`SparkleGetWindowsUseGDK()`
-
-**Returns:** int64
-
-|Name|Datatype|Purpose|
-|----|--------|-------|
-|N/A |        |       |
-
-Returns whether SparkleStore is using GDK on Windows. This function will always return `false` when not on Windows.
