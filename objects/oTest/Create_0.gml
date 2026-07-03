@@ -30,10 +30,9 @@ if (SPARKLE_ON_XBOX)
     SparkleSetXboxUser(XboxGetUser());
     gamepadFocus = XboxGetGamepad();
 }
-else if (SPARKLE_ON_WINDOWS && extension_exists("GDKExtension"))
+else if (SPARKLE_USING_WINDOWS_GDK)
 {
     instance_create_depth(0, 0, 0, oWindowsGDK);
-    SparkleSetWindowsUseGDK();
 }
 
 array_push(optionArray, {

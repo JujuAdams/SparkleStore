@@ -56,14 +56,8 @@ if (SPARKLE_ON_XBOX)
         }
     }
 }
-else if (SparkleGetWindowsUseGDK())
-{
-    
-}
 else
 {
-    //On Xbox we need to do some special things
-    
     var _i = 0;
     repeat(gamepad_get_device_count())
     {

@@ -35,7 +35,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.15",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"SparkleStore",
   "resources":[
@@ -80,7 +80,6 @@
     {"id":{"name":"SparkleGetSteamCloud","path":"scripts/SparkleGetSteamCloud/SparkleGetSteamCloud.yy",},},
     {"id":{"name":"SparkleGetSteamFile","path":"scripts/SparkleGetSteamFile/SparkleGetSteamFile.yy",},},
     {"id":{"name":"SparkleGetTotalPending","path":"scripts/SparkleGetTotalPending/SparkleGetTotalPending.yy",},},
-    {"id":{"name":"SparkleGetWindowsUseGDK","path":"scripts/SparkleGetWindowsUseGDK/SparkleGetWindowsUseGDK.yy",},},
     {"id":{"name":"SparkleGetXboxUser","path":"scripts/SparkleGetXboxUser/SparkleGetXboxUser.yy",},},
     {"id":{"name":"SparkleLoad","path":"scripts/SparkleLoad/SparkleLoad.yy",},},
     {"id":{"name":"SparkleLoadJSON","path":"scripts/SparkleLoadJSON/SparkleLoadJSON.yy",},},
@@ -98,7 +97,6 @@
     {"id":{"name":"SparkleSetPSSlotSubtitle","path":"scripts/SparkleSetPSSlotSubtitle/SparkleSetPSSlotSubtitle.yy",},},
     {"id":{"name":"SparkleSetPSSlotTitle","path":"scripts/SparkleSetPSSlotTitle/SparkleSetPSSlotTitle.yy",},},
     {"id":{"name":"SparkleSetSteamFile","path":"scripts/SparkleSetSteamFile/SparkleSetSteamFile.yy",},},
-    {"id":{"name":"SparkleSetWindowsUseGDK","path":"scripts/SparkleSetWindowsUseGDK/SparkleSetWindowsUseGDK.yy",},},
     {"id":{"name":"SparkleSetXboxUser","path":"scripts/SparkleSetXboxUser/SparkleSetXboxUser.yy",},},
     {"id":{"name":"SparkleSubmitAllSaves","path":"scripts/SparkleSubmitAllSaves/SparkleSubmitAllSaves.yy",},},
     {"id":{"name":"steam_update_safe","path":"scripts/steam_update_safe/steam_update_safe.yy",},},

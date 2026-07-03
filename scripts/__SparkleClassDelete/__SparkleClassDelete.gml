@@ -47,7 +47,7 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) : __Spark
         }
         else
         {
-            if (SparkleGetWindowsUseGDK())
+            if (SPARKLE_USING_WINDOWS_GDK)
             {
                 xboxone_set_savedata_user(_system.__xboxUser);
                 var _buffer = __SparkleEmptyBuffer();

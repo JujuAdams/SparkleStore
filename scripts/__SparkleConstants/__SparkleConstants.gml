@@ -57,7 +57,6 @@
 #macro SPARKLE_ON_PS4       (os_type == os_ps4)
 #macro SPARKLE_ON_PS5       (os_type == os_ps5)
 #macro SPARKLE_ON_XBOX      ((os_type == os_xboxone) || (os_type == os_xboxseriesxs))
-#macro SPARKLE_ON_GDK       ((os_type == os_xboxseriesxs) || SparkleGetWindowsUseGDK())
 #macro SPARKLE_ON_ANDROID   (os_type == os_android)
 #macro SPARKLE_ON_IOS       (os_type == os_ios)
 
@@ -65,6 +64,9 @@
 #macro SPARKLE_ON_CONSOLE  (SPARKLE_ON_SWITCH_X || SPARKLE_ON_PS_ANY || SPARKLE_ON_XBOX)
 #macro SPARKLE_ON_MOBILE   (SPARKLE_ON_ANDROID || SPARKLE_ON_IOS)
 #macro SPARKLE_ON_DESKTOP  (SPARKLE_ON_WINDOWS || SPARKLE_ON_MAC || SPARKLE_ON_LINUX)
+#macro SPARKLE_ON_GDK      ((os_type == os_xboxseriesxs) || SPARKLE_USING_WINDOWS_GDK)
+
+#macro SPARKLE_USING_WINDOWS_GDK  ((os_type == os_windows) && extension_exists("GDKExtension"))
 
 #macro SPARKLE_OP_SAVE    0
 #macro SPARKLE_OP_LOAD    1
