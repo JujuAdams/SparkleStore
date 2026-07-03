@@ -60,9 +60,9 @@ You must call `SparkleSetPSGamepadIndex()` to set the player whose savedata you'
 
 &nbsp;
 
-## Xbox GDK
+## Xbox & Windows GDK
 
-You must call `SparkleSetXboxUser()` to set the player whose savedata you're going to access. When running on Windows and are using the GDK, you must call `SparkleSetWindowsUseGDK()` immediately when the game boots to ensure that the correct savedata functions are called. GDK file access will not work unless `gdk_init()` and `gdk_update()` are being used correctly so bear that in mind during testing.
+Xbox and Windows GDK require that the Xbox user is set with `SparkleSetXboxUser()` before any save/load operations are started, in a similar fashion to PlayStation. Windows GDK file access will not work unless `gdk_init()` and `gdk_update()` are being used correctly so bear that in mind during testing.
 
 **N.B.** SparkleStore does not support the legacy XDK API.
 
