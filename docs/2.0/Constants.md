@@ -51,20 +51,22 @@ On this page are various constants (implemented as macros) that this library rel
 
 ## Platforms
 
-|Name                 |Usage                                                     |
-|---------------------|----------------------------------------------------------|
-|`SPARKLE_ON_WINDOWS` |Game is running on Windows                                |
-|`SPARKLE_ON_MAC`     |Game is running on MacOS                                  |
-|`SPARKLE_ON_LINUX`   |Game is running on a Linux distro, including Steam OS     |
-|`SPARKLE_ON_SWITCH`  |Game is running on a Nintendo Switch                      |
-|`SPARKLE_ON_SWITCH_2`|Game is running on a Nintendo Switch 2                    |
-|`SPARKLE_ON_PS4`     |Game is running on a PlayStation 4                        |
-|`SPARKLE_ON_PS5`     |Game is running on a PlayStation 5                        |
-|`SPARKLE_ON_XBOX`    |Game is running on an Xbox Series X or Series S           |
-|`SPARKLE_ON_ANDROID` |Game is running on Android                                |
-|`SPARKLE_ON_IOS`     |Game is running on iOS                                    |
-|`SPARKLE_ON_SWITCH_X`|Game is running on either Nintendo Switch platform        |
-|`SPARKLE_ON_PS_ANY`  |Game is running on either a PlayStation 4 or PlayStation 5|
-|`SPARKLE_ON_CONSOLE` |Game is running on a Switch, PlayStation, or Xbox         |
-|`SPARKLE_ON_MOBILE`  |Game is running on iOS or Android                         |
-|`SPARKLE_ON_DESKTOP` |Game is running on Window, MacOS, or Linux                |
+|Name                    |Usage                                                                                        |
+|------------------------|---------------------------------------------------------------------------------------------|
+|`SPARKLE_ON_WINDOWS`    |Game is running on Windows                                                                   |
+|`SPARKLE_ON_MAC`        |Game is running on MacOS                                                                     |
+|`SPARKLE_ON_LINUX`      |Game is running on a Linux distro, including Steam OS                                        |
+|`SPARKLE_ON_SWITCH`     |Game is running on a Nintendo Switch                                                         |
+|`SPARKLE_ON_SWITCH_2`   |Game is running on a Nintendo Switch 2                                                       |
+|`SPARKLE_ON_PS4`        |Game is running on a PlayStation 4                                                           |
+|`SPARKLE_ON_PS5`        |Game is running on a PlayStation 5                                                           |
+|`SPARKLE_ON_XBOX`       |Game is running on an Xbox Series X or Series S                                              |
+|`SPARKLE_ON_ANDROID`    |Game is running on Android                                                                   |
+|`SPARKLE_ON_IOS`        |Game is running on iOS                                                                       |
+|`SPARKLE_ON_SWITCH_X`   |Game is running on either Nintendo Switch platform                                           |
+|`SPARKLE_ON_PS_ANY`     |Game is running on either a PlayStation 4 or PlayStation 5                                   |
+|`SPARKLE_ON_CONSOLE`    |Game is running on a Switch, PlayStation, or Xbox                                            |
+|`SPARKLE_ON_MOBILE`     |Game is running on iOS or Android                                                            |
+|`SPARKLE_ON_DESKTOP`    |Game is running on Window, MacOS, or Linux                                                   |
+|`SPARKLE_ON_GDK`        |Game is running on an Xbox Series X or Series S, or running on Windows with the GDK extension|
+|`SPARKLE_ON_WINDOWS_GDK`|Game is running on Windows with the GDK extension                                            |
