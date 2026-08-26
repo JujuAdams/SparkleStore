@@ -111,7 +111,7 @@ buffer_delete(_buffer);
 
 //Start the load process. The callback function will be
 //executed later when the load completes
-SparkleLoad("filename.json", _buffer, function(_status, _buffer)
+SparkleLoad("filename.json", function(_status, _buffer)
 {
     //Convert the raw binary data into a database
     var _loadedDatabase = _status? db_buffer_read(_buffer) : undefined;
