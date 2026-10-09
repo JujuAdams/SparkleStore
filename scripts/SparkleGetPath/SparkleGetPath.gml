@@ -12,5 +12,5 @@ function SparkleGetPath(_filename, _groupName = undefined)
 {
     static _system = __SparkleSystem();
 
-    return (SPARKLE_ON_DESKTOP || SPARKLE_ON_MOBILE)? $"{game_save_id}/{_groupName ?? _system.__groupName}/{_filename}" : undefined;
+    return (SPARKLE_ON_DESKTOP || SPARKLE_ON_MOBILE)? $"{game_save_id}{_groupName ?? _system.__groupName}/{_filename}" : undefined;
 }

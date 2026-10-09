@@ -66,6 +66,7 @@
 #macro SPARKLE_ON_DESKTOP  (SPARKLE_ON_WINDOWS || SPARKLE_ON_MAC || SPARKLE_ON_LINUX)
 #macro SPARKLE_ON_GDK      ((os_type == os_xboxseriesxs) || SPARKLE_USING_WINDOWS_GDK)
 
+#macro SPARKLE_USE_SAFE_SAVES  ((SPARKLE_ON_DESKTOP && (not SPARKLE_USING_WINDOWS_GDK)) || SPARKLE_ON_MOBILE)
 #macro SPARKLE_USING_WINDOWS_GDK  ((os_type == os_windows) && extension_exists("GDKExtension"))
 
 #macro SPARKLE_OP_SAVE    0

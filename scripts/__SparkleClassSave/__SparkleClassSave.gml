@@ -89,7 +89,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
                     buffer_async_group_option("ps_create_backup", true);
                 }
                 
-                buffer_save_async(__buffer, __filename, 0, __size);
+                buffer_save_async(__buffer, SPARKLE_USE_SAFE_SAVES? (__filename + ".temp") : __filename, 0, __size);
                 __asyncID = buffer_async_group_end();
             }
             
@@ -113,6 +113,22 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
         if (SPARKLE_ON_SWITCH && (_status == SPARKLE_STATUS_SUCCESS))
         {
             switch_save_data_commit();
+        }
+        
+        if (SPARKLE_USE_SAFE_SAVES)
+        {
+            var _finalPath = SparkleGetPath(__filename, __groupName);
+            var _tempPath = _finalPath + ".temp";
+            
+            if ((_status == SPARKLE_STATUS_SUCCESS) && file_exists(_tempPath))
+            {
+                if (file_exists(_finalPath)) file_delete(_finalPath);
+                file_rename(_tempPath, _finalPath);
+            }
+            else
+            {
+                file_delete(_tempPath);
+            }
         }
         
         if (_status == SPARKLE_STATUS_SUCCESS)
