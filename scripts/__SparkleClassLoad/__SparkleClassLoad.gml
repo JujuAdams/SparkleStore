@@ -92,6 +92,8 @@ function __SparkleClassLoad(_filename, _callback, _callbackMetadata) : __Sparkle
                 {
                     buffer_async_group_option("showdialog",   __psShowDialog);
                     buffer_async_group_option("savepadindex", __psGamepadIndex);
+                    buffer_async_group_option("slottitle",    __psSlotTitle);
+                    buffer_async_group_option("subtitle",     __psSlotSubtitle);
                     buffer_async_group_option("saveslotsize", SPARKLE_PLAYSTATION_SLOT_SIZE);
                 }
                 
