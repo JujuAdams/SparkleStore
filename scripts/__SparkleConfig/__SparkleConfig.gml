@@ -19,6 +19,7 @@
 // the relevant SparkleStore functions. Please note that the slot title must not contain spaces.
 #macro SPARKLE_PLAYSTATION_SLOT_TITLE  "GameWithName"
 #macro SPARKLE_PLAYSTATION_SUBTITLE    "Game savedata"
+#macro SPARKLE_PLAYSTATION_SLOT_SIZE   (32*1024*1024) //bytes
 
 // Whether SparkleStore is allowed to use `steam_file_*` functions to save and load data. This
 // macro only applies if you have enabled Steam Cloud for your game and the player has enabled

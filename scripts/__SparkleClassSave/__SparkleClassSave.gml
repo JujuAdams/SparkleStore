@@ -77,6 +77,7 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
                     buffer_async_group_option("savepadindex", __psGamepadIndex);
                     buffer_async_group_option("slottitle",    __psSlotTitle);
                     buffer_async_group_option("subtitle",     __psSlotSubtitle);
+                    buffer_async_group_option("saveslotsize", SPARKLE_PLAYSTATION_SLOT_SIZE);
                 }
                 
                 if (__SPARKLE_PS_SAVE_BACKUP)
