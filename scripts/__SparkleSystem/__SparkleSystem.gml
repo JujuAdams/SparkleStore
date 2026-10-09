@@ -28,6 +28,23 @@ function __SparkleSystem()
         __psShowDialog   = false;
         __psGamepadIndex = -1;
         
+        if (SPARKLE_PLAYSTATION_SLOT_SIZE < 0)
+        {
+            if (SPARKLE_ON_PS_ANY)
+            {
+                __SparkleError("`SPARKLE_PLAYSTATION_SLOT_SIZE` has not been set");
+            }
+            else
+            {
+                //Doesn't matter!
+                __psSlotSize = -1;
+            }
+        }
+        else
+        {
+            __psSlotSize = SPARKLE_PLAYSTATION_SLOT_SIZE*1024*1024;
+        }
+        
         __xboxUser = int64(0);
         
         __queuedArray = [];

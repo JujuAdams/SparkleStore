@@ -84,7 +84,7 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) : __Spark
                     buffer_async_group_option("savepadindex", __psGamepadIndex);
                     buffer_async_group_option("slottitle",    __psSlotTitle);
                     buffer_async_group_option("subtitle",     __psSlotSubtitle);
-                    buffer_async_group_option("saveslotsize", SPARKLE_PLAYSTATION_SLOT_SIZE);
+                    buffer_async_group_option("saveslotsize", _system.__psSlotSize);
                 }
                 
                 if (__SPARKLE_PS_SAVE_BACKUP)
