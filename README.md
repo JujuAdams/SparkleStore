@@ -1,6 +1,5 @@
 <p align="center"><img src="https://raw.githubusercontent.com/JujuAdams/SparkleStore/master/LOGO.png" style="display:block; margin:auto; width:300px"></p>
 <h1 align="center">SparkleStore 3.0.0-beta</h1>
-
 <p align="center">Cross-platform file save/load for GameMaker LTS 2026</p>
 
 &nbsp;
@@ -111,7 +110,7 @@ buffer_delete(_buffer);
 
 //Start the load process. The callback function will be
 //executed later when the load completes
-SparkleLoad("filename.json", _buffer, function(_status, _buffer)
+SparkleLoad("filename.json", function(_status, _buffer)
 {
     //Convert the raw binary data into a database
     var _loadedDatabase = _status? db_buffer_read(_buffer) : undefined;
