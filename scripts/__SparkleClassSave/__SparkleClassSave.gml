@@ -48,7 +48,11 @@ function __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _call
         
         array_push(_saveActivityArray, self);
         
-        if (__steamFile && SparkleGetSteamCloud())
+        if (SPARKLE_DEBUG_NEVER_SAVE)
+        {
+            __Complete(SPARKLE_STATUS_FAILED);
+        }
+        else if (__steamFile && SparkleGetSteamCloud())
         {
             var _status = steam_file_write_buffer($"{__groupName}/{__filename}", __buffer);
             __Complete(_status? SPARKLE_STATUS_SUCCESS : SPARKLE_STATUS_FAILED);

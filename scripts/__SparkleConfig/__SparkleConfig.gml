@@ -73,3 +73,7 @@
 // Minimum time between save operations. This prevents save operations choking up the game if
 // a lot of save operations get generated very quickly.
 #macro SPARKLE_SAVE_RATE_LIMIT  300 //milliseconds
+
+// Prevents save and delete operations from being executed. These operations will instead return
+// a "failed" status. This is helpful when testing a particular savefile that reproduces a bug.
+#macro SPARKLE_DEBUG_NEVER_SAVE  (false && SPARKLE_RUNNING_FROM_IDE)

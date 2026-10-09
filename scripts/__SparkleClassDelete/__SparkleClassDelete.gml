@@ -40,7 +40,11 @@ function __SparkleClassDelete(_filename, _callback, _callbackMetadata) : __Spark
         
         array_push(_saveActivityArray, self);
         
-        if (__steamFile && SparkleGetSteamCloud())
+        if (SPARKLE_DEBUG_NEVER_SAVE)
+        {
+            __Complete(SPARKLE_STATUS_FAILED);
+        }
+        else if (__steamFile && SparkleGetSteamCloud())
         {
             var _status = steam_file_delete($"{__groupName}/{__filename}");
             __Complete(_status? SPARKLE_STATUS_SUCCESS : SPARKLE_STATUS_FAILED);
