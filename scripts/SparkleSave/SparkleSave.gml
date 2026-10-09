@@ -78,6 +78,28 @@ function SparkleSave(_filename, _buffer, _callback = undefined, _callbackMetadat
     _offset = max(0, min(_offset, buffer_get_size(_buffer)-1));
     _size = max(0, min(_size, buffer_get_size(_buffer) - _offset));
     
+    //Try to cancel queued save/delete operations to lighten file system burden
+    var _i = 0;
+    repeat(array_length(_queuedArray))
+    {
+        var _opStruct = _queuedArray[_i];
+        if ((_opStruct.__opType == SPARKLE_OP_SAVE) || (_opStruct.__opType == SPARKLE_OP_DELETE))
+        {
+            if ((_opStruct.__filename == _filename) && (_opStruct.__groupName == _system.__groupName) && (_opStruct.__psSlotTitle == _system.__psSlotTitle))
+            {
+                if (SPARKLE_VERBOSE)
+                {
+                    __SparkleTrace($"Cancelled existing save/delete operation: group name = \"{_system.__groupName}\", slot title = \"{_system.__psSlotTitle}\", filename = \"{_filename}\"");
+                }
+                
+                _opStruct.__Complete(SPARKLE_STATUS_CANCELLED);
+                break;
+            }
+        }
+        
+        ++_i;
+    }
+    
     var _struct = new __SparkleClassSave(_filename, _buffer, _offset, _size, _callback, _callbackMetadata);
     
     if (_priority == SPARKLE_PRIORITY_HIGH)
