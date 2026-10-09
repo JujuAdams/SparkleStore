@@ -69,3 +69,7 @@
 // conservative and offers extra wiggle room without violating guidelines.
 #macro SPARKLE_MAX_SAVE_FREQUENCY  (SPARKLE_ON_SWITCH? 25 : infinity)
 #macro SPARKLE_MAX_LOAD_FREQUENCY  (SPARKLE_ON_SWITCH? 25 : infinity)
+
+// Minimum time between save operations. This prevents save operations choking up the game if
+// a lot of save operations get generated very quickly.
+#macro SPARKLE_SAVE_RATE_LIMIT  300 //milliseconds

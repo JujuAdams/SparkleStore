@@ -128,8 +128,6 @@ function __SparkleSystem()
             //Dispatch queued operations
             while(array_length(__queuedArray) > 0)
             {
-                __lastActivityTime = current_time;
-                
                 var _totalPending = array_length(__savePendingArray) + array_length(__loadPendingArray);
                 
                 var _opStruct = array_first(__queuedArray);
@@ -137,8 +135,10 @@ function __SparkleSystem()
                 if ((_operation == SPARKLE_OP_SAVE) || (_operation == SPARKLE_OP_DELETE))
                 {
                     var _recentCount = array_length(__saveActivityArray);
-                    if ((_recentCount < SPARKLE_MAX_SAVE_FREQUENCY) && (_totalPending < max(1, __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
+                    if ((current_time - __lastActivityTime >= SPARKLE_SAVE_RATE_LIMIT) && (_recentCount < SPARKLE_MAX_SAVE_FREQUENCY) && (_totalPending < max(1, __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
                     {
+                        __lastActivityTime = current_time;
+                        
                         array_shift(__queuedArray);
                         _opStruct.__Dispatch();
                     }
@@ -152,6 +152,8 @@ function __SparkleSystem()
                     var _recentCount = array_length(__loadActivityArray);
                     if ((_recentCount < SPARKLE_MAX_LOAD_FREQUENCY) && (_totalPending < max(1, __SPARKLE_MAX_SIMULTANEOUS_OPERATIONS)))
                     {
+                        __lastActivityTime = current_time;
+                        
                         array_shift(__queuedArray);
                         _opStruct.__Dispatch();
                     }
